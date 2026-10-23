@@ -23,6 +23,10 @@ def source_checks():
     lock=json.loads((ROOT/'package-lock.json').read_text(encoding='utf-8'))
     if any(value!=version for value in (package['version'],lock['version'],lock['packages']['']['version'])):
         raise ValueError('Las versiones de la skill y las pruebas no coinciden.')
+    platforms=json.loads((source/'PLATFORMS.json').read_text(encoding='utf-8'))
+    if (platforms.get('version')!=version or set(platforms.get('validated_systems',[]))!={'Windows','Linux'}
+        or platforms.get('pending_systems')!=['Darwin'] or platforms.get('python_tested')!=['3.10','3.14']):
+        raise ValueError('El alcance publicado debe declarar Windows/Linux y macOS pendiente.')
     license_text=(ROOT/'LICENSE').read_text(encoding='utf-8')
     if license_text!=(source/'LICENSE').read_text(encoding='utf-8') or not license_text.startswith('MIT License\n'):
         raise ValueError('El paquete y el repositorio deben incluir la licencia MIT elegida.')

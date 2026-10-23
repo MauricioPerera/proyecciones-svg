@@ -13,17 +13,17 @@ from prepare_release import approved_run,check_proof,prepare,write_assets
 from install_skill import verified_files
 
 
-def fixtures(folder):
+def fixtures(folder,systems=('Linux','Windows','Darwin')):
     sha='a'*40
     package=b'fixture package'
-    for system in ('Linux','Windows','Darwin'):
+    for system in systems:
         for version in ('3.10.20','3.14.4'):
             dest=folder/f'python-{system}-{version}'
             dest.mkdir()
             (dest/'package.zip').write_bytes(package)
             report={'commit':sha,'system':system,'python':version,'version':'1.0.0','status':'success',
                 'suites':{name:{'tests':count,'failures':0,'errors':0,'skipped':0}
-                          for name,count in (('geometry',69),('distribution',14))},
+                          for name,count in (('geometry',69),('distribution',16))},
                 'package':{'name':'package.zip','sha256':hashlib.sha256(package).hexdigest()}}
             (dest/'report.json').write_text(json.dumps(report),encoding='utf-8')
     (folder/'browser-evidence').mkdir()
@@ -34,6 +34,36 @@ def fixtures(folder):
 
 
 class ReleaseGateTests(unittest.TestCase):
+    def test_windows_linux_profile_is_explicit_and_keeps_macos_pending(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)
+            sha=fixtures(folder,systems=('Windows','Linux'))
+            with self.assertRaises(ValueError):
+                validate_matrix.validate(folder,sha)
+            result=validate_matrix.validate(folder,sha,'windows-linux')
+            self.assertEqual(result['validated_systems'],['Linux','Windows'])
+            self.assertEqual(result['pending_systems'],['Darwin'])
+            check_proof(result,sha,'1.0.0',result['package_sha256'],'windows-linux')
+            with self.assertRaises(ValueError):
+                check_proof(result,sha,'1.0.0',result['package_sha256'])
+
+    def test_scoped_profile_still_rejects_missing_failed_or_changed_results(self):
+        for fault in ('missing','failed','changed'):
+            with self.subTest(fault=fault),tempfile.TemporaryDirectory() as temp:
+                folder=Path(temp)
+                sha=fixtures(folder,systems=('Windows','Linux'))
+                report=next(folder.glob('python-*/report.json'))
+                if fault=='missing':
+                    report.unlink()
+                elif fault=='failed':
+                    data=json.loads(report.read_text())
+                    data['suites']['distribution']['errors']=1
+                    report.write_text(json.dumps(data),encoding='utf-8')
+                else:
+                    (report.parent/'package.zip').write_bytes(b'changed')
+                with self.assertRaises(ValueError):
+                    validate_matrix.validate(folder,sha,'windows-linux')
+
     def test_complete_matrix_is_accepted(self):
         with tempfile.TemporaryDirectory() as temp:
             folder=Path(temp)

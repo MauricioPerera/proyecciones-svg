@@ -1,4 +1,4 @@
-"""Prepare stable assets and an optional GitHub draft from an approved CI commit."""
+"""Prepare stable assets and an optional draft from CI or local platform evidence."""
 import argparse
 import hashlib
 import json
@@ -10,6 +10,7 @@ import tempfile
 
 import release
 from verify import source_checks
+from validate_matrix import PROFILES,validate
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -27,11 +28,14 @@ def approved_run(runs,commit):
                  and run['event'] in ('push','workflow_dispatch')),None)
 
 
-def check_proof(proof,commit,version,digest):
+def check_proof(proof,commit,version,digest,profile='all'):
+    if profile not in PROFILES:
+        raise ValueError('Perfil de validación desconocido.')
     if (proof.get('commit')!=commit or proof.get('version')!=version
         or proof.get('status')!='success' or proof.get('package_sha256')!=digest
-        or len(proof.get('python_jobs',[]))!=6 or len(proof.get('browsers',[]))!=6):
-        raise ValueError('La evidencia de CI no aprueba este commit, versión o paquete.')
+        or proof.get('validation_profile','all')!=profile
+        or len(proof.get('python_jobs',[]))!=len(PROFILES[profile]) or len(proof.get('browsers',[]))!=6):
+        raise ValueError('La evidencia no aprueba este commit, versión, perfil o paquete.')
 
 
 def write_assets(output,package,commit,version,digest,evidence):
@@ -44,7 +48,16 @@ def write_assets(output,package,commit,version,digest,evidence):
     notes=(ROOT/'releases'/(version+'.md')).read_text(encoding='utf-8')
     notes+='\n## Validación de esta entrega\n\nCommit: `'+commit+'`. '
     if approved:
-        notes+='[CI aprobada]('+evidence['workflow_run']['url']+').\n\n'
+        if 'workflow_run' in evidence:
+            notes+='[CI aprobada]('+evidence['workflow_run']['url']+').\n\n'
+        else:
+            labels={'Windows':'Windows','Linux':'Linux','Darwin':'macOS'}
+            notes+='Validación local y por SSH aprobada para **'+', '.join(labels[s] for s in evidence['validated_systems'])+'**. '
+            if evidence['pending_systems']:
+                notes+='**Pendiente de validación: '+', '.join(labels[s] for s in evidence['pending_systems'])+'**.'
+            notes+='\n\n'
+            notes+='Pruebas por combinación: '+str(sum(s['tests'] for s in evidence['python_jobs'][0]['suites'].values()))+'. '
+            notes+=str(len(evidence['python_jobs']))+' combinaciones de sistema/Python y 144 comprobaciones de ángulo en Chromium/Firefox sobre Linux.\n\n'
     else:
         notes+='**CI remota pendiente. Esta preparación local todavía no está aprobada para publicación.**\n\n'
     notes+='SHA-256 del ZIP: `'+digest+'`.\n'
@@ -57,9 +70,11 @@ def write_assets(output,package,commit,version,digest,evidence):
     return assets
 
 
-def prepare(repo,create_draft=False,local_only=False):
+def prepare(repo,create_draft=False,local_only=False,validation_dir=None,profile='all'):
     if create_draft and local_only:
         raise ValueError('--local-only no permite crear un borrador.')
+    if (local_only and validation_dir is not None) or (profile!='all' and validation_dir is None):
+        raise ValueError('Un perfil acotado requiere --validation-dir y no puede combinarse con --local-only.')
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',repo):
         raise ValueError('Repositorio inválido; usa owner/repo.')
     if command(['git','status','--porcelain']):
@@ -84,26 +99,31 @@ def prepare(repo,create_draft=False,local_only=False):
     identity=gh_json(['repo','view',repo,'--json','nameWithOwner,isPrivate'])
     if identity['nameWithOwner'].lower()!=repo.lower() or not identity['isPrivate']:
         raise ValueError('El destino debe ser el repositorio privado elegido.')
-    runs=gh_json(['run','list','--repo',repo,'--workflow','verify.yml','--branch','main',
-        '--commit',commit,'--status','success','--limit','10','--json','databaseId,headSha,conclusion,url,event'])
-    run=approved_run(runs,commit)
-    if run is None:
-        raise ValueError('Todavía no hay una ejecución satisfactoria de CI para este commit.')
-    jobs=gh_json(['run','view',str(run['databaseId']),'--repo',repo,'--json','jobs'])['jobs']
-    if not any(job['name']=='Ready for release' and job['conclusion']=='success' for job in jobs):
-        raise ValueError('No se aprobó Ready for release.')
     output=ROOT/'dist'
     output.mkdir(exist_ok=True)
     (ROOT/'build').mkdir(exist_ok=True)
-    with tempfile.TemporaryDirectory(prefix='release-proof-',dir=ROOT/'build') as temporary:
-        command(['gh','run','download',str(run['databaseId']),'--repo',repo,'--name','release-readiness','--dir',temporary])
-        proof=json.loads((Path(temporary)/'release-readiness.json').read_text(encoding='utf-8'))
+    if validation_dir is not None:
+        proof=validate(Path(validation_dir),commit,profile)
+        proof['validation_method']='local-and-authorized-ssh'
+    else:
+        runs=gh_json(['run','list','--repo',repo,'--workflow','verify.yml','--branch','main',
+            '--commit',commit,'--status','success','--limit','10','--json','databaseId,headSha,conclusion,url,event'])
+        run=approved_run(runs,commit)
+        if run is None:
+            raise ValueError('Todavía no hay una ejecución satisfactoria de CI para este commit.')
+        jobs=gh_json(['run','view',str(run['databaseId']),'--repo',repo,'--json','jobs'])['jobs']
+        if not any(job['name']=='Ready for release' and job['conclusion']=='success' for job in jobs):
+            raise ValueError('No se aprobó Ready for release.')
+        with tempfile.TemporaryDirectory(prefix='release-proof-',dir=ROOT/'build') as temporary:
+            command(['gh','run','download',str(run['databaseId']),'--repo',repo,'--name','release-readiness','--dir',temporary])
+            proof=json.loads((Path(temporary)/'release-readiness.json').read_text(encoding='utf-8'))
+        proof['workflow_run']={'id':run['databaseId'],'url':run['url']}
     package,digest=release.build()
-    check_proof(proof,commit,version,digest)
-    proof['workflow_run']={'id':run['databaseId'],'url':run['url']}
+    check_proof(proof,commit,version,digest,profile)
     assets=write_assets(output,package,commit,version,digest,proof)
     notes_path=output/'RELEASE_NOTES.md'
-    result={'version':version,'commit':commit,'status':'ci_approved','ci_url':run['url'],'package_sha256':digest,'assets':[str(p) for p in assets]}
+    result={'version':version,'commit':commit,'status':'validation_approved','validation_profile':profile,
+            'ci_url':proof.get('workflow_run',{}).get('url'),'package_sha256':digest,'assets':[str(p) for p in assets]}
     if create_draft:
         tag='v'+version
         existing=gh_json(['release','list','--repo',repo,'--limit','100','--json','tagName,isDraft'])
@@ -128,10 +148,12 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo',required=True)
     parser.add_argument('--create-draft',action='store_true')
+    parser.add_argument('--validation-dir',type=Path,help='Informes y paquetes locales de la matriz declarada.')
+    parser.add_argument('--profile',choices=tuple(PROFILES),default='all')
     parser.add_argument('--local-only',action='store_true',help='Prepara archivos locales marcados como pendientes; no consulta CI ni crea borradores.')
     args=parser.parse_args()
     try:
-        result=prepare(args.repo,args.create_draft,args.local_only)
+        result=prepare(args.repo,args.create_draft,args.local_only,args.validation_dir,args.profile)
     except (OSError,ValueError,KeyError,subprocess.CalledProcessError) as error:
         parser.exit(1,f'Error: {error}\n')
     print(json.dumps(result,indent=2))
