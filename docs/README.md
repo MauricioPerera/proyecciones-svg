@@ -2,7 +2,7 @@
 
 Sitio estático en español: presentación, cuatro modelos interactivos, instalación asistida y por terminal, ejemplos de peticiones, archivos de salida, límites y preguntas frecuentes. El sitio no contiene el paquete privado de la skill ni credenciales.
 
-Se publica con GitHub Pages desde una rama que contiene únicamente esta carpeta. `.nojekyll` evita transformar los archivos estáticos. No necesita dependencias ni un proceso de compilación en el servidor.
+Se publica en [GitHub Pages](https://mauricioperera.github.io/proyecciones-svg-site/) mediante el repositorio público `MauricioPerera/proyecciones-svg-site`, que contiene únicamente el sitio y sus ejemplos. El repositorio de la skill conserva su visibilidad privada. `.nojekyll` evita transformar los archivos estáticos. No necesita dependencias ni un proceso de compilación en el servidor.
 
 ## Desarrollo local
 
@@ -18,7 +18,7 @@ Abre `http://127.0.0.1:8770/`. Las rutas de los ejemplos son relativas para admi
 python -B tools/build_site_examples.py
 ```
 
-También acepta `--skill-dir RUTA_A_LA_SKILL_ESTABLE`. Los modelos sencillos proceden de los recursos de la skill; la pieza irregular usa `docs/assets/models/irregular/modelo.json`. Los SVG de descarga conservan la salida del generador. Las versiones de presentación eliminan rótulos internos, añaden estilos propios y usan curvas y fotogramas calculados por la misma skill; no recalculan la geometría en JavaScript.
+La regeneración y las comprobaciones con `tools/` se ejecutan en el repositorio privado de la skill; esos programas no se incluyen en la copia pública del sitio. También acepta `--skill-dir RUTA_A_LA_SKILL_ESTABLE`. Los modelos sencillos proceden de los recursos de la skill; la pieza irregular usa `docs/assets/models/irregular/modelo.json`. Los SVG de descarga conservan la geometría del generador. Las versiones de presentación eliminan rótulos internos, añaden estilos propios y usan curvas y fotogramas calculados por la misma skill; no recalculan la geometría en JavaScript.
 
 ## Verificación
 

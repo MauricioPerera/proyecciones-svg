@@ -12,7 +12,7 @@ Versión estable **1.0.0 para Windows y Linux**, licencia MIT. **macOS pendiente
 
 ## Sitio web
 
-La [landing de Proyecciones SVG](https://mauricioperera.github.io/proyecciones-svg/) explica el uso y la instalación, con cuatro ejemplos SVG interactivos y guías para usuarios técnicos y no técnicos. Su fuente está en `docs/`; se sirve como sitio estático de GitHub Pages. La descarga de la skill sigue requiriendo acceso al repositorio privado. Consulta [el desarrollo de la landing](docs/README.md) para regenerar los ejemplos y comprobarla localmente.
+La [landing de Proyecciones SVG](https://mauricioperera.github.io/proyecciones-svg-site/) explica el uso y la instalación, con cuatro ejemplos SVG interactivos y guías para usuarios técnicos y no técnicos. Su fuente está en `docs/`; se sirve como sitio estático de GitHub Pages. La descarga de la skill sigue requiriendo acceso al repositorio privado. Consulta [el desarrollo de la landing](docs/README.md) para regenerar los ejemplos y comprobarla localmente.
 
 ## Usar
 
