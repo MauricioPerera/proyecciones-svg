@@ -2,7 +2,7 @@
 
 Skill de Codex para construir un modelo geométrico a partir de una descripción, un croquis o vistas técnicas y generar alzado, planta, perfil y giros SVG. Python estándar y SVG nativo, sin motor 3D ni servicios externos.
 
-Estado: **1.0.0-rc.1**, candidata local. El código canónico está en `skills/proyecciones-svg`; la carpeta de skills instalada se obtiene del paquete, no se edita como segunda fuente.
+Versión preparada: **1.0.0**, licencia MIT. Repositorio privado: [MauricioPerera/proyecciones-svg](https://github.com/MauricioPerera/proyecciones-svg). La publicación se prepara como borrador tras aprobar CI. El código canónico está en `skills/proyecciones-svg`; la carpeta de skills instalada se obtiene del paquete, no se edita como segunda fuente.
 
 ## Usar
 
@@ -19,25 +19,24 @@ Los modelos admitidos y sus límites están en [la skill](skills/proyecciones-sv
 ## Comprobar
 
 ```sh
-python -B -m unittest discover -s skills/proyecciones-svg/scripts -p "test_*.py"
-python -B -m unittest discover -s tests -p "test_*.py"
+python -B tools/verify.py
 npm ci
 npx playwright install chromium firefox
 python -B tools/browser_fixtures.py
 npm run test:browser
 ```
 
-Node/Playwright sólo se usan en pruebas. Se verifican geometría, curvas y cotas al cambiar de escala; piezas esbeltas; instalación limpia; presupuestos de ejecución; controles del visor; 24 ángulos en tres modelos; SMIL, movimiento reducido y pantalla de 320 px. La matriz CI configura Python 3.10/3.14 en Windows, Linux y macOS, y Chromium/Firefox en Linux. Su configuración sigue las guías oficiales de [Actions](https://github.com/actions/setup-python) y [Playwright](https://playwright.dev/docs/ci); configurar la matriz no significa haberla ejecutado.
+Node/Playwright sólo se usan en pruebas. Se verifican geometría, curvas y cotas al cambiar de escala; piezas esbeltas; instalación limpia; presupuestos de ejecución; controles del visor; 24 ángulos en tres modelos; SMIL, movimiento reducido y pantalla de 320 px. La matriz CI ejecuta Python 3.10/3.14 en Windows, Linux y macOS, y Chromium/Firefox en Linux. `Ready for release` exige seis informes del mismo commit, ninguna prueba omitida, las seis combinaciones de navegador/modelo y ZIP idéntico entre plataformas. Los resultados se conservan como artefactos. La configuración sigue las guías oficiales de [Actions](https://github.com/actions/setup-python) y [Playwright](https://playwright.dev/docs/ci).
 
 ## Empaquetar e instalar
 
 ```sh
 python -B tools/release.py
-python -B tools/install_skill.py dist/proyecciones-svg-1.0.0-rc.1.zip --skills-dir RUTA_A_CODEX/skills
+python -B tools/install_skill.py dist/proyecciones-svg-1.0.0.zip --skills-dir RUTA_A_CODEX/skills
 ```
 
-El ZIP es reproducible e incluye un manifiesto con SHA-256. El instalador comprueba rutas y sumas antes de escribir. Para actualizar una instalación existente añade `--update`: conserva la versión previa en `skill-backups/`, fuera de la carpeta de descubrimiento de skills. Las sumas detectan alteraciones, pero no autentican por sí solas al distribuidor.
+El ZIP usa entradas sin compresión y metadatos fijos para conservar los mismos bytes entre sistemas y versiones de zlib; incluye licencia y manifiesto con SHA-256. El instalador comprueba rutas y sumas antes de escribir. Para actualizar una instalación existente añade `--update`: conserva la versión previa en `skill-backups/`, fuera de la carpeta de descubrimiento de skills. Las sumas detectan alteraciones, pero no autentican por sí solas al distribuidor.
 
 Para volver a una release anterior, instala su ZIP con `--update`; la versión reemplazada también queda respaldada.
 
-Antes de una publicación estable: ejecutar la matriz remota completa, revisar la evidencia de aceptación, elegir licencia y canal de distribución. Esta preparación no crea un repositorio remoto ni publica una release.
+Para preparar el borrador estable desde el commit aprobado de `main`, usa `python -B tools/prepare_release.py --repo MauricioPerera/proyecciones-svg --create-draft`. Comprueba CI y descarga su evidencia, compara el paquete local con el de las seis plataformas y adjunta ZIP, sumas, instalador, notas y evidencia. Requiere GitHub CLI autenticado. Este comando crea un borrador y no lo publica. Las notas están en `releases/1.0.0.md`.

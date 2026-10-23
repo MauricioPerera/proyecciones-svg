@@ -28,13 +28,15 @@ def build(source=SOURCE, destination=None):
               'files':{name:hashlib.sha256(data).hexdigest() for name,data in files.items()}}
     files['RELEASE.json']=(json.dumps(manifest,sort_keys=True,indent=2)+'\n').encode()
     destination.parent.mkdir(parents=True,exist_ok=True)
-    with zipfile.ZipFile(destination,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as archive:
+    # Stored entries avoid zlib-version differences across OS/Python builds.
+    # The source-only package is small enough to prefer byte reproducibility.
+    with zipfile.ZipFile(destination,'w',compression=zipfile.ZIP_STORED) as archive:
         for name,data in sorted(files.items()):
             info=zipfile.ZipInfo('proyecciones-svg/'+name,date_time=(2020,1,1,0,0,0))
-            info.compress_type=zipfile.ZIP_DEFLATED
+            info.compress_type=zipfile.ZIP_STORED
             info.create_system=3
             info.external_attr=0o100644<<16
-            archive.writestr(info,data,compresslevel=9)
+            archive.writestr(info,data)
     digest=hashlib.sha256(destination.read_bytes()).hexdigest()
     destination.with_suffix('.zip.sha256').write_text(digest+'  '+destination.name+'\n',encoding='ascii')
     return destination,digest
