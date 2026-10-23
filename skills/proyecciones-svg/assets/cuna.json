@@ -1,0 +1,8 @@
+{
+  "name": "Cuña",
+  "units": "cm",
+  "type": "extrusion",
+  "profile": [[0, 0], [6, 0], [6, 3]],
+  "depth": 4,
+  "assumptions": ["Pieza maciza de perfil constante en toda la profundidad."]
+}

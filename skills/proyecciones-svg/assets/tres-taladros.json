@@ -1,0 +1,19 @@
+{
+  "name":"Pieza irregular con tres taladros cruzados",
+  "units":"cm",
+  "type":"triple_crossed_bores",
+  "footprint":[[0,0],[7,0],[8,1.5],[8,5],[6,6],[0,6]],
+  "roof":{"offset":1.5,"slope_x":0.2,"slope_y":0.1},
+  "bores":[
+    {"axis":"inclined","center":[2.8,2.775],"direction":[0.8,0.15,1],"diameter":1.2,"through":true},
+    {"axis":"inclined","center":[5.2,2.775],"direction":[-0.8,0.15,1],"diameter":0.8,"through":true},
+    {"axis":"inclined","center":[4,1.575],"direction":[0,0.95,1],"diameter":0.6,"through":true}
+  ],
+  "assumptions":[
+    "Mismo contorno y cubierta inclinada de los ejemplos anteriores; medidas en centímetros.",
+    "Tres diámetros reales distintos: 1.2, 0.8 y 0.6 cm, medidos perpendicularmente a cada eje.",
+    "Los tres ejes se intersecan en (4,3,1.5) cm; seis bocas separadas y comunicación interior.",
+    "El material es el cuerpo exterior menos la unión de los tres cilindros; se eliminan las curvas enterradas en otro vaciado.",
+    "Bocas elípticas analíticas; cruces Bézier y clips poligonales 2D con tolerancia nominal de 0.025 píxeles del SVG."
+  ]
+}

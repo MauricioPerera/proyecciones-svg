@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proyecciones SVG · visor</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#152a3a;font:16px system-ui,sans-serif}main{max-width:1280px;margin:auto;padding:24px}h1{font-size:1.4rem;margin:0 0 8px}.note{color:#4f6270;margin:0 0 20px}.panels{display:grid;grid-template-columns:1fr 1fr;gap:20px}.panel{background:white;border:1px solid #d6dee5;border-radius:12px;overflow:hidden;min-width:0}.panel h2{font-size:1rem;padding:16px;margin:0;border-bottom:1px solid #e6ebef}.drawing{overflow:auto}.drawing>svg{width:100%;height:auto;display:block}.controls{padding:16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}button,input{font:inherit}button{padding:8px 16px;border:1px solid #9aadb9;background:#fff;border-radius:6px;cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #1465b2;outline-offset:3px}input[type=range]{width:100%;margin:0}output{font-variant-numeric:tabular-nums}body.omit .hidden-edge{display:none}footer{margin-top:20px;color:#4f6270;font-size:.85rem}@media(max-width:760px){main{padding:12px}.panels{grid-template-columns:1fr}}
+</style>
+<main>
+<h1>Proyecciones SVG</h1>
+<p class="note">Plano y giro calculados desde un único modelo. El control recorre los ángulos de la proyección.</p>
+<div class="panels">
+<section class="panel"><h2>Tres vistas</h2><div class="drawing" id="sheet">__SHEET__</div></section>
+<section class="panel"><h2>Giro ortográfico</h2><div class="drawing" id="rotation">__ROTATION__</div>
+<div class="controls"><button id="play" type="button" aria-pressed="false">Reproducir</button><output id="angle" aria-live="off"></output>
+<input id="frame" type="range" min="0" value="0" step="1" aria-label="Ángulo del giro">
+<label><input id="hidden" type="checkbox" checked> Mostrar aristas ocultas disponibles</label></div></section>
+</div>
+<footer>SVG vectorial editable · cotas generales, sin tolerancias de fabricación · reproducción manual</footer>
+<noscript>Activa JavaScript para recorrer los ángulos. Las tres vistas y el primer ángulo siguen visibles.</noscript>
+</main>
+<script>
+'use strict';
+const settings=__SETTINGS__;
+const frames=[...document.querySelectorAll('#rotation [data-frame]')];
+const slider=document.getElementById('frame'),button=document.getElementById('play'),angle=document.getElementById('angle');
+let index=0,playing=false,request=0,start=0,origin=0;
+slider.max=String(frames.length-1);
+function show(value){
+  frames[index].setAttribute('visibility','hidden');index=value;
+  frames[index].setAttribute('visibility','visible');slider.value=String(index);
+  angle.textContent='Azimut '+frames[index].dataset.azimuth+'° · elevación '+frames[index].dataset.elevation+'°';
+}
+function pause(){playing=false;cancelAnimationFrame(request);button.textContent='Reproducir';button.setAttribute('aria-pressed','false')}
+function tick(now){
+  if(!playing)return;
+  if(!start)start=now;
+  const advance=Math.floor((now-start)/1000/settings.seconds*frames.length);
+  const next=origin+advance;
+  if(!settings.loop&&next>=frames.length){show(frames.length-1);pause();return}
+  show(next%frames.length);request=requestAnimationFrame(tick);
+}
+button.addEventListener('click',()=>{
+  if(playing){pause();return}
+  if(index===frames.length-1&&!settings.loop)show(0);
+  playing=true;start=0;origin=index;button.textContent='Pausar';button.setAttribute('aria-pressed','true');request=requestAnimationFrame(tick);
+});
+slider.addEventListener('input',()=>{pause();show(Number(slider.value))});
+document.getElementById('hidden').addEventListener('change',event=>document.body.classList.toggle('omit',!event.target.checked));
+document.addEventListener('visibilitychange',()=>{if(document.hidden)pause()});
+matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',event=>{if(event.matches)pause()});
+show(0);
+</script>
+</html>

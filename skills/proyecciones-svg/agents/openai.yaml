@@ -1,0 +1,4 @@
+interface:
+  display_name: "Proyecciones SVG"
+  short_description: "Vistas técnicas y giros vectoriales desde croquis"
+  default_prompt: "Usa $proyecciones-svg para generar las tres vistas y una animación SVG de esta pieza a partir de su descripción o croquis."

@@ -1,0 +1,8 @@
+{
+  "name": "Pieza escalonada",
+  "units": "cm",
+  "type": "extrusion",
+  "profile": [[0, 0], [6, 0], [6, 2], [2, 2], [2, 4], [0, 4]],
+  "depth": 4,
+  "assumptions": ["Rebaje a toda la profundidad, sin cavidades interiores."]
+}

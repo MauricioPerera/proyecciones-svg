@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="650" viewBox="0 0 960 650">
+<rect width="960" height="650" fill="white"/>
+<style>text{font:18px Arial;fill:#172a38}path,rect{stroke:#172a38;stroke-width:2;fill:none}.thin{stroke:#697885;stroke-width:1}.title{font-size:24px}</style>
+<text x="30" y="34" class="title">Croquis · medidas en mm · tercer diedro</text>
+<text x="200" y="85">PLANTA</text><rect x="100" y="110" width="400" height="200"/>
+<path class="thin" d="M100 90V70 M500 90V70 M100 80H500 M70 110H50 M70 310H50 M60 110V310"/>
+<text x="280" y="72">80</text><text x="22" y="220">40</text>
+<text x="200" y="365">ALZADO</text><path d="M100 600H500V500L100 400Z"/>
+<path class="thin" d="M100 615V640 M500 615V640 M100 630H500 M80 400H55 M80 600H55 M65 400V600 M515 500H550 M515 600H550 M540 500V600"/>
+<text x="280" y="625">80</text><text x="28" y="505">40</text><text x="550" y="555">20</text>
+<text x="670" y="365">PERFIL DERECHO</text><rect x="660" y="400" width="200" height="200"/>
+<path d="M660 500H860"/>
+<path class="thin" d="M660 615V640 M860 615V640 M660 630H860"/><text x="740" y="625">40</text>
+</svg>

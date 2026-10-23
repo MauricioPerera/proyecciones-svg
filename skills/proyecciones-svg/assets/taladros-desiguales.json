@@ -1,0 +1,18 @@
+{
+  "name":"Pieza irregular con taladros de distinto diámetro",
+  "units":"cm",
+  "type":"unequal_crossed_bores",
+  "footprint":[[0,0],[7,0],[8,1.5],[8,5],[6,6],[0,6]],
+  "roof":{"offset":1.5,"slope_x":0.2,"slope_y":0.1},
+  "bores":[
+    {"axis":"inclined","center":[2.8,2.775],"direction":[0.8,0.15,1],"diameter":1.2,"through":true},
+    {"axis":"inclined","center":[5.2,2.775],"direction":[-0.8,0.15,1],"diameter":0.8,"through":true}
+  ],
+  "assumptions":[
+    "Mismo contorno, cubierta y ejes del ejemplo anterior; medidas en centímetros.",
+    "Diámetros reales de 1.2 y 0.8 cm medidos perpendicularmente a cada eje.",
+    "Ejes cruzados en (4,3,1.5) cm; cuatro bocas separadas y comunicación interior.",
+    "El material es el cuerpo exterior menos la unión de ambos cilindros.",
+    "Bocas analíticas SVG; curvas interiores Bézier y clip de intersección aproximados con tolerancia nominal de 0.025 píxeles del SVG."
+  ]
+}

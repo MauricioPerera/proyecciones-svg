@@ -1,0 +1,22 @@
+{
+  "name": "Pieza irregular con taladro inclinado",
+  "units": "cm",
+  "type": "sloped_prism_with_bore",
+  "footprint": [[0,0],[7,0],[8,1.5],[8,5],[6,6],[0,6]],
+  "roof": {"offset":1.5,"slope_x":0.2,"slope_y":0.1},
+  "bore": {
+    "axis":"inclined",
+    "center":[3.4,2.6],
+    "direction":[0.5,0.25,1],
+    "diameter":3,
+    "through":true
+  },
+  "assumptions": [
+    "Misma pieza irregular del ejemplo anterior; medidas en centímetros.",
+    "Base z=0 y cubierta z=1.5+0.2x+0.1y; altura máxima 3.6 cm.",
+    "Eje desde el punto (3.4,2.6,0) en la dirección (0.5,0.25,1), aproximadamente 29.21 grados respecto de la vertical.",
+    "Diámetro de 3 cm medido en un plano perpendicular al eje del cilindro.",
+    "Las dos bocas quedan enteras en la base y la cubierta, sin atravesar paredes laterales.",
+    "Intersecciones cilindro-plano analíticas, sin aproximación por facetas ni motor 3D."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Bloque con agujero cilíndrico pasante",
+  "units": "cm",
+  "type": "block_with_bore",
+  "size": [8, 6, 2],
+  "bore": {"axis": "z", "center": [4, 3], "diameter": 3, "through": true},
+  "assumptions": [
+    "Ejemplo inventado para probar curvas; medidas en centímetros.",
+    "Taladro vertical centrado, pasante y sin avellanados.",
+    "Círculos y elipses analíticos; la superficie cilíndrica no se aproxima mediante facetas.",
+    "El giro mantiene una elevación de 45 grados."
+  ]
+}

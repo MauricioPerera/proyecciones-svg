@@ -1,0 +1,43 @@
+name: Verify skill
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  python:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ['3.10', '3.14']
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -B -m unittest discover -s skills/proyecciones-svg/scripts -p "test_*.py"
+      - run: python -B -m unittest discover -s tests -p "test_*.py"
+      - run: python -B tools/release.py
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium firefox
+      - run: python -B tools/browser_fixtures.py
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: browser-evidence
+          path: build/browser-evidence/
+          retention-days: 7

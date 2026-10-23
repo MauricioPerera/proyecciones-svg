@@ -1,0 +1,21 @@
+{
+  "name":"Pieza irregular con cuatro taladros cruzados",
+  "units":"cm",
+  "type":"quadruple_crossed_bores",
+  "footprint":[[0,0],[7,0],[8,1.5],[8,5],[6,6],[0,6]],
+  "roof":{"offset":1.5,"slope_x":0.2,"slope_y":0.1},
+  "bores":[
+    {"axis":"inclined","center":[2.8,2.775],"direction":[0.8,0.15,1],"diameter":1.2,"through":true},
+    {"axis":"inclined","center":[5.2,2.775],"direction":[-0.8,0.15,1],"diameter":0.8,"through":true},
+    {"axis":"inclined","center":[4,1.575],"direction":[0,0.95,1],"diameter":0.6,"through":true},
+    {"axis":"inclined","center":[4,4.425],"direction":[0,-0.95,1],"diameter":0.4,"through":true}
+  ],
+  "assumptions":[
+    "Mismo contorno irregular y cubierta inclinada; medidas en centímetros.",
+    "Diámetros reales de 1.2, 0.8, 0.6 y 0.4 cm, medidos perpendicularmente a cada eje.",
+    "Los cuatro ejes pasan por (4,3,1.5) cm; ocho bocas separadas y conductos comunicados.",
+    "El cuerpo se vacía con la unión de los cuatro cilindros; se eliminan las curvas enterradas en cualquiera de los otros vaciados.",
+    "Se consideran los caminos de comunicación de hasta cuatro conductos, sin exigir coincidencia simultánea en el mismo punto del rayo.",
+    "Bocas elípticas analíticas; curvas interiores Bézier y clips poligonales 2D con tolerancia nominal de 0.025 píxeles del SVG."
+  ]
+}
