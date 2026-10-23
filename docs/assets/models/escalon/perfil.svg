@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320.5000 222.0000" role="img" aria-label="Perfil derecho" class="site-model"><g transform="translate(-389.7500 -355.5000)"><g data-view="Perfil derecho" data-scale="280.5"><path d="M456.5,560 L456.5,560 L456.5,466.5 L456.5,466.5 L456.5,373 L456.5,373 Z" class="face" /><path d="M643.5,373 L643.5,373 L643.5,466.5 L643.5,466.5 L643.5,560 L643.5,560 Z" class="face" /><path d="M456.5,560 L456.5,560 L643.5,560 L643.5,560 Z" class="face" /><path d="M456.5,466.5 L456.5,560 L643.5,560 L643.5,466.5 Z" class="face" /><path d="M456.5,466.5 L456.5,466.5 L643.5,466.5 L643.5,466.5 Z" class="face" /><path d="M456.5,373 L456.5,466.5 L643.5,466.5 L643.5,373 Z" class="face" /><path d="M456.5,373 L456.5,373 L643.5,373 L643.5,373 Z" class="face" /><path d="M456.5,560 L456.5,373 L643.5,373 L643.5,560 Z" class="face" /><path d="M456.5,560 L456.5,373 M643.5,560 L643.5,373 M456.5,560 L643.5,560 M456.5,466.5 L643.5,466.5 M456.5,373 L643.5,373" class="hidden-edge" data-segments="5" /><path d="M456.5,560 L456.5,466.5 M456.5,466.5 L456.5,373 M643.5,466.5 L643.5,373 M643.5,560 L643.5,466.5 M456.5,560 L643.5,560 M456.5,466.5 L643.5,466.5 M456.5,373 L643.5,373" class="edge" data-segments="7" /></g></g><style>
+.site-model{--paper:#fffef9;--ink:#193c36;--faint:#718274}
+.site-model .paper,.site-model .face{fill:var(--paper);stroke:none}
+.site-model .edge{fill:none;stroke:var(--ink);stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.site-model .hidden-edge{fill:none;stroke:var(--faint);stroke-width:1;stroke-dasharray:5 4}
+.site-model .dimension{fill:none;stroke:var(--faint);stroke-width:1}
+.site-model .curve{vector-effect:non-scaling-stroke}
+.site-model .bore-wall{fill:var(--ink);fill-opacity:.12}
+.site-model .axis{fill:none;stroke:var(--faint);stroke-width:1;stroke-dasharray:10 3 2 3}
+</style></svg>

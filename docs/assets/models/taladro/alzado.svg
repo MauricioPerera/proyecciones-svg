@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 345.1429 263.8571" role="img" aria-label="Alzado" class="site-model"><g transform="translate(-70.0000 -321.0715)"><g data-view="Alzado" data-scale="305.1429"><path d="M90,491.1429 L395.1429,491.1429 L395.1429,414.8571 L90,414.8571 Z" class="face" /><path d="M90,414.8571 L395.1429,414.8571 L395.1429,491.1429 L90,491.1429 Z" class="face" /><path d="M395.1429,491.1429 L90,491.1429 L90,491.1429 L395.1429,491.1429 Z" class="face" /><path d="M395.1429,414.8571 L395.1429,491.1429 L395.1429,491.1429 L395.1429,414.8571 Z" class="face" /><path d="M90,414.8571 L395.1429,414.8571 L395.1429,414.8571 L90,414.8571 Z" class="face" /><path d="M90,491.1429 L90,414.8571 L90,414.8571 L90,491.1429 Z" class="face" /><g data-layer="bore-surface" /><g data-layer="bore-hidden"><path d="M395.1429,414.8571 L90,414.8571 M395.1429,491.1429 L395.1429,414.8571 M90,491.1429 L395.1429,491.1429 M90,491.1429 L90,414.8571" class="hidden-edge" data-segments="4" /><path d="M299.7857,491.1428 L299.7857,414.8571" class="hidden-edge" data-feature="bore-generator" /><path d="M185.3571,491.1428 L185.3571,414.8571" class="hidden-edge" data-feature="bore-generator" /></g><g data-layer="bore-visible"><path d="M90,491.1429 L395.1429,491.1429 M395.1429,491.1429 L395.1429,414.8571 M395.1429,414.8571 L90,414.8571 M90,491.1429 L90,414.8571" class="edge" data-segments="4" /></g><path d="M242.5714,406.8571v92.2857" class="axis" /></g></g><style>
+.site-model{--paper:#fffef9;--ink:#193c36;--faint:#718274}
+.site-model .paper,.site-model .face{fill:var(--paper);stroke:none}
+.site-model .edge{fill:none;stroke:var(--ink);stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.site-model .hidden-edge{fill:none;stroke:var(--faint);stroke-width:1;stroke-dasharray:5 4}
+.site-model .dimension{fill:none;stroke:var(--faint);stroke-width:1}
+.site-model .curve{vector-effect:non-scaling-stroke}
+.site-model .bore-wall{fill:var(--ink);fill-opacity:.12}
+.site-model .axis{fill:none;stroke:var(--faint);stroke-width:1;stroke-dasharray:10 3 2 3}
+</style></svg>

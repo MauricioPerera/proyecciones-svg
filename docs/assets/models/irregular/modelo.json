@@ -1,0 +1,103 @@
+{
+  "name": "Pieza irregular · prueba de la versión estable 1.0.0",
+  "units": "mm",
+  "type": "quadruple_crossed_bores",
+  "footprint": [
+    [
+      0,
+      0
+    ],
+    [
+      72,
+      0
+    ],
+    [
+      85,
+      16
+    ],
+    [
+      82,
+      48
+    ],
+    [
+      61,
+      64
+    ],
+    [
+      0,
+      60
+    ]
+  ],
+  "roof": {
+    "offset": 16,
+    "slope_x": 0.18,
+    "slope_y": 0.12
+  },
+  "bores": [
+    {
+      "axis": "inclined",
+      "center": [
+        29.2,
+        28.6
+      ],
+      "direction": [
+        0.8,
+        0.15,
+        1
+      ],
+      "diameter": 12,
+      "through": true
+    },
+    {
+      "axis": "inclined",
+      "center": [
+        54.8,
+        28.6
+      ],
+      "direction": [
+        -0.8,
+        0.15,
+        1
+      ],
+      "diameter": 9,
+      "through": true
+    },
+    {
+      "axis": "inclined",
+      "center": [
+        42,
+        15.8
+      ],
+      "direction": [
+        0,
+        0.95,
+        1
+      ],
+      "diameter": 6,
+      "through": true
+    },
+    {
+      "axis": "inclined",
+      "center": [
+        42,
+        46.2
+      ],
+      "direction": [
+        0,
+        -0.95,
+        1
+      ],
+      "diameter": 4,
+      "through": true
+    }
+  ],
+  "assumptions": [
+    "Ejemplo nuevo con medidas supuestas en milímetros; generado con la skill estable instalada, versión 1.0.0.",
+    "Base hexagonal convexa asimétrica y cubierta plana inclinada z=16+0.18x+0.12y; base inferior z=0.",
+    "Envolvente máxima de 85 × 64 × 36.52 mm. El frente se observa desde y<0.",
+    "Taladros pasantes inclinados de diámetros reales 12, 9, 6 y 4 mm, medidos perpendicularmente al eje.",
+    "Los cuatro ejes concurren en (42,31,16) mm; ocho bocas separadas y vaciados interiores comunicados.",
+    "Tercer diedro: planta arriba, alzado debajo y perfil derecho a la derecha; cotas generales, sin tolerancias de fabricación.",
+    "Bocas elípticas analíticas; curvas interiores Bézier y clips poligonales 2D con tolerancia gráfica nominal de 0.025 píxeles del SVG original."
+  ]
+}

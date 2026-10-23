@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360.4000 248.6000" role="img" aria-label="Perfil derecho" class="site-model"><g transform="translate(-423.0000 -355.4000)"><g data-view="Perfil derecho" data-scale="320.4"><path d="M496.4,559.8 L496.4,559.8 L496.4,399.6 Z" class="face" /><path d="M710,399.6 L710,559.8 L710,559.8 Z" class="face" /><path d="M496.4,559.8 L496.4,559.8 L710,559.8 L710,559.8 Z" class="face" /><path d="M496.4,399.6 L496.4,559.8 L710,559.8 L710,399.6 Z" class="face" /><path d="M496.4,559.8 L496.4,399.6 L710,399.6 L710,559.8 Z" class="face" /><path d="M496.4,559.8 L496.4,399.6 M710,559.8 L710,399.6 M496.4,559.8 L710,559.8" class="hidden-edge" data-segments="3" /><path d="M496.4,559.8 L496.4,399.6 M496.4,399.6 L496.4,399.6 M710,559.8 L710,399.6 M710,399.6 L710,399.6 M496.4,559.8 L710,559.8 M496.4,399.6 L710,399.6" class="edge" data-segments="6" /></g></g><style>
+.site-model{--paper:#fffef9;--ink:#193c36;--faint:#718274}
+.site-model .paper,.site-model .face{fill:var(--paper);stroke:none}
+.site-model .edge{fill:none;stroke:var(--ink);stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.site-model .hidden-edge{fill:none;stroke:var(--faint);stroke-width:1;stroke-dasharray:5 4}
+.site-model .dimension{fill:none;stroke:var(--faint);stroke-width:1}
+.site-model .curve{vector-effect:non-scaling-stroke}
+.site-model .bore-wall{fill:var(--ink);fill-opacity:.12}
+.site-model .axis{fill:none;stroke:var(--faint);stroke-width:1;stroke-dasharray:10 3 2 3}
+</style></svg>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="128.8258 145.4542 382.3484 289.2727" width="640" height="460" role="img" class="site-model"><title id="cuna-angle-title">Cuña</title><desc id="cuna-angle-desc">Proyección ortográfica desde azimut 45°, elevación 50°.</desc><g><path d="M163.8258,266.1632 L351.2348,409.7269 L351.2348,324.5458 Z" class="face" /><path d="M476.1742,228.8368 L476.1742,314.0178 L288.7652,170.4542 Z" class="face" /><path d="M351.2348,409.7269 L163.8258,266.1632 L288.7652,170.4542 L476.1742,314.0178 Z" class="face" /><path d="M351.2348,324.5458 L351.2348,409.7269 L476.1742,314.0178 L476.1742,228.8368 Z" class="face" /><path d="M163.8258,266.1632 L351.2348,324.5458 L476.1742,228.8368 L288.7652,170.4542 Z" class="face" /><path d="M288.7652,170.4542 L476.1742,314.0178" class="hidden-edge" data-segments="1" /><path d="M163.8258,266.1632 L351.2348,409.7269 M351.2348,409.7269 L351.2348,324.5458 M163.8258,266.1632 L351.2348,324.5458 M476.1742,314.0178 L476.1742,228.8368 M288.7652,170.4542 L288.7652,170.4542 M476.1742,314.0178 L476.1742,314.0178 M288.7652,170.4542 L476.1742,228.8368 M163.8258,266.1632 L288.7652,170.4542 M351.2348,409.7269 L476.1742,314.0178 M351.2348,324.5458 L476.1742,228.8368" class="edge" data-segments="10" /></g><style>
+.site-model{--paper:#fffef9;--ink:#193c36;--faint:#718274}
+.site-model .paper,.site-model .face{fill:var(--paper);stroke:none}
+.site-model .edge{fill:none;stroke:var(--ink);stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.site-model .hidden-edge{fill:none;stroke:var(--faint);stroke-width:1;stroke-dasharray:5 4}
+.site-model .dimension{fill:none;stroke:var(--faint);stroke-width:1}
+.site-model .curve{vector-effect:non-scaling-stroke}
+.site-model .bore-wall{fill:var(--ink);fill-opacity:.12}
+.site-model .axis{fill:none;stroke:var(--faint);stroke-width:1;stroke-dasharray:10 3 2 3}
+
+.site-model .hidden-edge{display:none}
+</style></svg>

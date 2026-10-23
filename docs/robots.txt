@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mauricioperera.github.io/proyecciones-svg/sitemap.xml
