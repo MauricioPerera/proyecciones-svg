@@ -40,3 +40,5 @@ El ZIP usa entradas sin compresión y metadatos fijos para conservar los mismos 
 Para volver a una release anterior, instala su ZIP con `--update`; la versión reemplazada también queda respaldada.
 
 Para preparar el borrador estable desde el commit aprobado de `main`, usa `python -B tools/prepare_release.py --repo MauricioPerera/proyecciones-svg --create-draft`. Comprueba CI y descarga su evidencia, compara el paquete local con el de las seis plataformas y adjunta ZIP, sumas, instalador, notas y evidencia. Requiere GitHub CLI autenticado. Este comando crea un borrador y no lo publica. Las notas están en `releases/1.0.0.md`.
+
+Si CI sigue pendiente, `python -B tools/prepare_release.py --repo MauricioPerera/proyecciones-svg --local-only` prepara los archivos con estado `pending_ci` y no crea borrador. El primer intento remoto fue rechazado antes de ejecutar pruebas por el presupuesto de Actions; el usuario decidió aplazarlo. Detalles y reanudación en [el informe](reports/1.0.0-ci.md).

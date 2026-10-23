@@ -34,7 +34,32 @@ def check_proof(proof,commit,version,digest):
         raise ValueError('La evidencia de CI no aprueba este commit, versión o paquete.')
 
 
-def prepare(repo,create_draft=False):
+def write_assets(output,package,commit,version,digest,evidence):
+    output.mkdir(parents=True,exist_ok=True)
+    approved=evidence.get('status')=='success'
+    evidence_path=output/('release-readiness.json' if approved else 'ci-status.json')
+    evidence_path.write_text(json.dumps(evidence,indent=2)+'\n',encoding='utf-8')
+    shutil.copyfile(ROOT/'tools'/'install_skill.py',output/'install_skill.py')
+    shutil.copyfile(ROOT/'LICENSE',output/'LICENSE')
+    notes=(ROOT/'releases'/(version+'.md')).read_text(encoding='utf-8')
+    notes+='\n## Validación de esta entrega\n\nCommit: `'+commit+'`. '
+    if approved:
+        notes+='[CI aprobada]('+evidence['workflow_run']['url']+').\n\n'
+    else:
+        notes+='**CI remota pendiente. Esta preparación local todavía no está aprobada para publicación.**\n\n'
+    notes+='SHA-256 del ZIP: `'+digest+'`.\n'
+    notes_path=output/'RELEASE_NOTES.md'
+    notes_path.write_text(notes,encoding='utf-8')
+    assets=[package,package.with_suffix('.zip.sha256'),output/'install_skill.py',output/'LICENSE',evidence_path,notes_path]
+    sums=''.join(hashlib.sha256(path.read_bytes()).hexdigest()+'  '+path.name+'\n' for path in assets)
+    (output/'SHA256SUMS').write_text(sums,encoding='ascii')
+    assets.append(output/'SHA256SUMS')
+    return assets
+
+
+def prepare(repo,create_draft=False,local_only=False):
+    if create_draft and local_only:
+        raise ValueError('--local-only no permite crear un borrador.')
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',repo):
         raise ValueError('Repositorio inválido; usa owner/repo.')
     if command(['git','status','--porcelain']):
@@ -45,12 +70,20 @@ def prepare(repo,create_draft=False):
     remote=command(['git','remote','get-url','origin'])
     if remote not in ('https://github.com/'+repo+'.git','https://github.com/'+repo,'git@github.com:'+repo+'.git'):
         raise ValueError('El repositorio solicitado no coincide con origin.')
-    identity=gh_json(['repo','view',repo,'--json','nameWithOwner,isPrivate'])
-    if identity['nameWithOwner'].lower()!=repo.lower() or not identity['isPrivate']:
-        raise ValueError('El destino debe ser el repositorio privado elegido.')
     version=source_checks()
     if not re.fullmatch(r'\d+\.\d+\.\d+',version):
         raise ValueError('La versión aún no es estable.')
+    if local_only:
+        package,digest=release.build()
+        evidence={'commit':commit,'version':version,'status':'pending','package_sha256':digest,
+                  'reason':'Remote CI has not been approved; no draft or publication was created.'}
+        assets=write_assets(ROOT/'dist',package,commit,version,digest,evidence)
+        result={'version':version,'commit':commit,'status':'pending_ci','package_sha256':digest,'assets':[str(p) for p in assets]}
+        (ROOT/'dist'/'release-preparation.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
+        return result
+    identity=gh_json(['repo','view',repo,'--json','nameWithOwner,isPrivate'])
+    if identity['nameWithOwner'].lower()!=repo.lower() or not identity['isPrivate']:
+        raise ValueError('El destino debe ser el repositorio privado elegido.')
     runs=gh_json(['run','list','--repo',repo,'--workflow','verify.yml','--branch','main',
         '--commit',commit,'--status','success','--limit','10','--json','databaseId,headSha,conclusion,url,event'])
     run=approved_run(runs,commit)
@@ -68,19 +101,9 @@ def prepare(repo,create_draft=False):
     package,digest=release.build()
     check_proof(proof,commit,version,digest)
     proof['workflow_run']={'id':run['databaseId'],'url':run['url']}
-    (output/'release-readiness.json').write_text(json.dumps(proof,indent=2)+'\n',encoding='utf-8')
-    shutil.copyfile(ROOT/'tools'/'install_skill.py',output/'install_skill.py')
-    shutil.copyfile(ROOT/'LICENSE',output/'LICENSE')
-    notes=(ROOT/'releases'/(version+'.md')).read_text(encoding='utf-8')
-    notes+='\n## Validación de esta entrega\n\nCommit: `'+commit+'`. [CI aprobada]('+run['url']+').\n\n'
-    notes+='SHA-256 del ZIP: `'+digest+'`.\n'
+    assets=write_assets(output,package,commit,version,digest,proof)
     notes_path=output/'RELEASE_NOTES.md'
-    notes_path.write_text(notes,encoding='utf-8')
-    assets=[package,package.with_suffix('.zip.sha256'),output/'install_skill.py',output/'LICENSE',output/'release-readiness.json',notes_path]
-    sums=''.join(hashlib.sha256(path.read_bytes()).hexdigest()+'  '+path.name+'\n' for path in assets)
-    (output/'SHA256SUMS').write_text(sums,encoding='ascii')
-    assets.append(output/'SHA256SUMS')
-    result={'version':version,'commit':commit,'ci_url':run['url'],'package_sha256':digest,'assets':[str(p) for p in assets]}
+    result={'version':version,'commit':commit,'status':'ci_approved','ci_url':run['url'],'package_sha256':digest,'assets':[str(p) for p in assets]}
     if create_draft:
         tag='v'+version
         existing=gh_json(['release','list','--repo',repo,'--limit','100','--json','tagName,isDraft'])
@@ -105,9 +128,10 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--repo',required=True)
     parser.add_argument('--create-draft',action='store_true')
+    parser.add_argument('--local-only',action='store_true',help='Prepara archivos locales marcados como pendientes; no consulta CI ni crea borradores.')
     args=parser.parse_args()
     try:
-        result=prepare(args.repo,args.create_draft)
+        result=prepare(args.repo,args.create_draft,args.local_only)
     except (OSError,ValueError,KeyError,subprocess.CalledProcessError) as error:
         parser.exit(1,f'Error: {error}\n')
     print(json.dumps(result,indent=2))

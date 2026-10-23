@@ -19,7 +19,7 @@ def validate(folder,commit):
             raise ValueError('Plataforma duplicada o inesperada: '+str(key))
         if report['commit']!=commit or report['status']!='success':
             raise ValueError('Un informe no corresponde al commit o no fue satisfactorio.')
-        for name,minimum in (('geometry',69),('distribution',7)):
+        for name,minimum in (('geometry',69),('distribution',14)):
             result=report['suites'][name]
             if result['tests']<minimum or any(result[field] for field in ('failures','errors','skipped')):
                 raise ValueError('Suite incompleta o con fallos: '+name)

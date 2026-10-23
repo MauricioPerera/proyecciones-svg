@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 import validate_matrix
 import release
-from prepare_release import approved_run,check_proof
+from prepare_release import approved_run,check_proof,prepare,write_assets
 from install_skill import verified_files
 
 
@@ -23,7 +23,7 @@ def fixtures(folder):
             (dest/'package.zip').write_bytes(package)
             report={'commit':sha,'system':system,'python':version,'version':'1.0.0','status':'success',
                 'suites':{name:{'tests':count,'failures':0,'errors':0,'skipped':0}
-                          for name,count in (('geometry',69),('distribution',7))},
+                          for name,count in (('geometry',69),('distribution',14))},
                 'package':{'name':'package.zip','sha256':hashlib.sha256(package).hexdigest()}}
             (dest/'report.json').write_text(json.dumps(report),encoding='utf-8')
     (folder/'browser-evidence').mkdir()
@@ -105,6 +105,21 @@ class ReleaseGateTests(unittest.TestCase):
         for key,value in (('commit','b'*40),('version','1.0.1'),('package_sha256','other'),('status','failure'),('python_jobs',[])):
             with self.subTest(key=key),self.assertRaises(ValueError):
                 check_proof({**proof,key:value},commit,'1.0.0','digest')
+
+    def test_local_preparation_is_explicitly_pending_and_cannot_create_a_draft(self):
+        with self.assertRaisesRegex(ValueError,'no permite'):
+            prepare('owner/repo',create_draft=True,local_only=True)
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)
+            version=(release.SOURCE/'VERSION').read_text().strip()
+            package,digest=release.build(destination=folder/f'proyecciones-svg-{version}.zip')
+            write_assets(folder,package,'a'*40,version,digest,{'status':'pending'})
+            self.assertTrue((folder/'ci-status.json').exists())
+            self.assertFalse((folder/'release-readiness.json').exists())
+            self.assertIn('CI remota pendiente',(folder/'RELEASE_NOTES.md').read_text(encoding='utf-8'))
+            for line in (folder/'SHA256SUMS').read_text().splitlines():
+                expected,name=line.split('  ',1)
+                self.assertEqual(hashlib.sha256((folder/name).read_bytes()).hexdigest(),expected)
 
 
 if __name__=='__main__':
