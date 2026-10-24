@@ -19,5 +19,6 @@ La landing conserva su dirección: https://mauricioperera.github.io/proyecciones
 - Instalación aislada usando el instalador y el ZIP recién descargados: versión 1.0.0 y 41 archivos verificados contra el manifiesto.
 - Suite de distribución/publicación: 17 pruebas correctas. Incluye aceptar el repositorio público manteniendo el rechazo de un destino distinto.
 - Landing: comprobador estático correcto; enlaces directos ligados a la versión estable y eliminación del requisito de acceso privado.
+- GitHub Pages: despliegue `40042840215` aprobado, commit `1077376b09438e90c30553b6c0174451d369b7cc`. Lectura HTTP anónima con estado 200; el HTML servido coincide exactamente con la fuente y contiene los cuatro enlaces directos esperados.
 
 Las descargas se sirven desde los assets de la release oficial; la landing no conserva una segunda copia del paquete.
