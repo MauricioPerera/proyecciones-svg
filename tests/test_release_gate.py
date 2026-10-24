@@ -11,6 +11,7 @@ import validate_matrix
 import release
 from prepare_release import approved_run,check_identity,check_proof,prepare,write_assets
 from install_skill import verified_files
+from verify import check_platforms
 
 
 def fixtures(folder,systems=('Linux','Windows','Darwin')):
@@ -34,6 +35,19 @@ def fixtures(folder,systems=('Linux','Windows','Darwin')):
 
 
 class ReleaseGateTests(unittest.TestCase):
+    def test_current_platform_scope_requires_complete_declaration(self):
+        version=(release.SOURCE/'VERSION').read_text().strip()
+        current=json.loads((release.SOURCE/'PLATFORMS.json').read_text(encoding='utf-8'))
+        check_platforms(current,version)
+        with self.assertRaisesRegex(ValueError,'matriz completa'):
+            prepare('owner/repo',validation_dir=Path('unused'),profile='windows-linux')
+        for change in ({'validated_systems':['Windows','Linux'],'pending_systems':['Darwin']},
+                       {'validated_systems':['Windows','Linux','Other']},
+                       {'validated_systems':['Windows','Linux','Darwin','Darwin']},
+                       {'pending_systems':['Darwin']},{'version':'0.0.0'},{'python_tested':['3.14']}):
+            with self.subTest(change=change),self.assertRaises(ValueError):
+                check_platforms({**current,**change},version)
+
     def test_selected_repository_can_be_public_without_weakening_identity_check(self):
         for private in (False,True):
             check_identity({'nameWithOwner':'MauricioPerera/proyecciones-svg','isPrivate':private},

@@ -14,6 +14,8 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - run: go run github.com/rhysd/actionlint/cmd/actionlint@v1.7.12 -color
+      - run: python3 -B tools/check_site.py
+      - run: node --check docs/app.js
   python:
     strategy:
       fail-fast: false

@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "validated_systems": ["Windows", "Linux"],
-  "pending_systems": ["Darwin"],
+  "version": "1.0.1",
+  "validated_systems": ["Windows", "Linux", "Darwin"],
+  "pending_systems": [],
   "python_tested": ["3.10", "3.14"]
 }

@@ -1,6 +1,6 @@
 {
   "name": "proyecciones-svg-checks",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "private": true,
   "scripts": {"test:browser": "node tests/browser.cjs"},

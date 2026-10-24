@@ -2,7 +2,7 @@
 
 Requiere Python 3.10 o posterior. El generador, el instalador y el visor no necesitan paquetes Python, Node, red ni rutas de una máquina concreta.
 
-La versión 1.0.0 está validada en Windows y Linux con Python 3.10 y 3.14. macOS queda pendiente de validación. El archivo `PLATFORMS.json` conserva este alcance junto al paquete.
+La versión 1.0.1 está validada en Windows, Linux y macOS con Python 3.10 y 3.14 mediante GitHub Actions. El archivo `PLATFORMS.json` conserva este alcance junto al paquete; `release-readiness.json`, adjunto a la release, identifica las versiones y arquitecturas efectivamente probadas. En macOS y Linux usa `python3` si ése es el nombre del intérprete instalado.
 
 ```sh
 python <skill>/scripts/generar.py modelo.json --output-dir salida --mode all --viewer

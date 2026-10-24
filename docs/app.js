@@ -80,10 +80,11 @@
   document.querySelectorAll('[data-prompt]').forEach(button=>button.addEventListener('click',()=>{press('[data-prompt]',button);document.getElementById('prompt-text').textContent=prompts[button.dataset.prompt];}));
   document.querySelectorAll('[data-guide]').forEach(button=>button.addEventListener('click',()=>{press('[data-guide]',button);document.getElementById('guide-assisted').hidden=button.dataset.guide!=='assisted';document.getElementById('guide-terminal').hidden=button.dataset.guide!=='terminal';}));
   document.querySelectorAll('[data-os]').forEach(button=>button.addEventListener('click',()=>{
-    press('[data-os]',button);const linux=button.dataset.os==='linux';
-    document.getElementById('command-label').textContent=linux?'INSTALAR / SHELL':'INSTALAR / POWERSHELL';
-    document.getElementById('install-command').textContent=linux?'python3 install_skill.py proyecciones-svg-1.0.0.zip --skills-dir "$HOME/.codex/skills"':'python install_skill.py proyecciones-svg-1.0.0.zip --skills-dir "$env:USERPROFILE\\.codex\\skills"';
-    document.getElementById('checksum-command').textContent=linux?'sha256sum proyecciones-svg-1.0.0.zip install_skill.py':'Get-FileHash proyecciones-svg-1.0.0.zip, install_skill.py -Algorithm SHA256';
+    press('[data-os]',button);const shell=button.dataset.os!=='windows';
+    document.getElementById('command-label').textContent=shell?'INSTALAR / SHELL':'INSTALAR / POWERSHELL';
+    document.getElementById('install-command').textContent=shell?'python3 install_skill.py proyecciones-svg-1.0.1.zip --skills-dir "$HOME/.codex/skills"':'python install_skill.py proyecciones-svg-1.0.1.zip --skills-dir "$env:USERPROFILE\\.codex\\skills"';
+    const checksum=button.dataset.os==='macos'?'shasum -a 256':'sha256sum';
+    document.getElementById('checksum-command').textContent=shell?checksum+' proyecciones-svg-1.0.1.zip install_skill.py':'Get-FileHash proyecciones-svg-1.0.1.zip, install_skill.py -Algorithm SHA256';
   }));
   let copyTimer=0;
   document.querySelectorAll('[data-copy-target]').forEach(button=>button.addEventListener('click',async()=>{

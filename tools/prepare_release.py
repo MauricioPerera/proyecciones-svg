@@ -78,6 +78,8 @@ def write_assets(output,package,commit,version,digest,evidence):
 def prepare(repo,create_draft=False,local_only=False,validation_dir=None,profile='all'):
     if create_draft and local_only:
         raise ValueError('--local-only no permite crear un borrador.')
+    if profile!='all':
+        raise ValueError('La publicación actual exige la matriz completa: usa --profile all.')
     if (local_only and validation_dir is not None) or (profile!='all' and validation_dir is None):
         raise ValueError('Un perfil acotado requiere --validation-dir y no puede combinarse con --local-only.')
     if not re.fullmatch(r'[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+',repo):

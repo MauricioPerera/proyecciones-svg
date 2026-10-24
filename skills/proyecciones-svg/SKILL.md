@@ -5,7 +5,7 @@ description: Genera vistas técnicas y giros SVG de poliedros y prismas con hast
 
 # Proyecciones SVG
 
-Plataformas validadas: Windows y Linux con Python 3.10 y 3.14. macOS está pendiente de validación; no lo presentes como plataforma validada.
+Plataformas validadas: Windows, Linux y macOS con Python 3.10 y 3.14 en la matriz completa de GitHub Actions. `PLATFORMS.json` registra este alcance; la evidencia de la release identifica los sistemas y arquitecturas probados.
 
 Construye una geometría coherente y proyéctala a SVG editable. Entrega vectores calculados, sin imágenes generadas, capturas como producto final, Blender, WebGL, Three.js, vídeo ni servicios externos. Las coordenadas espaciales son datos matemáticos; no requieren un motor 3D.
 

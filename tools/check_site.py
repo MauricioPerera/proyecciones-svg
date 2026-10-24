@@ -44,7 +44,9 @@ def main():
                           ('download-package',f'proyecciones-svg-{version}.zip'),
                           ('download-installer','install_skill.py'),('download-checksums','SHA256SUMS')):
         assert page.anchors.get(identity)==base+name,'Wrong stable download: '+identity
-    assert 'macOS: validación pendiente' in source
+    platforms=json.loads((ROOT/'skills'/'proyecciones-svg'/'PLATFORMS.json').read_text(encoding='utf-8'))
+    assert platforms['pending_systems']==[] and 'Darwin' in platforms['validated_systems']
+    assert 'macOS: validado' in source and 'validación pendiente' not in source
     ns={'s':'http://www.w3.org/2000/svg'}
     for key in ('cuna','escalon','taladro','irregular'):
         folder=SITE/'assets'/'models'/key

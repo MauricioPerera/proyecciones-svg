@@ -27,6 +27,6 @@ python -B tools/check_site.py
 node --check docs/app.js
 ```
 
-Revisar además en navegador: selección de las cuatro piezas; giro y un único fotograma visible; planos; descarga de ejemplos; instalación en ambos sistemas; navegación móvil; pantalla estrecha; movimiento reducido y ausencia de errores. Comprobar sin autenticación las descargas de la release. macOS permanece pendiente de validación.
+Revisar además en navegador: selección de las cuatro piezas; giro y un único fotograma visible; planos; descarga de ejemplos; instalación en Windows, Linux y macOS; navegación móvil; pantalla estrecha; movimiento reducido y ausencia de errores. Comprobar sin autenticación las descargas de la release. La estable 1.0.1 está validada en Windows, Linux y macOS con Python 3.10 y 3.14; los enlaces apuntan al paquete de esa versión.
 
 La geometría y el alcance de la skill estable no se modifican al actualizar esta landing.

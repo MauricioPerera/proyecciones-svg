@@ -60,8 +60,9 @@ def main():
     parser.add_argument('--skill-dir',type=Path,default=ROOT/'skills'/'proyecciones-svg')
     args=parser.parse_args()
     skill=args.skill_dir.resolve()
-    if (skill/'VERSION').read_text().strip()!='1.0.0':
-        raise ValueError('Use the documented stable version 1.0.0.')
+    version=(ROOT/'skills'/'proyecciones-svg'/'VERSION').read_text().strip()
+    if (skill/'VERSION').read_text().strip()!=version:
+        raise ValueError('Use the documented stable version '+version+'.')
     output=ROOT/'docs'/'assets'/'models'
     source_models={'cuna':skill/'assets'/'cuna.json','escalon':skill/'assets'/'escalon.json',
                    'taladro':skill/'assets'/'bloque-taladrado.json',

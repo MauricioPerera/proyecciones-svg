@@ -16,6 +16,13 @@ from install_skill import verified_files
 ROOT=Path(__file__).resolve().parents[1]
 
 
+def check_platforms(platforms,version):
+    systems=platforms.get('validated_systems',[])
+    if (platforms.get('version')!=version or len(systems)!=3 or set(systems)!={'Windows','Linux','Darwin'}
+        or platforms.get('pending_systems')!=[] or platforms.get('python_tested')!=['3.10','3.14']):
+        raise ValueError('El alcance publicado debe declarar Windows/Linux/macOS y la matriz completa.')
+
+
 def source_checks():
     source=release.SOURCE
     version=(source/'VERSION').read_text(encoding='utf-8').strip()
@@ -24,9 +31,7 @@ def source_checks():
     if any(value!=version for value in (package['version'],lock['version'],lock['packages']['']['version'])):
         raise ValueError('Las versiones de la skill y las pruebas no coinciden.')
     platforms=json.loads((source/'PLATFORMS.json').read_text(encoding='utf-8'))
-    if (platforms.get('version')!=version or set(platforms.get('validated_systems',[]))!={'Windows','Linux'}
-        or platforms.get('pending_systems')!=['Darwin'] or platforms.get('python_tested')!=['3.10','3.14']):
-        raise ValueError('El alcance publicado debe declarar Windows/Linux y macOS pendiente.')
+    check_platforms(platforms,version)
     license_text=(ROOT/'LICENSE').read_text(encoding='utf-8')
     if license_text!=(source/'LICENSE').read_text(encoding='utf-8') or not license_text.startswith('MIT License\n'):
         raise ValueError('El paquete y el repositorio deben incluir la licencia MIT elegida.')
@@ -45,6 +50,7 @@ def verify(report_dir):
     report_dir.mkdir(parents=True,exist_ok=True)
     sha=os.environ.get('GITHUB_SHA') or subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     report={'commit':sha,'system':platform.system(),'python':platform.python_version(),
+            'machine':platform.machine(),'platform':platform.platform(),
             'created_at':datetime.now(timezone.utc).isoformat(),'status':'failure','suites':{}}
     try:
         report['version']=source_checks()

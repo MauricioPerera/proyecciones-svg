@@ -2,13 +2,15 @@
 
 Skill de Codex para construir un modelo geométrico a partir de una descripción, un croquis o vistas técnicas y generar alzado, planta, perfil y giros SVG. Python estándar y SVG nativo, sin motor 3D ni servicios externos.
 
-Versión estable **1.0.0 para Windows y Linux**, licencia MIT. **macOS pendiente de validación**. Código público: [MauricioPerera/proyecciones-svg](https://github.com/MauricioPerera/proyecciones-svg). El código canónico está en `skills/proyecciones-svg`; la carpeta de skills instalada se obtiene del paquete, no se edita como segunda fuente.
+Versión estable **1.0.1 para Windows, Linux y macOS**, licencia MIT. La matriz completa de GitHub Actions valida las seis combinaciones de plataforma/Python. Código público: [MauricioPerera/proyecciones-svg](https://github.com/MauricioPerera/proyecciones-svg). El código canónico está en `skills/proyecciones-svg`; la carpeta de skills instalada se obtiene del paquete, no se edita como segunda fuente.
 
 | Plataforma | Python 3.10 | Python 3.14 |
 | --- | --- | --- |
 | Windows | Validado | Validado |
-| Linux | Validado en Ubuntu 24.04 por SSH | Validado en Ubuntu 24.04 por SSH |
-| macOS | Pendiente | Pendiente |
+| Linux | Validado | Validado |
+| macOS | Validado | Validado |
+
+La evidencia adjunta a cada release identifica las versiones de Python, sistemas y arquitecturas efectivamente probados. No se han probado todas las versiones o arquitecturas de cada sistema operativo.
 
 ## Sitio web
 
@@ -16,11 +18,12 @@ La [landing de Proyecciones SVG](https://mauricioperera.github.io/proyecciones-s
 
 ## Descarga directa
 
-- [Skill estable 1.0.0 · ZIP](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.0/proyecciones-svg-1.0.0.zip)
-- [Instalador Python](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.0/install_skill.py)
-- [Sumas SHA-256](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.0/SHA256SUMS)
+- [Skill estable 1.0.1 · ZIP](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.1/proyecciones-svg-1.0.1.zip)
+- [Instalador Python](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.1/install_skill.py)
+- [Sumas SHA-256](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.1/SHA256SUMS)
+- [Evidencia de la matriz completa](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.1/release-readiness.json)
 
-Guarda los archivos en la misma carpeta. Las instrucciones de la landing explican la instalación asistida con Codex y los comandos para Windows/Linux.
+Guarda los archivos en la misma carpeta. Las instrucciones de la landing explican la instalación asistida con Codex y los comandos para Windows, Linux y macOS.
 
 ## Usar
 
@@ -44,27 +47,27 @@ python -B tools/browser_fixtures.py
 npm run test:browser
 ```
 
-Node/Playwright sólo se usan en pruebas. Se verifican geometría, curvas y cotas al cambiar de escala; piezas esbeltas; instalación limpia; presupuestos de ejecución; controles del visor; 24 ángulos en tres modelos; SMIL, movimiento reducido y pantalla de 320 px. El perfil de publicación `windows-linux` exige cuatro informes del mismo commit, ninguna prueba omitida, seis combinaciones de navegador/modelo y ZIP idéntico entre plataformas.
+Node/Playwright sólo se usan en pruebas. Se verifican geometría, curvas y cotas al cambiar de escala; piezas esbeltas; instalación limpia; presupuestos de ejecución; controles del visor; 24 ángulos en tres modelos; SMIL, movimiento reducido y pantalla de 320 px. El perfil de publicación predeterminado `all` exige seis informes del mismo commit, ninguna prueba omitida, seis combinaciones de navegador/modelo y ZIP idéntico entre plataformas. La versión 1.0.1 ejecuta 87 pruebas por combinación y 144 comprobaciones de ángulo en Chromium/Firefox sobre Linux.
 
-La validación puede ejecutarse localmente y por SSH sin GitHub Actions. El perfil completo `all` conserva las seis combinaciones, incluidas las dos de macOS; sigue siendo el predeterminado del validador y del workflow de CI, y no se considera aprobado por una validación de cuatro casos. La configuración opcional de CI sigue las guías oficiales de [Actions](https://github.com/actions/setup-python) y [Playwright](https://playwright.dev/docs/ci).
+La validación también puede ejecutarse localmente y por SSH. El perfil histórico `windows-linux` conserva la posibilidad de comprobar cuatro casos, pero no aprueba la matriz completa ni el alcance de 1.0.1. La configuración de CI sigue las guías oficiales de [Actions](https://github.com/actions/setup-python) y [Playwright](https://playwright.dev/docs/ci).
 
 ## Empaquetar e instalar
 
 ```sh
 python -B tools/release.py
-python -B tools/install_skill.py dist/proyecciones-svg-1.0.0.zip --skills-dir RUTA_A_CODEX/skills
+python -B tools/install_skill.py dist/proyecciones-svg-1.0.1.zip --skills-dir RUTA_A_CODEX/skills
 ```
 
 El ZIP usa entradas sin compresión y metadatos fijos para conservar los mismos bytes entre sistemas y versiones de zlib; incluye licencia y manifiesto con SHA-256. El instalador comprueba rutas y sumas antes de escribir. Para actualizar una instalación existente añade `--update`: conserva la versión previa en `skill-backups/`, fuera de la carpeta de descubrimiento de skills. Las sumas detectan alteraciones, pero no autentican por sí solas al distribuidor.
 
 Para volver a una release anterior, instala su ZIP con `--update`; la versión reemplazada también queda respaldada.
 
-Para preparar un borrador del alcance Windows/Linux desde `main` limpio y sincronizado, reúne los cuatro informes y sus ZIP en carpetas `python-*/`, y el informe Linux de navegadores en `browser-evidence/report.json`. Ejecuta:
+Para preparar un borrador desde `main` limpio y sincronizado, espera a que la matriz completa y `Ready for release` aprueben ese mismo commit. Ejecuta:
 
 ```sh
-python -B tools/prepare_release.py --repo MauricioPerera/proyecciones-svg --validation-dir RUTA_A_LA_MATRIZ --profile windows-linux --create-draft
+python -B tools/prepare_release.py --repo MauricioPerera/proyecciones-svg --create-draft
 ```
 
-Comprueba los cuatro casos, el commit y las sumas antes de adjuntar ZIP, licencia, instalador, notas y evidencia. Requiere GitHub CLI autenticado para crear el borrador; no ejecuta Actions. Sin `--validation-dir`, permanece disponible la ruta de CI con la matriz completa. El comando crea un borrador y no lo publica. Las notas están en `releases/1.0.0.md`.
+Comprueba la ejecución aprobada, los seis casos, el commit y las sumas antes de adjuntar ZIP, licencia, instalador, notas y evidencia. Requiere GitHub CLI autenticado; no ejecuta Actions. Para evidencia reunida fuera de Actions, usa `--validation-dir RUTA_A_LA_MATRIZ` con el perfil predeterminado `all`. El comando crea un borrador y no lo publica. Las notas están en `releases/1.0.1.md`.
 
-El primer intento de Actions fue rechazado por presupuesto y quedó aplazado. Esa limitación no impide publicar el alcance Windows/Linux con evidencia local y por SSH. `--local-only` sigue disponible para generar archivos pendientes sin aprobarlos ni crear borrador. Consulta [el alcance de la estable](reports/1.0.0-stable.md) y [el historial de CI](reports/1.0.0-ci.md).
+El bloqueo inicial de Actions por presupuesto quedó resuelto tras hacer público el repositorio. La [primera matriz completa aprobada](https://github.com/MauricioPerera/proyecciones-svg/actions/runs/40043435677) reprodujo el ZIP 1.0.0 sin cambiar sus bytes; su [evidencia permanente](reports/1.0.0-full-matrix.json) conserva los seis resultados. La revisión 1.0.1 incorpora macOS en los metadatos distribuidos y se vuelve a validar antes de publicar. `--local-only` permite generar archivos pendientes sin aprobarlos ni crear borrador. El [alcance original 1.0.0](reports/1.0.0-stable.md) y el [historial previo de CI](reports/1.0.0-ci.md) se conservan como antecedentes.
