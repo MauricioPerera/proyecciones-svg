@@ -1,0 +1,261 @@
+{
+  "commit": "af4d2b0cf7b7e77e649c8493732c42ce3c6e62ff",
+  "version": "1.0.1",
+  "package_sha256": "75bace2d0bcb6664b98581b23786201c736dd171f7005295785adcb387990042",
+  "status": "success",
+  "validation_profile": "all",
+  "validated_systems": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "pending_systems": [],
+  "python_jobs": [
+    {
+      "commit": "af4d2b0cf7b7e77e649c8493732c42ce3c6e62ff",
+      "system": "Darwin",
+      "python": "3.10.11",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "created_at": "2026-10-24T00:14:52.651571+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 69,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.0.1",
+      "package": {
+        "name": "proyecciones-svg-1.0.1.zip",
+        "sha256": "75bace2d0bcb6664b98581b23786201c736dd171f7005295785adcb387990042",
+        "bytes": 240951,
+        "files": 41
+      },
+      "seconds": 48.456
+    },
+    {
+      "commit": "af4d2b0cf7b7e77e649c8493732c42ce3c6e62ff",
+      "system": "Darwin",
+      "python": "3.14.8",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "created_at": "2026-10-24T00:14:31.021467+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 69,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.0.1",
+      "package": {
+        "name": "proyecciones-svg-1.0.1.zip",
+        "sha256": "75bace2d0bcb6664b98581b23786201c736dd171f7005295785adcb387990042",
+        "bytes": 240951,
+        "files": 41
+      },
+      "seconds": 45.089
+    },
+    {
+      "commit": "af4d2b0cf7b7e77e649c8493732c42ce3c6e62ff",
+      "system": "Linux",
+      "python": "3.10.22",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "created_at": "2026-10-24T00:14:31.250031+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 69,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.0.1",
+      "package": {
+        "name": "proyecciones-svg-1.0.1.zip",
+        "sha256": "75bace2d0bcb6664b98581b23786201c736dd171f7005295785adcb387990042",
+        "bytes": 240951,
+        "files": 41
+      },
+      "seconds": 61.293
+    },
+    {
+      "commit": "af4d2b0cf7b7e77e649c8493732c42ce3c6e62ff",
+      "system": "Linux",
+      "python": "3.14.8",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "created_at": "2026-10-24T00:14:32.157634+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 69,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.0.1",
+      "package": {
+        "name": "proyecciones-svg-1.0.1.zip",
+        "sha256": "75bace2d0bcb6664b98581b23786201c736dd171f7005295785adcb387990042",
+        "bytes": 240951,
+        "files": 41
+      },
+      "seconds": 39.004
+    },
+    {
+      "commit": "af4d2b0cf7b7e77e649c8493732c42ce3c6e62ff",
+      "system": "Windows",
+      "python": "3.10.11",
+      "machine": "AMD64",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "created_at": "2026-10-24T00:15:31.918684+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 69,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.0.1",
+      "package": {
+        "name": "proyecciones-svg-1.0.1.zip",
+        "sha256": "75bace2d0bcb6664b98581b23786201c736dd171f7005295785adcb387990042",
+        "bytes": 240951,
+        "files": 41
+      },
+      "seconds": 68.125
+    },
+    {
+      "commit": "af4d2b0cf7b7e77e649c8493732c42ce3c6e62ff",
+      "system": "Windows",
+      "python": "3.14.9",
+      "machine": "AMD64",
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "created_at": "2026-10-24T00:14:36.311553+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 69,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.0.1",
+      "package": {
+        "name": "proyecciones-svg-1.0.1.zip",
+        "sha256": "75bace2d0bcb6664b98581b23786201c736dd171f7005295785adcb387990042",
+        "bytes": 240951,
+        "files": 41
+      },
+      "seconds": 72.615
+    }
+  ],
+  "browsers": [
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "cuna",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "bloque-taladrado",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "cuatro-taladros",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "cuna",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "bloque-taladrado",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "cuatro-taladros",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    }
+  ],
+  "workflow_run": {
+    "id": 40043973341,
+    "url": "https://github.com/MauricioPerera/proyecciones-svg/actions/runs/40043973341"
+  }
+}

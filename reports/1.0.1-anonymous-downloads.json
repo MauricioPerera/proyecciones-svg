@@ -1,0 +1,47 @@
+{
+  "version": "1.0.1",
+  "commit": "af4d2b0cf7b7e77e649c8493732c42ce3c6e62ff",
+  "status": "success",
+  "authenticated": false,
+  "assets": [
+    {
+      "name": "install_skill.py",
+      "bytes": 3944,
+      "sha256": "28321ad8649255e90d779b5a7c71ce74599dd688f6ccb3e4e8afec8172bfbcab"
+    },
+    {
+      "name": "LICENSE",
+      "bytes": 1072,
+      "sha256": "009b2e3184c200b2a6fc42d5ed6dd7269affe5d0f70117245410c2741f18e6c8"
+    },
+    {
+      "name": "proyecciones-svg-1.0.1.zip",
+      "bytes": 240951,
+      "sha256": "75bace2d0bcb6664b98581b23786201c736dd171f7005295785adcb387990042"
+    },
+    {
+      "name": "proyecciones-svg-1.0.1.zip.sha256",
+      "bytes": 94,
+      "sha256": "662cd5b1fceb187d83ec35a308a183b36d9ec8f20ccb5e9ee4e51adb40dcd12f"
+    },
+    {
+      "name": "release-readiness.json",
+      "bytes": 6935,
+      "sha256": "2ad3ffbfbe4a33a09c9fa624de46ad3c650eb4995ea42f6281486279767322e9"
+    },
+    {
+      "name": "RELEASE_NOTES.md",
+      "bytes": 2628,
+      "sha256": "c6138e9007bce2a692df3a88e327228f55a64724ebb9a921e79fe7793ea63c6c"
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 528,
+      "sha256": "002c97c7741b620be0dc7a52903a72b0b14165db0b73cca4824334046cbf00a2"
+    }
+  ],
+  "workflow_run": {
+    "id": 40043973341,
+    "url": "https://github.com/MauricioPerera/proyecciones-svg/actions/runs/40043973341"
+  }
+}
