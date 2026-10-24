@@ -1,5 +1,7 @@
 # Landing de Proyecciones SVG
 
+> Registro de la publicación inicial. Posteriormente se hizo pública la skill y se añadieron descargas directas; consulta [la actualización de distribución pública](public-distribution.md).
+
 Publicada el 23 de octubre de 2026 en https://mauricioperera.github.io/proyecciones-svg-site/.
 
 - Fuente canónica: `docs/` de este repositorio privado.

@@ -2,7 +2,7 @@
 
 Skill de Codex para construir un modelo geométrico a partir de una descripción, un croquis o vistas técnicas y generar alzado, planta, perfil y giros SVG. Python estándar y SVG nativo, sin motor 3D ni servicios externos.
 
-Versión estable **1.0.0 para Windows y Linux**, licencia MIT. **macOS pendiente de validación**. Repositorio privado: [MauricioPerera/proyecciones-svg](https://github.com/MauricioPerera/proyecciones-svg). El código canónico está en `skills/proyecciones-svg`; la carpeta de skills instalada se obtiene del paquete, no se edita como segunda fuente.
+Versión estable **1.0.0 para Windows y Linux**, licencia MIT. **macOS pendiente de validación**. Código público: [MauricioPerera/proyecciones-svg](https://github.com/MauricioPerera/proyecciones-svg). El código canónico está en `skills/proyecciones-svg`; la carpeta de skills instalada se obtiene del paquete, no se edita como segunda fuente.
 
 | Plataforma | Python 3.10 | Python 3.14 |
 | --- | --- | --- |
@@ -12,7 +12,15 @@ Versión estable **1.0.0 para Windows y Linux**, licencia MIT. **macOS pendiente
 
 ## Sitio web
 
-La [landing de Proyecciones SVG](https://mauricioperera.github.io/proyecciones-svg-site/) explica el uso y la instalación, con cuatro ejemplos SVG interactivos y guías para usuarios técnicos y no técnicos. Su fuente está en `docs/`; se sirve como sitio estático de GitHub Pages. La descarga de la skill sigue requiriendo acceso al repositorio privado. Consulta [el desarrollo de la landing](docs/README.md) para regenerar los ejemplos y comprobarla localmente.
+La [landing de Proyecciones SVG](https://mauricioperera.github.io/proyecciones-svg-site/) explica el uso y la instalación, con cuatro ejemplos SVG interactivos y guías para usuarios técnicos y no técnicos. Su fuente está en `docs/`; se sirve como sitio estático de GitHub Pages. La skill y el instalador se pueden descargar sin iniciar sesión. Consulta [el desarrollo de la landing](docs/README.md) para regenerar los ejemplos y comprobarla localmente.
+
+## Descarga directa
+
+- [Skill estable 1.0.0 · ZIP](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.0/proyecciones-svg-1.0.0.zip)
+- [Instalador Python](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.0/install_skill.py)
+- [Sumas SHA-256](https://github.com/MauricioPerera/proyecciones-svg/releases/download/v1.0.0/SHA256SUMS)
+
+Guarda los archivos en la misma carpeta. Las instrucciones de la landing explican la instalación asistida con Codex y los comandos para Windows/Linux.
 
 ## Usar
 

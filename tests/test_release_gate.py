@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 import validate_matrix
 import release
-from prepare_release import approved_run,check_proof,prepare,write_assets
+from prepare_release import approved_run,check_identity,check_proof,prepare,write_assets
 from install_skill import verified_files
 
 
@@ -34,6 +34,14 @@ def fixtures(folder,systems=('Linux','Windows','Darwin')):
 
 
 class ReleaseGateTests(unittest.TestCase):
+    def test_selected_repository_can_be_public_without_weakening_identity_check(self):
+        for private in (False,True):
+            check_identity({'nameWithOwner':'MauricioPerera/proyecciones-svg','isPrivate':private},
+                           'mauricioperera/proyecciones-svg')
+        for identity in ({},{'nameWithOwner':'someone/another-repo','isPrivate':False}):
+            with self.assertRaisesRegex(ValueError,'destino elegido'):
+                check_identity(identity,'MauricioPerera/proyecciones-svg')
+
     def test_windows_linux_profile_is_explicit_and_keeps_macos_pending(self):
         with tempfile.TemporaryDirectory() as temp:
             folder=Path(temp)

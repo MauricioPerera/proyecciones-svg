@@ -11,11 +11,13 @@ SITE=ROOT/'docs'
 class Page(HTMLParser):
     def __init__(self):
         super().__init__()
-        self.ids=[];self.links=[]
+        self.ids=[];self.links=[];self.anchors={}
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
         if a.get('id'):
             self.ids.append(a['id'])
+        if tag=='a' and a.get('id'):
+            self.anchors[a['id']]=a.get('href')
         for name in ('src','href'):
             if a.get(name):self.links.append(a[name])
         if a.get('data-copy-target'):
@@ -34,7 +36,14 @@ def main():
         else:
             path=(SITE/unquote(parsed.path)).resolve()
             assert path.is_relative_to(SITE.resolve()) and path.is_file(),link
-    assert 'repositorio privado' in source
+    assert 'repositorio privado' not in source.lower()
+    assert 'sin iniciar sesión' in source
+    version=(ROOT/'skills'/'proyecciones-svg'/'VERSION').read_text().strip()
+    base=f'https://github.com/MauricioPerera/proyecciones-svg/releases/download/v{version}/'
+    for identity,name in (('download-hero',f'proyecciones-svg-{version}.zip'),
+                          ('download-package',f'proyecciones-svg-{version}.zip'),
+                          ('download-installer','install_skill.py'),('download-checksums','SHA256SUMS')):
+        assert page.anchors.get(identity)==base+name,'Wrong stable download: '+identity
     assert 'macOS: validación pendiente' in source
     ns={'s':'http://www.w3.org/2000/svg'}
     for key in ('cuna','escalon','taladro','irregular'):

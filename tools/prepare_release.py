@@ -23,6 +23,11 @@ def gh_json(args):
     return json.loads(command(['gh',*args]))
 
 
+def check_identity(identity,repo):
+    if identity.get('nameWithOwner','').lower()!=repo.lower():
+        raise ValueError('El repositorio no coincide con el destino elegido.')
+
+
 def approved_run(runs,commit):
     return next((run for run in runs if run['headSha']==commit and run['conclusion']=='success'
                  and run['event'] in ('push','workflow_dispatch')),None)
@@ -97,8 +102,7 @@ def prepare(repo,create_draft=False,local_only=False,validation_dir=None,profile
         (ROOT/'dist'/'release-preparation.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
         return result
     identity=gh_json(['repo','view',repo,'--json','nameWithOwner,isPrivate'])
-    if identity['nameWithOwner'].lower()!=repo.lower() or not identity['isPrivate']:
-        raise ValueError('El destino debe ser el repositorio privado elegido.')
+    check_identity(identity,repo)
     output=ROOT/'dist'
     output.mkdir(exist_ok=True)
     (ROOT/'build').mkdir(exist_ok=True)
