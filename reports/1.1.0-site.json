@@ -1,0 +1,34 @@
+{
+  "version": "1.1.0",
+  "status": "success",
+  "anonymous": true,
+  "html_and_script_match": true,
+  "site_commit": "97971bfd4dae6250b8a54747940792dbc46d9797",
+  "pages_run": "https://github.com/MauricioPerera/proyecciones-svg-site/actions/runs/40224369787",
+  "examples": [
+    {
+      "model": "cuna",
+      "url": "https://mauricioperera.github.io/proyecciones-svg-site/assets/models/cuna/modelo.cota",
+      "bytes": 1592,
+      "sha256": "0604e077d45fc195b547669db5b7362e25b6b1f694b173722b2d1eb7f61e1c6c"
+    },
+    {
+      "model": "escalon",
+      "url": "https://mauricioperera.github.io/proyecciones-svg-site/assets/models/escalon/modelo.cota",
+      "bytes": 1833,
+      "sha256": "54e08b074a62b5aabc17ef96fd0c4d6628082b7d79a9135bf965b4fc58cd55d5"
+    },
+    {
+      "model": "taladro",
+      "url": "https://mauricioperera.github.io/proyecciones-svg-site/assets/models/taladro/modelo.cota",
+      "bytes": 1889,
+      "sha256": "de32375c366b2f21eb6d6103f40d92b16bb8235e94a41ed1fbed89f8bd344a94"
+    },
+    {
+      "model": "irregular",
+      "url": "https://mauricioperera.github.io/proyecciones-svg-site/assets/models/irregular/modelo.cota",
+      "bytes": 4759,
+      "sha256": "10f1d346acbee674776670a32e190c6dc2f1d2ed33b2de82f087ca25e03a5256"
+    }
+  ]
+}

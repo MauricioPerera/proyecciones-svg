@@ -1,0 +1,1301 @@
+{
+  "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+  "version": "1.1.0",
+  "package_sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+  "cota_jobs": [
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "0604e077d45fc195b547669db5b7362e25b6b1f694b173722b2d1eb7f61e1c6c",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "1b5a09aa305a04f466bc86fd01070506ba554ff5254bd8e05ffaf2c3e73c090e",
+          "units": "mm"
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "version": "1.1.0",
+      "package_sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+      "system": "Darwin",
+      "python": "3.10.11",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "node": "v22.23.4",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "0604e077d45fc195b547669db5b7362e25b6b1f694b173722b2d1eb7f61e1c6c",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "1b5a09aa305a04f466bc86fd01070506ba554ff5254bd8e05ffaf2c3e73c090e",
+          "units": "mm"
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "version": "1.1.0",
+      "package_sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+      "system": "Darwin",
+      "python": "3.14.9",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "node": "v22.23.4",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "0604e077d45fc195b547669db5b7362e25b6b1f694b173722b2d1eb7f61e1c6c",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "1b5a09aa305a04f466bc86fd01070506ba554ff5254bd8e05ffaf2c3e73c090e",
+          "units": "mm"
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "version": "1.1.0",
+      "package_sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+      "system": "Linux",
+      "python": "3.10.22",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "node": "v22.23.3",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "0604e077d45fc195b547669db5b7362e25b6b1f694b173722b2d1eb7f61e1c6c",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "1b5a09aa305a04f466bc86fd01070506ba554ff5254bd8e05ffaf2c3e73c090e",
+          "units": "mm"
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "version": "1.1.0",
+      "package_sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+      "system": "Linux",
+      "python": "3.14.8",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "node": "v22.23.3",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "294ce9d98bc057309bad9ba5c445c6b9937b89cb3a6dce16a4b78bf8614a9f86",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "6a2af75ca4bd8aad3748fb0e9c44ba876cf9c8aa0135d3685457a181f7991193",
+          "units": "mm"
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "version": "1.1.0",
+      "package_sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+      "system": "Windows",
+      "python": "3.10.11",
+      "machine": "AMD64",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "node": "v22.23.4",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "294ce9d98bc057309bad9ba5c445c6b9937b89cb3a6dce16a4b78bf8614a9f86",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "6a2af75ca4bd8aad3748fb0e9c44ba876cf9c8aa0135d3685457a181f7991193",
+          "units": "mm"
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "version": "1.1.0",
+      "package_sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+      "system": "Windows",
+      "python": "3.14.9",
+      "machine": "AMD64",
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "node": "v22.23.4",
+      "cota_version": "1.0.0"
+    }
+  ],
+  "status": "success",
+  "validation_profile": "all",
+  "validated_systems": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "pending_systems": [],
+  "python_jobs": [
+    {
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "system": "Darwin",
+      "python": "3.10.11",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "created_at": "2026-10-25T19:01:24.094525+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 77,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+        "bytes": 263099,
+        "files": 44
+      },
+      "seconds": 52.102
+    },
+    {
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "system": "Darwin",
+      "python": "3.14.9",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "created_at": "2026-10-25T19:01:03.966241+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 77,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+        "bytes": 263099,
+        "files": 44
+      },
+      "seconds": 59.352
+    },
+    {
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "system": "Linux",
+      "python": "3.10.22",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "created_at": "2026-10-25T19:01:00.066299+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 77,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+        "bytes": 263099,
+        "files": 44
+      },
+      "seconds": 89.452
+    },
+    {
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "system": "Linux",
+      "python": "3.14.8",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "created_at": "2026-10-25T19:01:00.115056+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 77,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+        "bytes": 263099,
+        "files": 44
+      },
+      "seconds": 49.155
+    },
+    {
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "system": "Windows",
+      "python": "3.10.11",
+      "machine": "AMD64",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "created_at": "2026-10-25T19:01:53.510766+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 77,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+        "bytes": 263099,
+        "files": 44
+      },
+      "seconds": 85.0
+    },
+    {
+      "commit": "c4333663b96ececb59849e56fb23e840d47b465b",
+      "system": "Windows",
+      "python": "3.14.9",
+      "machine": "AMD64",
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "created_at": "2026-10-25T19:01:09.048207+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 77,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+        "bytes": 263099,
+        "files": 44
+      },
+      "seconds": 89.38
+    }
+  ],
+  "browsers": [
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "cuna",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "bloque-taladrado",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "cuatro-taladros",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "cuna",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "bloque-taladrado",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "cuatro-taladros",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true
+    }
+  ],
+  "workflow_run": {
+    "id": 40223978218,
+    "url": "https://github.com/MauricioPerera/proyecciones-svg/actions/runs/40223978218"
+  }
+}
