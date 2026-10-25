@@ -40,7 +40,7 @@
     document.getElementById('model-title').textContent=info.name;
     document.getElementById('model-detail').textContent=info.detail;
     document.getElementById('model-dimensions').textContent=info.dimensions+' · MEDIDAS DE EJEMPLO';
-    for(const [id,file] of [['sheet-download','vistas.svg'],['rotation-download','giro.svg'],['model-download','modelo.json'],['cota-download','modelo.cota']])document.getElementById(id).href='assets/models/'+key+'/'+file;
+    for(const [id,file] of [['sheet-download','vistas.svg'],['rotation-download','giro.svg'],['model-download','modelo.json'],['cota-download','modelo.cota'],['glb-download','modelo.glb'],['mf-download','modelo.3mf'],['stl-download','modelo.stl']])document.getElementById(id).href='assets/models/'+key+'/'+file;
     for(const [id,file,label] of [['plant-image','planta.svg','Planta de '],['front-image','alzado.svg','Alzado de '],['side-image','perfil.svg','Perfil derecho de ']]){
       const image=document.getElementById(id);image.src='assets/models/'+key+'/'+file;image.alt=label+info.alt+'.';
     }
@@ -82,9 +82,9 @@
   document.querySelectorAll('[data-os]').forEach(button=>button.addEventListener('click',()=>{
     press('[data-os]',button);const shell=button.dataset.os!=='windows';
     document.getElementById('command-label').textContent=shell?'INSTALAR / SHELL':'INSTALAR / POWERSHELL';
-    document.getElementById('install-command').textContent=shell?'python3 install_skill.py proyecciones-svg-1.1.0.zip --skills-dir "$HOME/.codex/skills"':'python install_skill.py proyecciones-svg-1.1.0.zip --skills-dir "$env:USERPROFILE\\.codex\\skills"';
+    document.getElementById('install-command').textContent=shell?'python3 install_skill.py proyecciones-svg-1.2.0.zip --skills-dir "$HOME/.codex/skills"':'python install_skill.py proyecciones-svg-1.2.0.zip --skills-dir "$env:USERPROFILE\\.codex\\skills"';
     const checksum=button.dataset.os==='macos'?'shasum -a 256':'sha256sum';
-    document.getElementById('checksum-command').textContent=shell?checksum+' proyecciones-svg-1.1.0.zip install_skill.py':'Get-FileHash proyecciones-svg-1.1.0.zip, install_skill.py -Algorithm SHA256';
+    document.getElementById('checksum-command').textContent=shell?checksum+' proyecciones-svg-1.2.0.zip install_skill.py':'Get-FileHash proyecciones-svg-1.2.0.zip, install_skill.py -Algorithm SHA256';
   }));
   let copyTimer=0;
   document.querySelectorAll('[data-copy-target]').forEach(button=>button.addEventListener('click',async()=>{

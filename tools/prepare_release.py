@@ -10,7 +10,7 @@ import tempfile
 
 import release
 from verify import source_checks
-from validate_matrix import PROFILES,validate,requires_cota,check_cota
+from validate_matrix import PROFILES,validate,requires_cota,check_cota,requires_meshes,check_meshes
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -54,6 +54,15 @@ def check_proof(proof,commit,version,digest,profile='all'):
                 raise ValueError('Entorno Cota duplicado o sin informe Python.')
             check_cota(job,python_report)
             found.add(key)
+    if requires_meshes(version):
+        jobs=proof.get('mesh_jobs',[])
+        if len(jobs)!=len(PROFILES[profile]):raise ValueError('Falta la matriz de mallas del paquete.')
+        found=set()
+        for job in jobs:
+            key=(job.get('system'),'.'.join(job.get('python','').split('.')[:2]))
+            python_report=next((r for r in proof['python_jobs'] if (r.get('system'),'.'.join(r.get('python','').split('.')[:2]))==key),None)
+            if key in found or python_report is None:raise ValueError('Entorno de mallas duplicado o sin informe Python.')
+            check_meshes(job,python_report);found.add(key)
 
 
 def write_assets(output,package,commit,version,digest,evidence):

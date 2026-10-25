@@ -32,6 +32,8 @@ def scaled(data,factor):
             result[name]*=factor
     if 'roof' in result:
         result['roof']['offset']*=factor
+    for section in result.get('sections', []):
+        section['origin']=[x*factor for x in section['origin']]
     for bore in result.get('bores',[result['bore']] if 'bore' in result else []):
         bore['center']=[x*factor for x in bore['center']]
         bore['diameter']*=factor

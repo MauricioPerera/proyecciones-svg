@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-25T21:42:05.757436+00:00",
+  "status": "local_development_unpublished",
+  "source_base_commit": "449a324be54f9838251d830f958aa3989209019e",
+  "working_tree_changes": true,
+  "python": [
+    {
+      "commit": "449a324be54f9838251d830f958aa3989209019e",
+      "system": "Windows",
+      "python": "3.10.20",
+      "machine": "AMD64",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "created_at": "2026-10-25T21:37:50.841585+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 121,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 35,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "c7042d5d3714753ee4ad3a21f37ed705dcc6c0d6d75785237b866833045895f3",
+        "bytes": 367749,
+        "files": 57
+      },
+      "seconds": 136.015
+    },
+    {
+      "commit": "449a324be54f9838251d830f958aa3989209019e",
+      "system": "Windows",
+      "python": "3.14.6",
+      "machine": "AMD64",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "created_at": "2026-10-25T21:37:51.323211+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 121,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 35,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "c7042d5d3714753ee4ad3a21f37ed705dcc6c0d6d75785237b866833045895f3",
+        "bytes": 367749,
+        "files": 57
+      },
+      "seconds": 132.017
+    }
+  ],
+  "mesh_interop": {
+    "dependencies_and_hashes": [
+      {
+        "python": "3.10.20",
+        "manifold3d": "3.5.4",
+        "numpy": "2.2.6",
+        "files": {
+          "glb": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088",
+          "3mf": "fc2f91a0425d390c267affad08edb3f2053e7d1cf2084b11f67d4e125ecfbfd7",
+          "stl": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608"
+        }
+      },
+      {
+        "python": "3.14.6",
+        "manifold3d": "3.5.4",
+        "numpy": "2.5.4",
+        "files": {
+          "glb": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088",
+          "3mf": "4fb99102edb4121de58a6e1972564c45306a497fa5f21d03752567ee9357cea5",
+          "stl": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608"
+        }
+      }
+    ],
+    "glb_and_stl_byte_identical": true,
+    "3mf_identical_topology": true,
+    "3mf_max_coordinate_delta_mm": 3.552713678800501e-14
+  },
+  "glb_validation": {
+    "status": "success",
+    "reports": [
+      {
+        "model": "cuatro-taladros",
+        "validator": "2.0.0-dev.3.10",
+        "report": {
+          "uri": "cuatro-taladros.glb",
+          "mimeType": "model/gltf-binary",
+          "validatorVersion": "2.0.0-dev.3.10",
+          "issues": {
+            "numErrors": 0,
+            "numWarnings": 0,
+            "numInfos": 0,
+            "numHints": 0,
+            "messages": [],
+            "truncated": false
+          },
+          "info": {
+            "version": "2.0",
+            "generator": "proyecciones-svg / exportar_mallas",
+            "resources": [
+              {
+                "pointer": "/buffers/0",
+                "mimeType": "application/gltf-buffer",
+                "storage": "glb",
+                "byteLength": 81216
+              }
+            ],
+            "animationCount": 0,
+            "materialCount": 1,
+            "hasMorphTargets": false,
+            "hasSkins": false,
+            "hasTextures": false,
+            "hasDefaultScene": true,
+            "drawCallCount": 1,
+            "totalVertexCount": 3384,
+            "totalTriangleCount": 1128,
+            "maxUVs": 0,
+            "maxInfluences": 0,
+            "maxAttributes": 2
+          }
+        }
+      }
+    ]
+  },
+  "print_validation": {
+    "status": "success",
+    "slicer_executable": "D:\\Repo\\proyection\\build\\research\\prusa-2.9.6\\portable\\PrusaSlicer-2.9.6\\prusa-slicer-console.exe",
+    "slicer_executable_sha256": "7fd50b52d1cc3da87dbcb71e45e764412dd45688bea028f351333e86d9769704",
+    "scope": "Import and manifold/dimensions/volume checks. No printer profile, slicing or physical printing performed.",
+    "results": [
+      {
+        "model": "cuatro-taladros",
+        "format": "3mf",
+        "sha256": "4fb99102edb4121de58a6e1972564c45306a497fa5f21d03752567ee9357cea5",
+        "values": {
+          "size_x": "80.000000",
+          "size_y": "60.000000",
+          "size_z": "36.000000",
+          "min_x": "-40.000000",
+          "min_y": "-30.000000",
+          "min_z": "-18.000000",
+          "max_x": "40.000000",
+          "max_y": "30.000000",
+          "max_z": "18.000000",
+          "number_of_facets": "1128",
+          "manifold": "yes",
+          "number_of_parts": "1",
+          "volume": "112947.148438"
+        },
+        "stdout": "[modelo.3mf]\nsize_x = 80.000000\nsize_y = 60.000000\nsize_z = 36.000000\nmin_x = -40.000000\nmin_y = -30.000000\nmin_z = -18.000000\nmax_x = 40.000000\nmax_y = 30.000000\nmax_z = 18.000000\nnumber_of_facets = 1128\nmanifold = yes\nnumber_of_parts =  1\nvolume = 112947.148438\n",
+        "stderr": ""
+      },
+      {
+        "model": "cuatro-taladros",
+        "format": "stl",
+        "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608",
+        "values": {
+          "size_x": "80.000000",
+          "size_y": "60.000000",
+          "size_z": "36.000000",
+          "min_x": "0.000000",
+          "min_y": "0.000000",
+          "min_z": "0.000000",
+          "max_x": "80.000000",
+          "max_y": "60.000000",
+          "max_z": "36.000000",
+          "number_of_facets": "1128",
+          "manifold": "yes",
+          "number_of_parts": "1",
+          "volume": "112947.148438"
+        },
+        "stdout": "[modelo.stl]\nsize_x = 80.000000\nsize_y = 60.000000\nsize_z = 36.000000\nmin_x = 0.000000\nmin_y = 0.000000\nmin_z = 0.000000\nmax_x = 80.000000\nmax_y = 60.000000\nmax_z = 36.000000\nnumber_of_facets = 1128\nmanifold = yes\nnumber_of_parts =  1\nvolume = 112947.148438\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "browser": {
+    "url": "http://127.0.0.1:8781/",
+    "svg_frames_verified": 24,
+    "cut_control_values_checked": [
+      15,
+      20
+    ],
+    "orbit_drag_checked": true,
+    "dom": {
+      "cutHeight": "15",
+      "loaded": [
+        {
+          "id": "whole",
+          "loaded": "true"
+        },
+        {
+          "id": "inside",
+          "loaded": "true"
+        }
+      ],
+      "overflow": false,
+      "valid": "true"
+    }
+  },
+  "catalog": [
+    {
+      "id": "cuatro-taladros",
+      "name": "Pieza irregular Â· cuatro conductos comunicados",
+      "dimensionsMm": [
+        80.0,
+        60.0,
+        36.0
+      ],
+      "volumeMm3": 112947.08186843421,
+      "triangles": 1128,
+      "files": {
+        "angulo.svg": {
+          "bytes": 36300,
+          "sha256": "53aa024ca1a63363718ffc1df9db6e17d30161cd2a1d524fb331b223f8985cd2"
+        },
+        "cortes.svg": {
+          "bytes": 17994,
+          "sha256": "064cc56eee56aac9d97917fd4cafe3bea18eb7bfbede9fb69a6ae6fad953ea26"
+        },
+        "giro.svg": {
+          "bytes": 872957,
+          "sha256": "147e1bb3853cb08715fc8dc9cf2868c0039294dc5acd7191dadd04ee3274a17d"
+        },
+        "modelo.3mf": {
+          "bytes": 84762,
+          "sha256": "4fb99102edb4121de58a6e1972564c45306a497fa5f21d03752567ee9357cea5"
+        },
+        "modelo.cota": {
+          "bytes": 4954,
+          "sha256": "6a2af75ca4bd8aad3748fb0e9c44ba876cf9c8aa0135d3685457a181f7991193"
+        },
+        "modelo.glb": {
+          "bytes": 82332,
+          "sha256": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088"
+        },
+        "modelo.json": {
+          "bytes": 2026,
+          "sha256": "cadda8285f1c43069ae77cf9431287739d7d88a3f9b76074793f68366923efa5"
+        },
+        "modelo.stl": {
+          "bytes": 56484,
+          "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608"
+        },
+        "visor.html": {
+          "bytes": 958876,
+          "sha256": "8696f11f0b73d26df8efd5ce4edfd21cf076ebfddedaf1d82069a0f24447594f"
+        },
+        "vistas.svg": {
+          "bytes": 68266,
+          "sha256": "53aa29e04faea9087d7ae5849a3cbdad394aabbce08f8e671e7f53ba161c2d38"
+        }
+      },
+      "mesh": {
+        "scope": "simple extrusion, convex mesh, or validated cylindrical through-bores; one closed surface",
+        "genus": 7,
+        "tessellation": {
+          "backend": "manifold3d",
+          "backend_version": "3.5.4",
+          "operation": "body minus union of inscribed polygonal cylinders",
+          "radial_tolerance_mm": 0.02,
+          "segments_per_bore": [
+            40,
+            32,
+            32,
+            32
+          ],
+          "max_radial_sagitta_mm": 0.019261093311212285,
+          "bound_scope": "radial sagitta only; not an intersection/rim Hausdorff or manufacturing tolerance",
+          "mouths": 8,
+          "communicating_void": true
+        },
+        "vertices": 552,
+        "triangles": 1128,
+        "volume_mm3": 112947.08186843421,
+        "bounds_mm": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            80.0,
+            60.0,
+            36.0
+          ]
+        ],
+        "millimeters_per_source_unit": 10.0,
+        "source_sha256": "684b381dcb2e14d031d1499527267e0502258c5aeedbc466809126c2906cb962",
+        "glb": {
+          "units": "m",
+          "axes": "(x,y,z) -> (x,z,-y); right handed, Y up",
+          "origin": "source origin retained"
+        },
+        "printing": {
+          "units": "mm",
+          "axes": "source X/Y/Z, Z up",
+          "printer_profile": null,
+          "sliced": false
+        }
+      }
+    }
+  ],
+  "kit": {
+    "name": "cuatro-taladros-kit.zip",
+    "sha256": "5c52f1a585118d3943b4e0f53ef3605ef5d9ae13cc13b02e0948bba691b58750"
+  },
+  "scope": {
+    "systems_tested": [
+      "Windows"
+    ],
+    "remote_ci_executed": false,
+    "physically_printed": false,
+    "sliced": false,
+    "stable_installation_changed": false
+  }
+}

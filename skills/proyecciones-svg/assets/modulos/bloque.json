@@ -1,0 +1,9 @@
+{
+  "name": "Bloque modular",
+  "units": "mm",
+  "type": "extrusion",
+  "profile": [[0,0],[40,0],[40,20],[0,20]],
+  "depth": 40,
+  "asset": {"base_color": [0.12,0.34,0.75,1]},
+  "assumptions": ["Módulo macizo de 40 × 40 × 20 mm.", "Origen en la esquina frontal de la base; sin textura ni colisión generada."]
+}

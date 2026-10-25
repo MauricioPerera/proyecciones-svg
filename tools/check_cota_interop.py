@@ -40,7 +40,7 @@ def check(cota_dir,output,node='node',package_path=None):
         skill,_=install(archive,fixtures/'skills')
         for name,asset in (('cuna','cuna.json'),('cuatro-taladros','cuatro-taladros.json')):
             subprocess.run([sys.executable,'-B',str(skill/'scripts'/'generar.py'),str(skill/'assets'/asset),
-                            '--output-dir',str(fixtures/name),'--mode','sheet','--export-cota'],
+                            '--output-dir',str(fixtures/name),'--mode','sheet','--export-cota','--sections'],
                            check=True,capture_output=True,text=True,encoding='utf-8')
         # The harness imports Cota's own TypeScript modules. Create and remove
         # only this owned file, so no application code or dependencies change.
@@ -54,6 +54,9 @@ def check(cota_dir,output,node='node',package_path=None):
             report=json.loads((fixtures/'cota-interop.json').read_text(encoding='utf-8'))
             report['exports']={name:{'sha256':hashlib.sha256((fixtures/name/'modelo.cota').read_bytes()).hexdigest(),
                 'units':json.loads((fixtures/name/'modelo.cota').read_text(encoding='utf-8'))['units']}
+                for name in ('cuna','cuatro-taladros')}
+            report['sections']={name:{'sha256':hashlib.sha256((fixtures/name/'cortes.svg').read_bytes()).hexdigest(),
+                'planes':len(json.loads((fixtures/name/'informe.json').read_text(encoding='utf-8'))['sections']['planes'])}
                 for name in ('cuna','cuatro-taladros')}
         finally:
             harness.unlink()

@@ -1,0 +1,536 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-25T21:21:44.062615+00:00",
+  "status": "local_prototype_unpublished",
+  "source_base_commit": "449a324be54f9838251d830f958aa3989209019e",
+  "working_tree_changes": true,
+  "full_python": [
+    {
+      "commit": "449a324be54f9838251d830f958aa3989209019e",
+      "system": "Windows",
+      "python": "3.14.6",
+      "machine": "AMD64",
+      "platform": "Windows-11-10.0.26200-SP0",
+      "created_at": "2026-10-25T21:15:30.896952+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 112,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "691040a6d9864f34f33e54ab2570eaca15e52b8ff5022a4831694734c85f655d",
+        "bytes": 347530,
+        "files": 54
+      },
+      "seconds": 136.258
+    },
+    {
+      "commit": "449a324be54f9838251d830f958aa3989209019e",
+      "system": "Windows",
+      "python": "3.10.20",
+      "machine": "AMD64",
+      "platform": "Windows-10-10.0.26200-SP0",
+      "created_at": "2026-10-25T21:15:31.050348+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 112,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 34,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.1.0",
+      "package": {
+        "name": "proyecciones-svg-1.1.0.zip",
+        "sha256": "691040a6d9864f34f33e54ab2570eaca15e52b8ff5022a4831694734c85f655d",
+        "bytes": 347530,
+        "files": 54
+      },
+      "seconds": 155.89
+    }
+  ],
+  "gltf_validator": {
+    "status": "success",
+    "reports": [
+      {
+        "model": "rampa",
+        "validator": "2.0.0-dev.3.10",
+        "report": {
+          "uri": "rampa.glb",
+          "mimeType": "model/gltf-binary",
+          "validatorVersion": "2.0.0-dev.3.10",
+          "issues": {
+            "numErrors": 0,
+            "numWarnings": 0,
+            "numInfos": 0,
+            "numHints": 0,
+            "messages": [],
+            "truncated": false
+          },
+          "info": {
+            "version": "2.0",
+            "generator": "proyecciones-svg / exportar_mallas",
+            "resources": [
+              {
+                "pointer": "/buffers/0",
+                "mimeType": "application/gltf-buffer",
+                "storage": "glb",
+                "byteLength": 576
+              }
+            ],
+            "animationCount": 0,
+            "materialCount": 1,
+            "hasMorphTargets": false,
+            "hasSkins": false,
+            "hasTextures": false,
+            "hasDefaultScene": true,
+            "drawCallCount": 1,
+            "totalVertexCount": 24,
+            "totalTriangleCount": 8,
+            "maxUVs": 0,
+            "maxInfluences": 0,
+            "maxAttributes": 2
+          }
+        }
+      },
+      {
+        "model": "bloque",
+        "validator": "2.0.0-dev.3.10",
+        "report": {
+          "uri": "bloque.glb",
+          "mimeType": "model/gltf-binary",
+          "validatorVersion": "2.0.0-dev.3.10",
+          "issues": {
+            "numErrors": 0,
+            "numWarnings": 0,
+            "numInfos": 0,
+            "numHints": 0,
+            "messages": [],
+            "truncated": false
+          },
+          "info": {
+            "version": "2.0",
+            "generator": "proyecciones-svg / exportar_mallas",
+            "resources": [
+              {
+                "pointer": "/buffers/0",
+                "mimeType": "application/gltf-buffer",
+                "storage": "glb",
+                "byteLength": 864
+              }
+            ],
+            "animationCount": 0,
+            "materialCount": 1,
+            "hasMorphTargets": false,
+            "hasSkins": false,
+            "hasTextures": false,
+            "hasDefaultScene": true,
+            "drawCallCount": 1,
+            "totalVertexCount": 36,
+            "totalTriangleCount": 12,
+            "maxUVs": 0,
+            "maxInfluences": 0,
+            "maxAttributes": 2
+          }
+        }
+      },
+      {
+        "model": "escalera",
+        "validator": "2.0.0-dev.3.10",
+        "report": {
+          "uri": "escalera.glb",
+          "mimeType": "model/gltf-binary",
+          "validatorVersion": "2.0.0-dev.3.10",
+          "issues": {
+            "numErrors": 0,
+            "numWarnings": 0,
+            "numInfos": 0,
+            "numHints": 0,
+            "messages": [],
+            "truncated": false
+          },
+          "info": {
+            "version": "2.0",
+            "generator": "proyecciones-svg / exportar_mallas",
+            "resources": [
+              {
+                "pointer": "/buffers/0",
+                "mimeType": "application/gltf-buffer",
+                "storage": "glb",
+                "byteLength": 2592
+              }
+            ],
+            "animationCount": 0,
+            "materialCount": 1,
+            "hasMorphTargets": false,
+            "hasSkins": false,
+            "hasTextures": false,
+            "hasDefaultScene": true,
+            "drawCallCount": 1,
+            "totalVertexCount": 108,
+            "totalTriangleCount": 36,
+            "maxUVs": 0,
+            "maxInfluences": 0,
+            "maxAttributes": 2
+          }
+        }
+      }
+    ]
+  },
+  "slicer": {
+    "status": "success",
+    "slicer_executable": "D:\\Repo\\proyection\\build\\research\\prusa-2.9.6\\portable\\PrusaSlicer-2.9.6\\prusa-slicer-console.exe",
+    "slicer_executable_sha256": "7fd50b52d1cc3da87dbcb71e45e764412dd45688bea028f351333e86d9769704",
+    "scope": "Import and manifold/dimensions/volume checks. No printer profile, slicing or physical printing performed.",
+    "results": [
+      {
+        "model": "rampa",
+        "format": "3mf",
+        "sha256": "823f6d50f6d9dd06372f6fb41502f673cc6720b6ef906318fc71b58c81f8eec2",
+        "values": {
+          "size_x": "40.000000",
+          "size_y": "40.000000",
+          "size_z": "20.000000",
+          "min_x": "-20.000000",
+          "min_y": "-20.000000",
+          "min_z": "-10.000000",
+          "max_x": "20.000000",
+          "max_y": "20.000000",
+          "max_z": "10.000000",
+          "number_of_facets": "8",
+          "manifold": "yes",
+          "number_of_parts": "1",
+          "volume": "16000.000000"
+        },
+        "stdout": "[modelo.3mf]\nsize_x = 40.000000\nsize_y = 40.000000\nsize_z = 20.000000\nmin_x = -20.000000\nmin_y = -20.000000\nmin_z = -10.000000\nmax_x = 20.000000\nmax_y = 20.000000\nmax_z = 10.000000\nnumber_of_facets = 8\nmanifold = yes\nnumber_of_parts =  1\nvolume = 16000.000000\n",
+        "stderr": ""
+      },
+      {
+        "model": "rampa",
+        "format": "stl",
+        "sha256": "0191f617cc16a58b3d7a2301940e87e444fcae4d903bce14e370a048b8ad8d91",
+        "values": {
+          "size_x": "40.000000",
+          "size_y": "40.000000",
+          "size_z": "20.000000",
+          "min_x": "0.000000",
+          "min_y": "0.000000",
+          "min_z": "0.000000",
+          "max_x": "40.000000",
+          "max_y": "40.000000",
+          "max_z": "20.000000",
+          "number_of_facets": "8",
+          "manifold": "yes",
+          "number_of_parts": "1",
+          "volume": "16000.000000"
+        },
+        "stdout": "[modelo.stl]\nsize_x = 40.000000\nsize_y = 40.000000\nsize_z = 20.000000\nmin_x = 0.000000\nmin_y = 0.000000\nmin_z = 0.000000\nmax_x = 40.000000\nmax_y = 40.000000\nmax_z = 20.000000\nnumber_of_facets = 8\nmanifold = yes\nnumber_of_parts =  1\nvolume = 16000.000000\n",
+        "stderr": ""
+      },
+      {
+        "model": "bloque",
+        "format": "3mf",
+        "sha256": "09b84efbcfa95412a33e5d36ddc0c61611d671d694d9492ea14c1521d7475f89",
+        "values": {
+          "size_x": "40.000000",
+          "size_y": "40.000000",
+          "size_z": "20.000000",
+          "min_x": "-20.000000",
+          "min_y": "-20.000000",
+          "min_z": "-10.000000",
+          "max_x": "20.000000",
+          "max_y": "20.000000",
+          "max_z": "10.000000",
+          "number_of_facets": "12",
+          "manifold": "yes",
+          "number_of_parts": "1",
+          "volume": "32000.001953"
+        },
+        "stdout": "[modelo.3mf]\nsize_x = 40.000000\nsize_y = 40.000000\nsize_z = 20.000000\nmin_x = -20.000000\nmin_y = -20.000000\nmin_z = -10.000000\nmax_x = 20.000000\nmax_y = 20.000000\nmax_z = 10.000000\nnumber_of_facets = 12\nmanifold = yes\nnumber_of_parts =  1\nvolume = 32000.001953\n",
+        "stderr": ""
+      },
+      {
+        "model": "bloque",
+        "format": "stl",
+        "sha256": "103ecf3acc79eed9e47cff73d003f03b4aaf5a9963ae37546a8b7ba3a6d46fd6",
+        "values": {
+          "size_x": "40.000000",
+          "size_y": "40.000000",
+          "size_z": "20.000000",
+          "min_x": "0.000000",
+          "min_y": "0.000000",
+          "min_z": "0.000000",
+          "max_x": "40.000000",
+          "max_y": "40.000000",
+          "max_z": "20.000000",
+          "number_of_facets": "12",
+          "manifold": "yes",
+          "number_of_parts": "1",
+          "volume": "32000.001953"
+        },
+        "stdout": "[modelo.stl]\nsize_x = 40.000000\nsize_y = 40.000000\nsize_z = 20.000000\nmin_x = 0.000000\nmin_y = 0.000000\nmin_z = 0.000000\nmax_x = 40.000000\nmax_y = 40.000000\nmax_z = 20.000000\nnumber_of_facets = 12\nmanifold = yes\nnumber_of_parts =  1\nvolume = 32000.001953\n",
+        "stderr": ""
+      },
+      {
+        "model": "escalera",
+        "format": "3mf",
+        "sha256": "741a7cc5d1f7e3f62ff57c4e837e3afd65b0667f77858472a68bb74b7363954a",
+        "values": {
+          "size_x": "40.000000",
+          "size_y": "40.000000",
+          "size_z": "20.000000",
+          "min_x": "-20.000000",
+          "min_y": "-20.000000",
+          "min_z": "-10.000000",
+          "max_x": "20.000000",
+          "max_y": "20.000000",
+          "max_z": "10.000000",
+          "number_of_facets": "36",
+          "manifold": "yes",
+          "number_of_parts": "1",
+          "volume": "20000.001953"
+        },
+        "stdout": "[modelo.3mf]\nsize_x = 40.000000\nsize_y = 40.000000\nsize_z = 20.000000\nmin_x = -20.000000\nmin_y = -20.000000\nmin_z = -10.000000\nmax_x = 20.000000\nmax_y = 20.000000\nmax_z = 10.000000\nnumber_of_facets = 36\nmanifold = yes\nnumber_of_parts =  1\nvolume = 20000.001953\n",
+        "stderr": ""
+      },
+      {
+        "model": "escalera",
+        "format": "stl",
+        "sha256": "df4ec7ec3ec45fc5b42fabe7423c2a89f4b3f1bd0906f9e1c500c49899424464",
+        "values": {
+          "size_x": "40.000000",
+          "size_y": "40.000000",
+          "size_z": "20.000000",
+          "min_x": "0.000000",
+          "min_y": "0.000000",
+          "min_z": "0.000000",
+          "max_x": "40.000000",
+          "max_y": "40.000000",
+          "max_z": "20.000000",
+          "number_of_facets": "36",
+          "manifold": "yes",
+          "number_of_parts": "1",
+          "volume": "20000.001953"
+        },
+        "stdout": "[modelo.stl]\nsize_x = 40.000000\nsize_y = 40.000000\nsize_z = 20.000000\nmin_x = 0.000000\nmin_y = 0.000000\nmin_z = 0.000000\nmax_x = 40.000000\nmax_y = 40.000000\nmax_z = 20.000000\nnumber_of_facets = 36\nmanifold = yes\nnumber_of_parts =  1\nvolume = 20000.001953\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "catalog": [
+    {
+      "id": "rampa",
+      "name": "Rampa modular",
+      "triangles": 8,
+      "volumeMm3": 16000.0,
+      "dimensionsMm": [
+        40,
+        40,
+        20
+      ],
+      "files": {
+        "angulo.svg": {
+          "bytes": 2640,
+          "sha256": "c02e9ed7a270711d0ab934ede65718568ffd7faec7dae48c1f5ee4c01890ca4d"
+        },
+        "giro.svg": {
+          "bytes": 33358,
+          "sha256": "d2f0ea6d87cb6c8b253e342359503dda4f3f6ddb22ba13b94a115c599c53059e"
+        },
+        "modelo.3mf": {
+          "bytes": 1845,
+          "sha256": "823f6d50f6d9dd06372f6fb41502f673cc6720b6ef906318fc71b58c81f8eec2"
+        },
+        "modelo.cota": {
+          "bytes": 1686,
+          "sha256": "9e1e898dda3c9c12c519b8ebd4bc148d07b4cee7b5510aad565b73a11c3a538c"
+        },
+        "modelo.glb": {
+          "bytes": 1620,
+          "sha256": "7b574bddcbc7f744f5fb828b51c6d391ba32790b527837027207e311441b77eb"
+        },
+        "modelo.json": {
+          "bytes": 480,
+          "sha256": "b3ae30e7d55abd8f76ef04d81ce9a2fab51b286839127c203701ab501b9fcdb4"
+        },
+        "modelo.stl": {
+          "bytes": 484,
+          "sha256": "0191f617cc16a58b3d7a2301940e87e444fcae4d903bce14e370a048b8ad8d91"
+        },
+        "visor.html": {
+          "bytes": 37167,
+          "sha256": "17dfe4ea0c19ed2171b3592fbdb91bfddfddc1d472ed32fde8861cc8c9bf3d33"
+        },
+        "vistas.svg": {
+          "bytes": 5325,
+          "sha256": "de252a6798b49eb3ee622a4a36096f10c0723ed1d2349bd2119c10872c0cf949"
+        }
+      }
+    },
+    {
+      "id": "bloque",
+      "name": "Bloque modular",
+      "triangles": 12,
+      "volumeMm3": 32000.0,
+      "dimensionsMm": [
+        40,
+        40,
+        20
+      ],
+      "files": {
+        "angulo.svg": {
+          "bytes": 2902,
+          "sha256": "4775b81ac43aa8f8269a584103c57e8927508d0c52a2a3e77c68ddbd8334cfe4"
+        },
+        "giro.svg": {
+          "bytes": 40028,
+          "sha256": "3bb4bdc5d7b2684938a32c90c7685c4b296c08bbd339ef869bb92becd5d9fd56"
+        },
+        "modelo.3mf": {
+          "bytes": 2038,
+          "sha256": "09b84efbcfa95412a33e5d36ddc0c61611d671d694d9492ea14c1521d7475f89"
+        },
+        "modelo.cota": {
+          "bytes": 1768,
+          "sha256": "6a3b68f2fedef2bd2d456f6e41e80f35ad71fec9436aa1e249774fe02be5d0c8"
+        },
+        "modelo.glb": {
+          "bytes": 1908,
+          "sha256": "bb49152e1e2d5f2779e7c3b7871201dc57cb1c4ff974c086ed7718d423018dfc"
+        },
+        "modelo.json": {
+          "bytes": 503,
+          "sha256": "22afda18623bf07985bf11d633b3b3036137ed35fb95f109850795431bc791a8"
+        },
+        "modelo.stl": {
+          "bytes": 684,
+          "sha256": "103ecf3acc79eed9e47cff73d003f03b4aaf5a9963ae37546a8b7ba3a6d46fd6"
+        },
+        "visor.html": {
+          "bytes": 43902,
+          "sha256": "f5afcfb43ab54629f092be1416d17382a142aeadd9d1345e41abd1176c3ba49a"
+        },
+        "vistas.svg": {
+          "bytes": 5653,
+          "sha256": "d70d75df42bf24031e087e809a17fe1fe62e241dfc10343b46bea469eb3d21e6"
+        }
+      }
+    },
+    {
+      "id": "escalera",
+      "name": "Escalera modular",
+      "triangles": 36,
+      "volumeMm3": 20000.0,
+      "dimensionsMm": [
+        40,
+        40,
+        20
+      ],
+      "files": {
+        "angulo.svg": {
+          "bytes": 4834,
+          "sha256": "c9545caf9d9c459c6619e8edc4afe32f3cc8e8a71d9b18d73f8c5c6aca868a7b"
+        },
+        "giro.svg": {
+          "bytes": 81992,
+          "sha256": "1f7f5962985133abad2698bd2969c0558a99b77fbf3406a1dacad5aa54bfc108"
+        },
+        "modelo.3mf": {
+          "bytes": 3250,
+          "sha256": "741a7cc5d1f7e3f62ff57c4e837e3afd65b0667f77858472a68bb74b7363954a"
+        },
+        "modelo.cota": {
+          "bytes": 2260,
+          "sha256": "a515e4ddd441c95335876f59e60b1b06ab07f0d06dfdd602bb267a09c01e09a0"
+        },
+        "modelo.glb": {
+          "bytes": 3648,
+          "sha256": "4baf9855a9bda0ba504ee6a5604637e6f41b8df58fe6741b67b50a4ed0cb6b5c"
+        },
+        "modelo.json": {
+          "bytes": 716,
+          "sha256": "a5414b46de8d07ea6d2946123ad13994be689ebba8884ec6b84ae4e4eeff2547"
+        },
+        "modelo.stl": {
+          "bytes": 1884,
+          "sha256": "df4ec7ec3ec45fc5b42fabe7423c2a89f4b3f1bd0906f9e1c500c49899424464"
+        },
+        "visor.html": {
+          "bytes": 87496,
+          "sha256": "3869648f4c3019d19372843f25fdd2137af989447e2ee12d092f2efe912132fc"
+        },
+        "vistas.svg": {
+          "bytes": 9154,
+          "sha256": "6b1e0477c85922d0b4ee5edabbe49497e6502d66297cb602f51cb0cec2d7d8ab"
+        }
+      }
+    }
+  ],
+  "library_archive": {
+    "name": "kit-modular.zip",
+    "bytes": 1878887,
+    "sha256": "3d3a64ef54d83bf6590d6a6d58b2d81d70cc76f4e15cb3011a6ba44f0843a001"
+  },
+  "slicer_download": {
+    "version": "2.9.6",
+    "url": "https://github.com/prusa3d/PrusaSlicer/releases/download/version_2.9.6/PrusaSlicer-2.9.6.zip",
+    "sha256": "5aaf22e42f95accecfa122d23a835911f289ecc2ff606db3e83d637ddcc0a209"
+  },
+  "scope": {
+    "game_engine": null,
+    "printer": null,
+    "sliced": false,
+    "physically_printed": false,
+    "remote_ci": false
+  },
+  "limitations": [
+    "No bore meshes yet",
+    "No character rigs, animation or collision assets",
+    "Printer profiles and G-code are not generated"
+  ],
+  "browser": {
+    "url": "http://127.0.0.1:8780/",
+    "dom": {
+      "canvases": 4,
+      "hasOverflow": false,
+      "modules": [
+        {
+          "asset": "rampa",
+          "error": null,
+          "valid": "true"
+        },
+        {
+          "asset": "bloque",
+          "error": null,
+          "valid": "true"
+        },
+        {
+          "asset": "escalera",
+          "error": null,
+          "valid": "true"
+        }
+      ]
+    },
+    "svg_frames_verified": 24,
+    "orbit_drag_checked": true
+  }
+}

@@ -23,6 +23,18 @@ const browsers=(process.env.TEST_BROWSERS||'chromium,firefox').split(',');
         const opened=[];
         page.on('request',request=>opened.push(request.url()));
         await page.goto(pathToFileURL(path.join(base,'visor.html')).href);
+        assert.equal(await page.locator('#sections [data-section]').count(),2);
+        const guideGroups=page.locator('#sections .section-guides');
+        assert.ok(await guideGroups.evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).display==='none')));
+        if(model!=='cuna'){
+          await page.locator('#section-guides').check();
+          assert.ok(await guideGroups.evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).display!=='none')));
+          await page.locator('#section-guides').uncheck();
+        }else{
+          assert.equal(await page.locator('#section-guides').count(),0);
+        }
+        assert.ok(await guideGroups.evaluateAll(nodes=>nodes.every(n=>getComputedStyle(n).display==='none')));
+        assert.ok(fs.existsSync(path.join(base,'modelo.cota')));
         const frames=page.locator('#rotation [data-frame]');
         assert.equal(await frames.count(),24);
         for(let index=0;index<24;index++){
@@ -60,7 +72,7 @@ const browsers=(process.env.TEST_BROWSERS||'chromium,firefox').split(',');
         const active=await page.locator('[data-frame]').evaluateAll(nodes=>nodes.filter(n=>getComputedStyle(n).visibility==='visible').map(n=>n.dataset.frame));
         assert.equal(active.length,1);
         assert.ok(Number(active[0])>=13&&Number(active[0])<=15);
-        evidence.push({browser:name,version:browser.version(),model,angles:24,portable:true,reducedMotion:true,width320:true});
+        evidence.push({browser:name,version:browser.version(),model,angles:24,portable:true,reducedMotion:true,width320:true,sections:2,sectionGuides:true,cotaPreserved:true});
         await page.close();
       }
     }finally{await browser.close()}

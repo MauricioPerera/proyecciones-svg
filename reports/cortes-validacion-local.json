@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-10-25T20:38:19.995806+00:00",
+  "milestone": "Cortes SVG y bateria adversarial",
+  "status": "local_development_unpublished",
+  "source_state": {
+    "git_base_commit": "449a324be54f9838251d830f958aa3989209019e",
+    "working_tree_has_uncommitted_changes": true,
+    "version_field": "1.1.0",
+    "warning": "The commit in historical local reports is the base HEAD, not a commit containing these changes. Use package and source hashes to identify the tested content."
+  },
+  "published_baseline": {
+    "version": "1.1.0",
+    "package_sha256": "014c6aee5f73936faa4f59177137b0de99515698f892200c6c2eeeadd1c8d80e",
+    "bytes": 263099,
+    "manifest_files": 44,
+    "evidence": "reports/1.1.0-full-matrix.json",
+    "publication": "reports/1.1.0-stable.md",
+    "installed_matches_published_manifest": true,
+    "installed_files_verified": 44
+  },
+  "development_package": {
+    "name": "proyecciones-svg-1.1.0.zip",
+    "sha256": "660f6f8f907da036f3a443cc9748baf354430c875ff031c45f21ba69ed5cc0f4",
+    "bytes": 313997,
+    "files": 48,
+    "warning": "Development artifact with the unchanged 1.1.0 version field; different from the published 1.1.0 package. Not a stable release.",
+    "manifest_files_sha256": {
+      "LICENSE": "009b2e3184c200b2a6fc42d5ed6dd7269affe5d0f70117245410c2741f18e6c8",
+      "PLATFORMS.json": "f093d6eed89e4149760c730a50fc03ce5d7fec11904aa3ace1522479a675a478",
+      "SKILL.md": "e0ebaa994beed6869b18a9a43f0a7b398ffda2df2f6f98c50c269394fe599144",
+      "VERSION": "1575e1af4a95f12f70b4ee6a6adce8160953d93ea17dc2611b90883ccc3ad3b8",
+      "agents/openai.yaml": "992944607371d0c79b8265a139e176a6450ce5d7ba1f48574bab381d522b6358",
+      "assets/bloque-taladrado.json": "3b1e49444105779372c07f89111ca6f08885884730972fec8cfd19a6d26af393",
+      "assets/cuatro-taladros.json": "c6b6dda430084a216be8465ca5ecc415d7c72b69a46c121e205b547c22747ba1",
+      "assets/cuna.json": "85bc7547bd131a6588028ca519007e3a1adebe95c826e25dd1e42cbf31ed1011",
+      "assets/escalon.json": "d5c4a828f7ad648af146cfc8bfffc0fc7207edd421843ca6d1c97317c653e9b9",
+      "assets/irregular-taladrada.json": "b7328ec4a58fbe421b8aa8477e9deb8c2f88a6df18769fe00b198a36ac108410",
+      "assets/taladro-inclinado.json": "1f05d7678ef29661abcb17448b78d68d885747ee47595a77281cd8dd565714ce",
+      "assets/taladros-cruzados.json": "24a971dfb6e32aa74336fdb802dafdcb2308dfc2e8fa80bf2fe3e6322a36e6d1",
+      "assets/taladros-desiguales.json": "56ac927d909413e474c30d2e8895b8c49eeeec3a16eda3b94fde338593345ef0",
+      "assets/tres-taladros.json": "3ac1e24e5f972d2e980b7eac26c58e4e00e80b2778403a9530c57dc89bb9edcd",
+      "assets/visor.html": "d968f33fa2724c770fabf2379f5f742f15aef2e99789569130c0ee6142ef3fc4",
+      "references/cortes.md": "e164550d9506335c3f70deeee5b612e96ccfe30f8815714d473de7f628773071",
+      "references/cota.md": "b8b9bc72146b3cfbdfa73af157bb4f043eaa5906fb8fb8f76e31177b492c481d",
+      "references/cuatro-taladros.md": "2187787fb3418d9cb291536bceb2b6b31aff48c9a5ac7f82fe60c94cbd0faeb0",
+      "references/ejecucion.md": "74dd0cb797f92e90842225739f0cf2a07686e8be4fd516b7de512822dac35adf",
+      "references/geometria-animacion.md": "f641e0f652ecef1f3a745f745240b677dcc09d80b8542d8b91911f20cc88c4a9",
+      "references/modelos.md": "74c92444f194d7b627d659f96e0b5e0c48a13aeaefad40957e6c3de60898e0ee",
+      "references/taladros-cruzados.md": "25b168509afc48813bee0c6983cca36ebb29278c735a209599a923a868232420",
+      "references/taladros-desiguales.md": "88491e18ff9a88d860571463ce0ab57c957e75e8054cb90307b1e42780362508",
+      "references/tres-taladros.md": "023a3c74db0374a2bcf7edc817521c75dec7622b568c2db350e74b8b9bbb49e1",
+      "scripts/cortes.py": "96999e070849357c9010242adc482f52a79e15d0df5bb2bd749b7c275121d9d2",
+      "scripts/cuatro_taladros.py": "5c6ff502964b3ca22588ce30e919de32671052a5469379960bf913cd6e09c7ed",
+      "scripts/exportar_cota.py": "82a2597d2d97899f3fdc43eac9bf720eb76d031c06046b6f35ede9f923d57a97",
+      "scripts/generar.py": "f7160a60fbf38e27d95985d15a06f623bc55661cf3197230ab6e78512fc946de",
+      "scripts/pieza_taladrada.py": "06063788c3197ebb048a20fca26e8015e927ecf2227c634f32d11fc560dfb257",
+      "scripts/proyectar.py": "c002522ffcdba0a5220fdf8ffe6533f9bfc242e5ade5431c7c511d628dbe985a",
+      "scripts/taladro_cilindrico.py": "ef6a464792f6e1419a0d798fe6af6702596e293426bfbd15db517b6779c706bf",
+      "scripts/taladros_cruzados.py": "4234f3b87b0020e9f4aeb77e998e96fa9996998d66757e016ccd858f7cc83853",
+      "scripts/taladros_desiguales.py": "ed322ab2ea85a11f47a6d9307cb26aa4b71e664fd8abcd33b126be2304733973",
+      "scripts/test_cortes.py": "0d37ebfa7efac81410c515f8c40c0de7175ca7f827ec4e5a876b33115e571e40",
+      "scripts/test_cortes_adversarial.py": "7e765f3f51638df6d02a79428bbf72a3f6e2da906003b73ecc76405cf68a67c7",
+      "scripts/test_cuatro_taladros.py": "26b769f8fef9abb6a314acb7e9c36825db0b31e3db08075ca19b44cd34d53cad",
+      "scripts/test_esbeltez.py": "2c0f6e17d7b25a15569430ede22318fb96111c9dac084d2bf4a9875dd7b6283a",
+      "scripts/test_escalas.py": "a11194dff826c034e045e7abe59419e158dcd143758586322df44dfc554f3201",
+      "scripts/test_exportar_cota.py": "a42277d3244914c86ea33bc739f46e6f51ba9f5b903b430239af7029437d1cf1",
+      "scripts/test_pieza_taladrada.py": "79de4e62a8365f009bfe81768e109732949ff4019461b65b3864ddf46b4e843b",
+      "scripts/test_proyectar.py": "a3bf676334592856feb00029d13ade7dacb14757996475a580079b98a8c0eb84",
+      "scripts/test_taladro_cilindrico.py": "4153586e1dd3654642c21001ea87f9e2a728845e72e86088a49ec15451114f1e",
+      "scripts/test_taladro_inclinado.py": "e5fbe1664b8e92bde3399551a894c11e66c8752da1cc0680db7339afca0a9a0d",
+      "scripts/test_taladros_cruzados.py": "65d3e11549c77add80d62d1ab790808897f13d7f54964b6d163a5816eeb2bf92",
+      "scripts/test_taladros_desiguales.py": "f4b817a8822f18b93fd823ea6818cc7877488c0703c07d5c7fb63a56f610fa74",
+      "scripts/test_tres_taladros.py": "696ffc485feca62028245696b7a5a248e8671d498c814b594f2e155fe1c9f44b",
+      "scripts/tres_taladros.py": "f3233682fdd3659a99672516f2fb53657c612ebbada82c7b5c4480613cdaaad7",
+      "scripts/visor.py": "4ac8fdfa6a2e4e849b083c96a034ddc72bdbf974a74affd89fb8ded8b490de59"
+    },
+    "source_matches_manifest_at_capture": true
+  },
+  "validation": {
+    "full_python": [
+      {
+        "commit": "449a324be54f9838251d830f958aa3989209019e",
+        "system": "Windows",
+        "python": "3.14.6",
+        "machine": "AMD64",
+        "platform": "Windows-11-10.0.26200-SP0",
+        "created_at": "2026-10-25T20:28:34.343438+00:00",
+        "status": "success",
+        "suites": {
+          "geometry": {
+            "tests": 99,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          "distribution": {
+            "tests": 30,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        },
+        "version": "1.1.0",
+        "package": {
+          "name": "proyecciones-svg-1.1.0.zip",
+          "sha256": "660f6f8f907da036f3a443cc9748baf354430c875ff031c45f21ba69ed5cc0f4",
+          "bytes": 313997,
+          "files": 48
+        },
+        "seconds": 102.188
+      },
+      {
+        "commit": "449a324be54f9838251d830f958aa3989209019e",
+        "system": "Windows",
+        "python": "3.10.20",
+        "machine": "AMD64",
+        "platform": "Windows-10-10.0.26200-SP0",
+        "created_at": "2026-10-25T20:28:34.498595+00:00",
+        "status": "success",
+        "suites": {
+          "geometry": {
+            "tests": 99,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          },
+          "distribution": {
+            "tests": 30,
+            "failures": 0,
+            "errors": 0,
+            "skipped": 0
+          }
+        },
+        "version": "1.1.0",
+        "package": {
+          "name": "proyecciones-svg-1.1.0.zip",
+          "sha256": "660f6f8f907da036f3a443cc9748baf354430c875ff031c45f21ba69ed5cc0f4",
+          "bytes": 313997,
+          "files": 48
+        },
+        "seconds": 108.609
+      }
+    ],
+    "adversarial": [
+      {
+        "status": "success",
+        "seed": 20261025,
+        "system": "Windows",
+        "python": "3.14.6",
+        "created_at": "2026-10-25T20:28:13.484941+00:00",
+        "tests": 18,
+        "subcases": 230,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "scope": "Local unpublished source; no remote CI or stable publication.",
+        "known_publication_limit": "Individual file replacements are atomic; an I/O error during publication can leave a mixed delivery."
+      },
+      {
+        "status": "success",
+        "seed": 20261025,
+        "system": "Windows",
+        "python": "3.10.20",
+        "created_at": "2026-10-25T20:28:17.343573+00:00",
+        "tests": 18,
+        "subcases": 230,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "scope": "Local unpublished source; no remote CI or stable publication.",
+        "known_publication_limit": "Individual file replacements are atomic; an I/O error during publication can leave a mixed delivery."
+      },
+      {
+        "status": "success",
+        "seed": 8675309,
+        "system": "Windows",
+        "python": "3.14.6",
+        "created_at": "2026-10-25T20:28:50.312060+00:00",
+        "tests": 18,
+        "subcases": 230,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "scope": "Local unpublished source; no remote CI or stable publication.",
+        "known_publication_limit": "Individual file replacements are atomic; an I/O error during publication can leave a mixed delivery."
+      }
+    ],
+    "adversarial_source_files_sha256": {
+      "tests/test_adversarial_io.py": "33423df105d132cca336ffd5763202e4405dfae86e0ee3d0c28aa17ece9401a2",
+      "tools/adversarial.py": "a3729761f15dc7800ceceb1e09550c23457557caa07a9d96282f2d052a3d960f",
+      "skills/proyecciones-svg/assets/bloque-taladrado.json": "3b1e49444105779372c07f89111ca6f08885884730972fec8cfd19a6d26af393",
+      "skills/proyecciones-svg/assets/cuatro-taladros.json": "c6b6dda430084a216be8465ca5ecc415d7c72b69a46c121e205b547c22747ba1",
+      "skills/proyecciones-svg/assets/cuna.json": "85bc7547bd131a6588028ca519007e3a1adebe95c826e25dd1e42cbf31ed1011",
+      "skills/proyecciones-svg/assets/escalon.json": "d5c4a828f7ad648af146cfc8bfffc0fc7207edd421843ca6d1c97317c653e9b9",
+      "skills/proyecciones-svg/assets/irregular-taladrada.json": "b7328ec4a58fbe421b8aa8477e9deb8c2f88a6df18769fe00b198a36ac108410",
+      "skills/proyecciones-svg/assets/taladro-inclinado.json": "1f05d7678ef29661abcb17448b78d68d885747ee47595a77281cd8dd565714ce",
+      "skills/proyecciones-svg/assets/taladros-cruzados.json": "24a971dfb6e32aa74336fdb802dafdcb2308dfc2e8fa80bf2fe3e6322a36e6d1",
+      "skills/proyecciones-svg/assets/taladros-desiguales.json": "56ac927d909413e474c30d2e8895b8c49eeeec3a16eda3b94fde338593345ef0",
+      "skills/proyecciones-svg/assets/tres-taladros.json": "3ac1e24e5f972d2e980b7eac26c58e4e00e80b2778403a9530c57dc89bb9edcd",
+      "skills/proyecciones-svg/assets/visor.html": "d968f33fa2724c770fabf2379f5f742f15aef2e99789569130c0ee6142ef3fc4",
+      "skills/proyecciones-svg/scripts/cortes.py": "96999e070849357c9010242adc482f52a79e15d0df5bb2bd749b7c275121d9d2",
+      "skills/proyecciones-svg/scripts/cuatro_taladros.py": "5c6ff502964b3ca22588ce30e919de32671052a5469379960bf913cd6e09c7ed",
+      "skills/proyecciones-svg/scripts/exportar_cota.py": "82a2597d2d97899f3fdc43eac9bf720eb76d031c06046b6f35ede9f923d57a97",
+      "skills/proyecciones-svg/scripts/generar.py": "f7160a60fbf38e27d95985d15a06f623bc55661cf3197230ab6e78512fc946de",
+      "skills/proyecciones-svg/scripts/pieza_taladrada.py": "06063788c3197ebb048a20fca26e8015e927ecf2227c634f32d11fc560dfb257",
+      "skills/proyecciones-svg/scripts/proyectar.py": "c002522ffcdba0a5220fdf8ffe6533f9bfc242e5ade5431c7c511d628dbe985a",
+      "skills/proyecciones-svg/scripts/taladro_cilindrico.py": "ef6a464792f6e1419a0d798fe6af6702596e293426bfbd15db517b6779c706bf",
+      "skills/proyecciones-svg/scripts/taladros_cruzados.py": "4234f3b87b0020e9f4aeb77e998e96fa9996998d66757e016ccd858f7cc83853",
+      "skills/proyecciones-svg/scripts/taladros_desiguales.py": "ed322ab2ea85a11f47a6d9307cb26aa4b71e664fd8abcd33b126be2304733973",
+      "skills/proyecciones-svg/scripts/test_cortes.py": "0d37ebfa7efac81410c515f8c40c0de7175ca7f827ec4e5a876b33115e571e40",
+      "skills/proyecciones-svg/scripts/test_cortes_adversarial.py": "7e765f3f51638df6d02a79428bbf72a3f6e2da906003b73ecc76405cf68a67c7",
+      "skills/proyecciones-svg/scripts/test_cuatro_taladros.py": "26b769f8fef9abb6a314acb7e9c36825db0b31e3db08075ca19b44cd34d53cad",
+      "skills/proyecciones-svg/scripts/test_esbeltez.py": "2c0f6e17d7b25a15569430ede22318fb96111c9dac084d2bf4a9875dd7b6283a",
+      "skills/proyecciones-svg/scripts/test_escalas.py": "a11194dff826c034e045e7abe59419e158dcd143758586322df44dfc554f3201",
+      "skills/proyecciones-svg/scripts/test_exportar_cota.py": "a42277d3244914c86ea33bc739f46e6f51ba9f5b903b430239af7029437d1cf1",
+      "skills/proyecciones-svg/scripts/test_pieza_taladrada.py": "79de4e62a8365f009bfe81768e109732949ff4019461b65b3864ddf46b4e843b",
+      "skills/proyecciones-svg/scripts/test_proyectar.py": "a3bf676334592856feb00029d13ade7dacb14757996475a580079b98a8c0eb84",
+      "skills/proyecciones-svg/scripts/test_taladro_cilindrico.py": "4153586e1dd3654642c21001ea87f9e2a728845e72e86088a49ec15451114f1e",
+      "skills/proyecciones-svg/scripts/test_taladro_inclinado.py": "e5fbe1664b8e92bde3399551a894c11e66c8752da1cc0680db7339afca0a9a0d",
+      "skills/proyecciones-svg/scripts/test_taladros_cruzados.py": "65d3e11549c77add80d62d1ab790808897f13d7f54964b6d163a5816eeb2bf92",
+      "skills/proyecciones-svg/scripts/test_taladros_desiguales.py": "f4b817a8822f18b93fd823ea6818cc7877488c0703c07d5c7fb63a56f610fa74",
+      "skills/proyecciones-svg/scripts/test_tres_taladros.py": "696ffc485feca62028245696b7a5a248e8671d498c814b594f2e155fe1c9f44b",
+      "skills/proyecciones-svg/scripts/tres_taladros.py": "f3233682fdd3659a99672516f2fb53657c612ebbada82c7b5c4480613cdaaad7",
+      "skills/proyecciones-svg/scripts/visor.py": "4ac8fdfa6a2e4e849b083c96a034ddc72bdbf974a74affd89fb8ded8b490de59"
+    },
+    "browser_manual": {
+      "idsUnique": true,
+      "inlineEvents": [],
+      "literalPayload": true,
+      "origins": [
+        "Origen (4, 3, 1.5) cm",
+        "Origen (1e16, 1e16, 1.5) cm"
+      ],
+      "svgScripts": 0,
+      "title": "Proyecciones SVG Â· visor",
+      "framesChecked": 8,
+      "guideControl": true,
+      "screenshot": "browser.png",
+      "scope": "Manual CUA checks in the in-app browser"
+    },
+    "remote_ci_for_development": "not_run",
+    "development_systems_verified": [
+      "Windows"
+    ],
+    "development_systems_pending": [
+      "Linux",
+      "Darwin"
+    ],
+    "native_cota_engine_on_final_development_package": "pending",
+    "adversarial_source_files_verified": 36
+  },
+  "known_limitations": [
+    "Publication is atomic per file, not an all-or-nothing folder transaction; a publication I/O error can leave mixed complete files.",
+    "Sections support convex bodies; concave sections are rejected.",
+    "Cota export is one-way and does not transfer SVG sections or animations.",
+    "General dimensions and numeric tolerances do not certify manufacturing accuracy."
+  ]
+}

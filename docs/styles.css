@@ -8,3 +8,5 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}.button:hover{transform:none}}
 .hero-figure .drawing-callout{position:static;margin-top:-10px;padding:0 24px 18px;background:transparent}
 .release-downloads{display:flex;flex-direction:column;gap:12px;margin-top:18px}.release-downloads a{display:flex;justify-content:space-between;gap:10px;font-size:11px;line-height:1.5}@media(min-width:471px) and (max-width:760px){.release-downloads{grid-column:2;grid-row:3;margin-top:16px}.release-panel .access-note{grid-column:1/-1;grid-row:4;margin:20px 0 0}.release-meta{grid-row:5}}
+
+.mesh-section{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.mesh-section p{line-height:1.75;color:var(--muted)}.mesh-section figure{margin:0;border:1px solid var(--line);padding:20px;border-radius:10px;background:#fff}.mesh-section figure img{width:100%;height:auto}.mesh-section figcaption{font-size:12px;line-height:1.7;padding-top:16px}.mesh-section .light-code{margin-left:0}.mesh-limits{font-size:13px}.demo-footer>div{flex-wrap:wrap}@media(max-width:760px){.mesh-section{grid-template-columns:1fr;gap:28px}}

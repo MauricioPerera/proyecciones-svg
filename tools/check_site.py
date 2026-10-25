@@ -1,6 +1,8 @@
 """Check static landing links, release scope and derived SVG examples."""
 from html.parser import HTMLParser
 import json
+import struct
+import zipfile
 from pathlib import Path
 from urllib.parse import unquote,urlsplit
 import xml.etree.ElementTree as ET
@@ -39,7 +41,10 @@ def main():
     assert 'repositorio privado' not in source.lower()
     assert 'sin iniciar sesión' in source
     assert '--export-cota' in source and 'modelo.cota' in source
+    assert '--export-glb' in source and 'requirements-mesh.txt' in source and '--sections' in source
     assert page.anchors.get('cota-download')=='assets/models/cuna/modelo.cota'
+    for identity,ext in (('glb-download','glb'),('mf-download','3mf'),('stl-download','stl')):
+        assert page.anchors.get(identity)=='assets/models/cuna/modelo.'+ext
     version=(ROOT/'skills'/'proyecciones-svg'/'VERSION').read_text().strip()
     base=f'https://github.com/MauricioPerera/proyecciones-svg/releases/download/v{version}/'
     for identity,name in (('download-hero',f'proyecciones-svg-{version}.zip'),
@@ -57,6 +62,15 @@ def main():
         cota=json.loads((folder/'modelo.cota').read_text(encoding='utf-8'))
         assert cota['schemaVersion']==1 and cota['units']=='mm' and len(cota['entities'])==1,key
         assert cota['meta']['custom']['source_type']==model['type'],key
+        assert cota['meta']['custom']['proyecciones_svg_version']==version,key
+        glb=(folder/'modelo.glb').read_bytes()
+        assert struct.unpack_from('<III',glb)==(0x46546c67,2,len(glb)),key
+        with zipfile.ZipFile(folder/'modelo.3mf') as archive:
+            mf=ET.fromstring(archive.read('3D/3dmodel.model'))
+            assert mf.get('unit')=='millimeter',key
+        stl=(folder/'modelo.stl').read_bytes()
+        assert len(stl)==84+50*struct.unpack_from('<I',stl,80)[0],key
+        if key!='escalon':assert (folder/'cortes.svg').is_file(),key
         boxes=[]
         for name in ('planta.svg','alzado.svg','perfil.svg'):
             root=ET.parse(folder/name).getroot()

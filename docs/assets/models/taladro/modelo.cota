@@ -80,7 +80,7 @@
   },
   "meta": {
     "custom": {
-      "proyecciones_svg_version": "1.1.0",
+      "proyecciones_svg_version": "1.2.0",
       "source_file": "modelo.json",
       "source_type": "block_with_bore",
       "source_units": "cm",

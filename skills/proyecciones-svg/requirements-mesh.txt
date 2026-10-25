@@ -1,0 +1,2 @@
+# Optional: only GLB/3MF/STL of cylindrical through-bores. SVG/Cota need no packages.
+manifold3d==3.5.4

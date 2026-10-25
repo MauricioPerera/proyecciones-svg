@@ -29,6 +29,7 @@ jobs:
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
         with:
           python-version: ${{ matrix.python }}
+      - run: python -m pip install --only-binary=:all: -r skills/proyecciones-svg/requirements-mesh.txt
       - run: python -B tools/verify.py
       - name: Check out pinned Cota reference
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
@@ -45,7 +46,9 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund
         working-directory: build/cota/services/web
       - name: Validate the released package with Cota
-        run: python -B tools/check_cota_interop.py --cota-dir build/cota --package build/ci/proyecciones-svg-1.1.0.zip --output build/ci/cota-interop.json
+        run: python -B tools/check_cota_interop.py --cota-dir build/cota --package build/ci/proyecciones-svg-1.2.0.zip --output build/ci/cota-interop.json
+      - name: Validate bored mesh exports from the installed package
+        run: python -B tools/check_mesh_interop.py --package build/ci/proyecciones-svg-1.2.0.zip --output build/ci/mesh-interop.json
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         if: always()
         with:
@@ -68,12 +71,25 @@ jobs:
       - run: npx playwright install --with-deps chromium firefox
         timeout-minutes: 4
       - run: python -B tools/browser_fixtures.py
+      - run: python -m pip install --only-binary=:all: -r skills/proyecciones-svg/requirements-mesh.txt
+      - run: python -B tools/build_asset_examples.py
+      - run: node tools/check_asset_formats.cjs
+      - run: python -B tools/build_bored_asset_example.py
+      - run: node tools/check_asset_formats.cjs build/cuatro-taladros-mallas
       - run: npm run test:browser
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         if: always()
         with:
           name: browser-evidence
           path: build/browser-evidence/
+          retention-days: 14
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        if: always()
+        with:
+          name: asset-format-evidence
+          path: |
+            build/prototipo-assets/gltf-validation.json
+            build/cuatro-taladros-mallas/gltf-validation.json
           retention-days: 14
   ready:
     name: Ready for release

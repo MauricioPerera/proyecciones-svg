@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cuatro taladros comunicados · SVG y mallas</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f2f6f7;color:#193340;font:16px system-ui,sans-serif}main{max-width:1220px;margin:auto;padding:36px 24px}.eyebrow{color:#147c70;text-transform:uppercase;letter-spacing:.12em;font-size:.76rem;font-weight:700}h1{font-size:clamp(2rem,4vw,3.3rem);letter-spacing:-.045em;line-height:1.08;margin:12px 0 18px}p{color:#506d79;line-height:1.65}.downloads{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.downloads a{border:1px solid #b7cdd3;border-radius:8px;padding:10px 15px;color:#174958;text-decoration:none;font-weight:600;font-size:.88rem;background:white}.downloads a:first-child{background:#174958;color:white}.views{display:grid;grid-template-columns:1fr 1fr;gap:20px}article,.technical{border:1px solid #d1e0e5;background:white;border-radius:14px;overflow:hidden}h2{font-size:1.2rem;margin:0 0 8px}.caption{padding:18px 20px}.caption p{font-size:.88rem;margin:0}.stage{height:360px;position:relative;background:linear-gradient(#fbfdfe,#e7f0f4)}canvas{display:block;touch-action:none;max-width:100%}.status{position:absolute;left:16px;bottom:12px;background:#ffffffdf;padding:5px 8px;border-radius:5px;font-size:.76rem;color:#386577}.controls{padding:12px 20px;font-size:.85rem;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.controls input{flex:1;min-width:120px;accent-color:#168975}.technical{margin-top:24px}.technical iframe{display:block;width:100%;height:780px;border:0}.note{padding:15px 20px;border-left:3px solid #158c76;background:#e4f0eb;font-size:.88rem;margin:24px 0}a{color:#176a7d}a:focus-visible,canvas:focus-visible{outline:3px solid #159a83;outline-offset:3px}.error{color:#a23120}@media(max-width:760px){main{padding:24px 14px}.views{grid-template-columns:1fr}.stage{height:320px}}
+</style>
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script>
+<main>
+<div class="eyebrow">Proyecciones SVG · versión 1.2.0</div>
+<h1>Cuatro agujeros.<br>Un mismo espacio interior.</h1>
+<p>La pieza irregular conserva su cubierta inclinada y cuatro taladros de <strong>12, 8, 6 y 4 mm</strong>. Los conductos se cruzan y comunican dentro del cuerpo. Las mallas contienen las paredes de ese vaciado.</p>
+<nav class="downloads" aria-label="Descargas"><a href="cuatro-taladros-kit.zip" download>Descargar todo · ZIP</a><a href="cuatro-taladros/modelo.glb" download>Videojuegos · GLB</a><a href="cuatro-taladros/modelo.3mf" download>Impresión · 3MF</a><a href="cuatro-taladros/modelo.stl" download>STL</a><a href="cuatro-taladros/modelo.cota" download>Cota</a><a href="cuatro-taladros/modelo.json" download>Fuente JSON</a></nav>
+<section class="views" aria-label="Previsualización del GLB">
+<article><div class="caption"><h2>La pieza completa</h2><p>GLB real, con las ocho bocas abiertas. Arrastra para girar y usa la rueda para acercar.</p></div><div class="stage" id="whole"><span class="status">Cargando GLB…</span></div></article>
+<article><div class="caption"><h2>Explorar el interior</h2><p>Recorte de visualización para ver la comunicación. Los archivos descargables contienen la pieza completa.</p></div><div class="stage" id="inside"><span class="status">Cargando GLB…</span></div><div class="controls"><label for="height">Altura del recorte</label><input id="height" type="range" min="2" max="37" value="15" step="0.5"><output id="heightValue" for="height">15 mm</output></div></article>
+</section>
+<p class="note" id="metrics">Comprobando dimensiones y geometría…</p>
+<section class="technical"><div class="caption"><h2>Tres vistas, giro SVG y cortes</h2><p>Documentación vectorial calculada desde la misma fuente. <a href="cuatro-taladros/visor.html" target="_blank" rel="noopener">Abrir el visor SVG en otra pestaña</a></p></div><iframe title="Tres vistas y giro SVG de la pieza taladrada" src="cuatro-taladros/visor.html"></iframe></section>
+<p>GLB usa metros con Y arriba; 3MF y STL, milímetros con Z arriba. La malla aproxima los cilindros con polígonos inscritos. La flecha radial máxima elegida es 0,02 mm; no representa una tolerancia de fabricación ni el error de todas las intersecciones. Hace falta elegir impresora y revisar el laminado antes de fabricar.</p>
+</main><script type="module" src="preview.js"></script>
+</html>

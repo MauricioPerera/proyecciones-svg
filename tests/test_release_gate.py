@@ -54,7 +54,60 @@ def cota_fixtures(folder):
     return sha
 
 
+def mesh_fixtures(folder):
+    sha=cota_fixtures(folder)
+    for path in folder.glob('python-*/report.json'):
+        python=json.loads(path.read_text());python['version']='1.2.0'
+        python['suites']['geometry']['tests']=121;python['suites']['distribution']['tests']=38
+        path.write_text(json.dumps(python),encoding='utf-8')
+        cota=path.parent/'cota-interop.json';data=json.loads(cota.read_text());data['version']='1.2.0';cota.write_text(json.dumps(data),encoding='utf-8')
+        report={key:python[key] for key in ('commit','version','system','python')}
+        report.update(status='success',package_sha256=python['package']['sha256'],model='cuatro-taladros',genus=7,mouths=8,
+            radial_sagitta_mm=.0193,dependencies={'manifold3d':'3.5.4','numpy':'2.2.6'},
+            formats=[{'format':ext,'sha256':'a'*64,'euler':-12,'triangles':1128,'bounds_mm':[80,60,36],
+                'volume_mm3':112947.08186843421,'void_checks':5,'material_checks':3} for ext in ('glb','3mf','stl')])
+        (path.parent/'mesh-interop.json').write_text(json.dumps(report),encoding='utf-8')
+    for folder_name,names in (('prototipo-assets',('rampa','bloque','escalera')),('cuatro-taladros-mallas',('cuatro-taladros',))):
+        path=folder/'asset-format-evidence'/folder_name;path.mkdir(parents=True)
+        (path/'gltf-validation.json').write_text(json.dumps({'status':'success','reports':[{'model':name,'report':{'issues':{'numErrors':0,'numWarnings':0}}} for name in names]}),encoding='utf-8')
+    return sha
+
+
 class ReleaseGateTests(unittest.TestCase):
+    def test_mesh_release_requires_six_matching_installed_package_reports(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp);sha=mesh_fixtures(folder);proof=validate_matrix.validate(folder,sha)
+            self.assertEqual(len(proof['mesh_jobs']),6)
+            self.assertEqual(len(proof['mesh_format_validation']),2)
+            check_proof(proof,sha,'1.2.0',proof['package_sha256'])
+            for jobs in ([],[proof['mesh_jobs'][0]]*6):
+                with self.assertRaisesRegex(ValueError,'mallas'):check_proof({**proof,'mesh_jobs':jobs},sha,'1.2.0',proof['package_sha256'])
+
+    def test_bad_missing_or_obstructed_mesh_evidence_cannot_release(self):
+        faults={'status':'failure','commit':'b'*40,'package_sha256':'b'*64,'genus':0,'mouths':6,
+            'radial_sagitta_mm':.1,'dependencies':{},'formats':[]}
+        for fault in ('missing','filled',*faults):
+            with self.subTest(fault=fault),tempfile.TemporaryDirectory() as temp:
+                folder=Path(temp);sha=mesh_fixtures(folder);path=next(folder.glob('python-*/mesh-interop.json'))
+                if fault=='missing':path.unlink()
+                else:
+                    data=json.loads(path.read_text())
+                    if fault=='filled':data['formats'][0]['void_checks']=0
+                    else:data[fault]=faults[fault]
+                    path.write_text(json.dumps(data),encoding='utf-8')
+                with self.assertRaises(ValueError):validate_matrix.validate(folder,sha)
+
+    def test_mesh_release_rejects_missing_or_failed_external_glb_validation(self):
+        for fault in ('missing','warning'):
+            with self.subTest(fault=fault),tempfile.TemporaryDirectory() as temp:
+                folder=Path(temp);sha=mesh_fixtures(folder)
+                path=folder/'asset-format-evidence/cuatro-taladros-mallas/gltf-validation.json'
+                if fault=='missing':path.unlink()
+                else:
+                    data=json.loads(path.read_text());data['reports'][0]['report']['issues']['numWarnings']=1
+                    path.write_text(json.dumps(data),encoding='utf-8')
+                with self.assertRaises((ValueError,OSError)):validate_matrix.validate(folder,sha)
+
     def test_cota_release_requires_six_matching_engine_reports(self):
         with tempfile.TemporaryDirectory() as temp:
             folder=Path(temp)

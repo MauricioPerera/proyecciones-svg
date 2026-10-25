@@ -1,0 +1,9 @@
+{
+  "name": "Rampa modular",
+  "units": "mm",
+  "type": "extrusion",
+  "profile": [[0,0],[40,0],[40,20]],
+  "depth": 40,
+  "asset": {"base_color": [0.08,0.55,0.43,1]},
+  "assumptions": ["Módulo de 40 × 40 mm y altura de 20 mm.", "Origen en la esquina frontal de la base; misma escala física en todas las salidas."]
+}

@@ -15,6 +15,30 @@ def requires_cota(version):
     return tuple(int(v) for v in version.split('.')[:2])>=(1,1)
 
 
+def requires_meshes(version):
+    return tuple(int(v) for v in version.split('.')[:2])>=(1,2)
+
+
+def check_meshes(report,python_report):
+    if (report.get('status')!='success' or any(report.get(k)!=python_report[k] for k in ('commit','version','system','python'))
+        or report.get('package_sha256')!=python_report['package']['sha256']
+        or report.get('dependencies',{}).get('manifold3d')!='3.5.4' or not report.get('dependencies',{}).get('numpy')
+        or report.get('model')!='cuatro-taladros' or report.get('genus')!=7 or report.get('mouths')!=8):
+        raise ValueError('La evidencia de mallas no aprueba el paquete, entorno o vaciado esperado.')
+    sagitta=report.get('radial_sagitta_mm',math.nan)
+    if not math.isfinite(sagitta) or not 0<sagitta<=.02:raise ValueError('Precisión radial de malla incorrecta.')
+    rows=report.get('formats',[])
+    if len(rows)!=3 or {r.get('format') for r in rows}!={'glb','3mf','stl'}:
+        raise ValueError('Faltan formatos de malla comprobados.')
+    for row in rows:
+        if (row.get('euler')!=-12 or row.get('triangles',0)<=0 or len(row.get('sha256',''))!=64
+            or row.get('void_checks')!=5 or row.get('material_checks')!=3
+            or len(row.get('bounds_mm',[]))!=3
+            or any(not math.isclose(a,b,rel_tol=1e-6) for a,b in zip(row['bounds_mm'],(80,60,36)))
+            or not math.isclose(row.get('volume_mm3',math.nan),112947.08186843421,rel_tol=1e-6)):
+            raise ValueError('Malla exportada sin geometría, escala o vaciado comprobados.')
+
+
 def check_cota(report,python_report):
     if (report.get('status')!='success' or report.get('tests')!=2
         or any(report.get(k)!=python_report[k] for k in ('commit','version','system','python'))
@@ -49,6 +73,7 @@ def validate(folder,commit,profile='all'):
     digests=set()
     versions=set()
     cota_jobs=[]
+    mesh_jobs=[]
     for report_path in sorted(folder.glob('python-*/**/report.json')):
         report=json.loads(report_path.read_text(encoding='utf-8'))
         key=(report['system'],'.'.join(report['python'].split('.')[:2]))
@@ -56,7 +81,7 @@ def validate(folder,commit,profile='all'):
             raise ValueError('Plataforma duplicada o inesperada: '+str(key))
         if report['commit']!=commit or report['status']!='success':
             raise ValueError('Un informe no corresponde al commit o no fue satisfactorio.')
-        minimums=(('geometry',77),('distribution',22)) if requires_cota(report['version']) else (('geometry',69),('distribution',16))
+        minimums=(('geometry',121),('distribution',38)) if requires_meshes(report['version']) else (('geometry',77),('distribution',22)) if requires_cota(report['version']) else (('geometry',69),('distribution',16))
         for name,minimum in minimums:
             result=report['suites'][name]
             if result['tests']<minimum or any(result[field] for field in ('failures','errors','skipped')):
@@ -75,6 +100,11 @@ def validate(folder,commit,profile='all'):
             cota=json.loads(cota_path.read_text(encoding='utf-8'))
             check_cota(cota,report)
             cota_jobs.append(cota)
+        if requires_meshes(report['version']):
+            mesh_path=report_path.parent/'mesh-interop.json'
+            if not mesh_path.is_file():raise ValueError('Falta la comprobación de mallas del paquete en '+str(key))
+            meshes=json.loads(mesh_path.read_text(encoding='utf-8'))
+            check_meshes(meshes,report);mesh_jobs.append(meshes)
         digests.add(digest)
         versions.add(report['version'])
         found[key]=report
@@ -89,8 +119,17 @@ def validate(folder,commit,profile='all'):
         raise ValueError('Faltan casos de navegador.')
     if any(r.get('angles')!=24 or not all(r.get(k) for k in ('portable','reducedMotion','width320')) for r in browsers):
         raise ValueError('Comprobación de navegador incompleta.')
+    format_reports=[]
+    if mesh_jobs:
+        for name,expected in (('prototipo-assets',{'rampa','bloque','escalera'}),('cuatro-taladros-mallas',{'cuatro-taladros'})):
+            report=json.loads((folder/'asset-format-evidence'/name/'gltf-validation.json').read_text(encoding='utf-8'))
+            rows=report.get('reports',[])
+            if (report.get('status')!='success' or len(rows)!=len(expected) or {r.get('model') for r in rows}!=expected
+                or any(r.get('report',{}).get('issues',{}).get(k)!=0 for r in rows for k in ('numErrors','numWarnings'))):
+                raise ValueError('La validación externa GLB está incompleta o tiene errores/avisos.')
+            format_reports.append(report)
     return {'commit':commit,'version':versions.pop(),'package_sha256':digests.pop(),
-            'cota_jobs':cota_jobs,
+            'cota_jobs':cota_jobs,'mesh_jobs':mesh_jobs,'mesh_format_validation':format_reports,
             'status':'success','validation_profile':profile,
             'validated_systems':sorted({pair[0] for pair in required}),
             'pending_systems':sorted({pair[0] for pair in EXPECTED}-{pair[0] for pair in required}),

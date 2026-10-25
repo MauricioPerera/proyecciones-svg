@@ -75,10 +75,12 @@ def main():
             target=Path(temporary)/'generated'
             command=[sys.executable,'-B',str(skill/'scripts'/'generar.py'),str(source),
                 '--output-dir',str(target),'--mode','all','--frames','24','--seconds','8',
-                '--viewer','--export-cota','--elevation','50','--hidden','dash']
+                '--viewer','--export-cota','--export-glb','--export-3mf','--export-stl','--elevation','50','--hidden','dash']
+            if key!='escalon':command.append('--sections')
             subprocess.run(command,check=True,capture_output=True,text=True,encoding='utf-8')
-            for name in ('vistas.svg','giro.svg','modelo.json','modelo.cota','visor.html'):
+            for name in ('vistas.svg','giro.svg','modelo.json','modelo.cota','modelo.glb','modelo.3mf','modelo.stl','visor.html'):
                 shutil.copyfile(target/name,folder/name)
+            if key!='escalon':shutil.copyfile(target/'cortes.svg',folder/'cortes.svg')
             oblique=clean(ET.parse(target/'angulo.svg').getroot(),key+'-angle-')
             x0,y0,x1,y1=bounds(oblique)
             oblique.set('viewBox',f'{x0-35:.4f} {y0-25:.4f} {x1-x0+70:.4f} {y1-y0+50:.4f}')
@@ -106,6 +108,7 @@ def main():
                 clean(root,key+'-'+filename+'-')
                 save(root,folder/filename)
         for artifact in folder.iterdir():
+            if artifact.suffix in ('.glb','.3mf','.stl'):continue
             text=artifact.read_text(encoding='utf-8')
             artifact.write_text('\n'.join(line.rstrip() for line in text.splitlines())+'\n',encoding='utf-8',newline='\n')
         print(key+': ready',flush=True)
