@@ -1,0 +1,1923 @@
+{
+  "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+  "version": "1.2.0",
+  "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+  "cota_jobs": [
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "2bb6c8151ca2892c6665563ef3bb8745a51fb543e256ba1d5053417416a18010",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "cca79b0c1aff2f70025196dd358ebeb8bccb3e32eb22ffc785bfc06ca92439e9",
+          "units": "mm"
+        }
+      },
+      "sections": {
+        "cuna": {
+          "sha256": "75834f4f3e0d65364fb2d08d67652dc080f2fd659ddf341b743504910e966ed3",
+          "planes": 2
+        },
+        "cuatro-taladros": {
+          "sha256": "a4dd27c6454252854ea07120c78fdd99dd55d24e883771f3a05ef558d4654023",
+          "planes": 2
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Darwin",
+      "python": "3.10.11",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "node": "v22.23.3",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "2bb6c8151ca2892c6665563ef3bb8745a51fb543e256ba1d5053417416a18010",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "cca79b0c1aff2f70025196dd358ebeb8bccb3e32eb22ffc785bfc06ca92439e9",
+          "units": "mm"
+        }
+      },
+      "sections": {
+        "cuna": {
+          "sha256": "75834f4f3e0d65364fb2d08d67652dc080f2fd659ddf341b743504910e966ed3",
+          "planes": 2
+        },
+        "cuatro-taladros": {
+          "sha256": "a4dd27c6454252854ea07120c78fdd99dd55d24e883771f3a05ef558d4654023",
+          "planes": 2
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Darwin",
+      "python": "3.14.8",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "node": "v22.23.3",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "2bb6c8151ca2892c6665563ef3bb8745a51fb543e256ba1d5053417416a18010",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "cca79b0c1aff2f70025196dd358ebeb8bccb3e32eb22ffc785bfc06ca92439e9",
+          "units": "mm"
+        }
+      },
+      "sections": {
+        "cuna": {
+          "sha256": "75834f4f3e0d65364fb2d08d67652dc080f2fd659ddf341b743504910e966ed3",
+          "planes": 2
+        },
+        "cuatro-taladros": {
+          "sha256": "a4dd27c6454252854ea07120c78fdd99dd55d24e883771f3a05ef558d4654023",
+          "planes": 2
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Linux",
+      "python": "3.10.22",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "node": "v22.23.3",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "2bb6c8151ca2892c6665563ef3bb8745a51fb543e256ba1d5053417416a18010",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "cca79b0c1aff2f70025196dd358ebeb8bccb3e32eb22ffc785bfc06ca92439e9",
+          "units": "mm"
+        }
+      },
+      "sections": {
+        "cuna": {
+          "sha256": "75834f4f3e0d65364fb2d08d67652dc080f2fd659ddf341b743504910e966ed3",
+          "planes": 2
+        },
+        "cuatro-taladros": {
+          "sha256": "a4dd27c6454252854ea07120c78fdd99dd55d24e883771f3a05ef558d4654023",
+          "planes": 2
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Linux",
+      "python": "3.14.8",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "node": "v22.23.3",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "c7f7247e60b3fdf0fa02e9c12272578a345fb0e82f67e7bfbf8a569cd5224125",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "687bfcef8869630c99fe74dd4a83027a8d62a30f39e2f91707e2883976e327ad",
+          "units": "mm"
+        }
+      },
+      "sections": {
+        "cuna": {
+          "sha256": "975dadd6210e3417e9974ef62fddfe9e0be9808631b2fb01a1a181bd626d5094",
+          "planes": 2
+        },
+        "cuatro-taladros": {
+          "sha256": "064cc56eee56aac9d97917fd4cafe3bea18eb7bfbede9fb69a6ae6fad953ea26",
+          "planes": 2
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Windows",
+      "python": "3.10.11",
+      "machine": "AMD64",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "node": "v22.23.4",
+      "cota_version": "1.0.0"
+    },
+    {
+      "cota_commit": "e43e37de4017e6b87f72180b0f4e6162943f4880",
+      "cases": [
+        {
+          "model": "cuna",
+          "views_mm": [
+            [
+              60,
+              30
+            ],
+            [
+              60,
+              40
+            ],
+            [
+              40,
+              30
+            ]
+          ],
+          "volume_mm3": 36000,
+          "material_checks": 3
+        },
+        {
+          "model": "cuatro-taladros",
+          "body_volume_expected_mm3": 118954.16666666667,
+          "body_volume_actual_mm3": 118954.15566669784,
+          "faces": 8870,
+          "material_checks": [
+            {
+              "point": [
+                32,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                44,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                48,
+                28.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                36,
+                30.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                20.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                34.75,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                39.5,
+                5
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                30,
+                15
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                40,
+                25.25,
+                20
+              ],
+              "material": false
+            },
+            {
+              "point": [
+                5,
+                5,
+                5
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                70,
+                15,
+                10
+              ],
+              "material": true
+            },
+            {
+              "point": [
+                10,
+                50,
+                10
+              ],
+              "material": true
+            }
+          ]
+        }
+      ],
+      "exports": {
+        "cuna": {
+          "sha256": "c7f7247e60b3fdf0fa02e9c12272578a345fb0e82f67e7bfbf8a569cd5224125",
+          "units": "mm"
+        },
+        "cuatro-taladros": {
+          "sha256": "687bfcef8869630c99fe74dd4a83027a8d62a30f39e2f91707e2883976e327ad",
+          "units": "mm"
+        }
+      },
+      "sections": {
+        "cuna": {
+          "sha256": "975dadd6210e3417e9974ef62fddfe9e0be9808631b2fb01a1a181bd626d5094",
+          "planes": 2
+        },
+        "cuatro-taladros": {
+          "sha256": "064cc56eee56aac9d97917fd4cafe3bea18eb7bfbede9fb69a6ae6fad953ea26",
+          "planes": 2
+        }
+      },
+      "status": "success",
+      "tests": 2,
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Windows",
+      "python": "3.14.9",
+      "machine": "AMD64",
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "node": "v22.23.4",
+      "cota_version": "1.0.0"
+    }
+  ],
+  "mesh_jobs": [
+    {
+      "status": "success",
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Darwin",
+      "python": "3.10.11",
+      "machine": "arm64",
+      "dependencies": {
+        "manifold3d": "3.5.4",
+        "numpy": "2.2.6"
+      },
+      "model": "cuatro-taladros",
+      "genus": 7,
+      "mouths": 8,
+      "radial_sagitta_mm": 0.019261093311212285,
+      "formats": [
+        {
+          "format": "glb",
+          "sha256": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            79.99999821186066,
+            59.99999865889549,
+            35.999998450279236
+          ],
+          "volume_mm3": 112947.07479068446,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "3mf",
+          "sha256": "fc2f91a0425d390c267affad08edb3f2053e7d1cf2084b11f67d4e125ecfbfd7",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08186843421,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "stl",
+          "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08211486616,
+          "void_checks": 5,
+          "material_checks": 3
+        }
+      ]
+    },
+    {
+      "status": "success",
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Darwin",
+      "python": "3.14.8",
+      "machine": "arm64",
+      "dependencies": {
+        "manifold3d": "3.5.4",
+        "numpy": "2.5.4"
+      },
+      "model": "cuatro-taladros",
+      "genus": 7,
+      "mouths": 8,
+      "radial_sagitta_mm": 0.019261093311212285,
+      "formats": [
+        {
+          "format": "glb",
+          "sha256": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            79.99999821186066,
+            59.99999865889549,
+            35.999998450279236
+          ],
+          "volume_mm3": 112947.07479068446,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "3mf",
+          "sha256": "4fb99102edb4121de58a6e1972564c45306a497fa5f21d03752567ee9357cea5",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08186843422,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "stl",
+          "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08211486616,
+          "void_checks": 5,
+          "material_checks": 3
+        }
+      ]
+    },
+    {
+      "status": "success",
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Linux",
+      "python": "3.10.22",
+      "machine": "x86_64",
+      "dependencies": {
+        "manifold3d": "3.5.4",
+        "numpy": "2.2.6"
+      },
+      "model": "cuatro-taladros",
+      "genus": 7,
+      "mouths": 8,
+      "radial_sagitta_mm": 0.019261093311212285,
+      "formats": [
+        {
+          "format": "glb",
+          "sha256": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            79.99999821186066,
+            59.99999865889549,
+            35.999998450279236
+          ],
+          "volume_mm3": 112947.07479068446,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "3mf",
+          "sha256": "fc2f91a0425d390c267affad08edb3f2053e7d1cf2084b11f67d4e125ecfbfd7",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08186843421,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "stl",
+          "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08211486616,
+          "void_checks": 5,
+          "material_checks": 3
+        }
+      ]
+    },
+    {
+      "status": "success",
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Linux",
+      "python": "3.14.8",
+      "machine": "x86_64",
+      "dependencies": {
+        "manifold3d": "3.5.4",
+        "numpy": "2.5.4"
+      },
+      "model": "cuatro-taladros",
+      "genus": 7,
+      "mouths": 8,
+      "radial_sagitta_mm": 0.019261093311212285,
+      "formats": [
+        {
+          "format": "glb",
+          "sha256": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            79.99999821186066,
+            59.99999865889549,
+            35.999998450279236
+          ],
+          "volume_mm3": 112947.07479068446,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "3mf",
+          "sha256": "4fb99102edb4121de58a6e1972564c45306a497fa5f21d03752567ee9357cea5",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08186843422,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "stl",
+          "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08211486616,
+          "void_checks": 5,
+          "material_checks": 3
+        }
+      ]
+    },
+    {
+      "status": "success",
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Windows",
+      "python": "3.10.11",
+      "machine": "AMD64",
+      "dependencies": {
+        "manifold3d": "3.5.4",
+        "numpy": "2.2.6"
+      },
+      "model": "cuatro-taladros",
+      "genus": 7,
+      "mouths": 8,
+      "radial_sagitta_mm": 0.019261093311212285,
+      "formats": [
+        {
+          "format": "glb",
+          "sha256": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            79.99999821186066,
+            59.99999865889549,
+            35.999998450279236
+          ],
+          "volume_mm3": 112947.07479068446,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "3mf",
+          "sha256": "fc2f91a0425d390c267affad08edb3f2053e7d1cf2084b11f67d4e125ecfbfd7",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08186843421,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "stl",
+          "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08211486616,
+          "void_checks": 5,
+          "material_checks": 3
+        }
+      ]
+    },
+    {
+      "status": "success",
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "version": "1.2.0",
+      "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+      "system": "Windows",
+      "python": "3.14.9",
+      "machine": "AMD64",
+      "dependencies": {
+        "manifold3d": "3.5.4",
+        "numpy": "2.5.4"
+      },
+      "model": "cuatro-taladros",
+      "genus": 7,
+      "mouths": 8,
+      "radial_sagitta_mm": 0.019261093311212285,
+      "formats": [
+        {
+          "format": "glb",
+          "sha256": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            79.99999821186066,
+            59.99999865889549,
+            35.999998450279236
+          ],
+          "volume_mm3": 112947.07479068446,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "3mf",
+          "sha256": "4fb99102edb4121de58a6e1972564c45306a497fa5f21d03752567ee9357cea5",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08186843422,
+          "void_checks": 5,
+          "material_checks": 3
+        },
+        {
+          "format": "stl",
+          "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608",
+          "euler": -12,
+          "triangles": 1128,
+          "bounds_mm": [
+            80.0,
+            60.0,
+            36.0
+          ],
+          "volume_mm3": 112947.08211486616,
+          "void_checks": 5,
+          "material_checks": 3
+        }
+      ]
+    }
+  ],
+  "mesh_format_validation": [
+    {
+      "status": "success",
+      "reports": [
+        {
+          "model": "rampa",
+          "validator": "2.0.0-dev.3.10",
+          "report": {
+            "uri": "rampa.glb",
+            "mimeType": "model/gltf-binary",
+            "validatorVersion": "2.0.0-dev.3.10",
+            "issues": {
+              "numErrors": 0,
+              "numWarnings": 0,
+              "numInfos": 0,
+              "numHints": 0,
+              "messages": [],
+              "truncated": false
+            },
+            "info": {
+              "version": "2.0",
+              "generator": "proyecciones-svg / exportar_mallas",
+              "resources": [
+                {
+                  "pointer": "/buffers/0",
+                  "mimeType": "application/gltf-buffer",
+                  "storage": "glb",
+                  "byteLength": 576
+                }
+              ],
+              "animationCount": 0,
+              "materialCount": 1,
+              "hasMorphTargets": false,
+              "hasSkins": false,
+              "hasTextures": false,
+              "hasDefaultScene": true,
+              "drawCallCount": 1,
+              "totalVertexCount": 24,
+              "totalTriangleCount": 8,
+              "maxUVs": 0,
+              "maxInfluences": 0,
+              "maxAttributes": 2
+            }
+          }
+        },
+        {
+          "model": "bloque",
+          "validator": "2.0.0-dev.3.10",
+          "report": {
+            "uri": "bloque.glb",
+            "mimeType": "model/gltf-binary",
+            "validatorVersion": "2.0.0-dev.3.10",
+            "issues": {
+              "numErrors": 0,
+              "numWarnings": 0,
+              "numInfos": 0,
+              "numHints": 0,
+              "messages": [],
+              "truncated": false
+            },
+            "info": {
+              "version": "2.0",
+              "generator": "proyecciones-svg / exportar_mallas",
+              "resources": [
+                {
+                  "pointer": "/buffers/0",
+                  "mimeType": "application/gltf-buffer",
+                  "storage": "glb",
+                  "byteLength": 864
+                }
+              ],
+              "animationCount": 0,
+              "materialCount": 1,
+              "hasMorphTargets": false,
+              "hasSkins": false,
+              "hasTextures": false,
+              "hasDefaultScene": true,
+              "drawCallCount": 1,
+              "totalVertexCount": 36,
+              "totalTriangleCount": 12,
+              "maxUVs": 0,
+              "maxInfluences": 0,
+              "maxAttributes": 2
+            }
+          }
+        },
+        {
+          "model": "escalera",
+          "validator": "2.0.0-dev.3.10",
+          "report": {
+            "uri": "escalera.glb",
+            "mimeType": "model/gltf-binary",
+            "validatorVersion": "2.0.0-dev.3.10",
+            "issues": {
+              "numErrors": 0,
+              "numWarnings": 0,
+              "numInfos": 0,
+              "numHints": 0,
+              "messages": [],
+              "truncated": false
+            },
+            "info": {
+              "version": "2.0",
+              "generator": "proyecciones-svg / exportar_mallas",
+              "resources": [
+                {
+                  "pointer": "/buffers/0",
+                  "mimeType": "application/gltf-buffer",
+                  "storage": "glb",
+                  "byteLength": 2592
+                }
+              ],
+              "animationCount": 0,
+              "materialCount": 1,
+              "hasMorphTargets": false,
+              "hasSkins": false,
+              "hasTextures": false,
+              "hasDefaultScene": true,
+              "drawCallCount": 1,
+              "totalVertexCount": 108,
+              "totalTriangleCount": 36,
+              "maxUVs": 0,
+              "maxInfluences": 0,
+              "maxAttributes": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "status": "success",
+      "reports": [
+        {
+          "model": "cuatro-taladros",
+          "validator": "2.0.0-dev.3.10",
+          "report": {
+            "uri": "cuatro-taladros.glb",
+            "mimeType": "model/gltf-binary",
+            "validatorVersion": "2.0.0-dev.3.10",
+            "issues": {
+              "numErrors": 0,
+              "numWarnings": 0,
+              "numInfos": 0,
+              "numHints": 0,
+              "messages": [],
+              "truncated": false
+            },
+            "info": {
+              "version": "2.0",
+              "generator": "proyecciones-svg / exportar_mallas",
+              "resources": [
+                {
+                  "pointer": "/buffers/0",
+                  "mimeType": "application/gltf-buffer",
+                  "storage": "glb",
+                  "byteLength": 81216
+                }
+              ],
+              "animationCount": 0,
+              "materialCount": 1,
+              "hasMorphTargets": false,
+              "hasSkins": false,
+              "hasTextures": false,
+              "hasDefaultScene": true,
+              "drawCallCount": 1,
+              "totalVertexCount": 3384,
+              "totalTriangleCount": 1128,
+              "maxUVs": 0,
+              "maxInfluences": 0,
+              "maxAttributes": 2
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "status": "success",
+  "validation_profile": "all",
+  "validated_systems": [
+    "Darwin",
+    "Linux",
+    "Windows"
+  ],
+  "pending_systems": [],
+  "python_jobs": [
+    {
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "system": "Darwin",
+      "python": "3.10.11",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "created_at": "2026-10-25T22:13:55.216050+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 121,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 38,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.2.0",
+      "package": {
+        "name": "proyecciones-svg-1.2.0.zip",
+        "sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+        "bytes": 367637,
+        "files": 57
+      },
+      "seconds": 75.15
+    },
+    {
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "system": "Darwin",
+      "python": "3.14.8",
+      "machine": "arm64",
+      "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+      "created_at": "2026-10-25T22:13:40.514688+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 121,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 38,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.2.0",
+      "package": {
+        "name": "proyecciones-svg-1.2.0.zip",
+        "sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+        "bytes": 367637,
+        "files": 57
+      },
+      "seconds": 75.808
+    },
+    {
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "system": "Linux",
+      "python": "3.10.22",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "created_at": "2026-10-25T22:13:40.543420+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 121,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 38,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.2.0",
+      "package": {
+        "name": "proyecciones-svg-1.2.0.zip",
+        "sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+        "bytes": 367637,
+        "files": 57
+      },
+      "seconds": 147.628
+    },
+    {
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "system": "Linux",
+      "python": "3.14.8",
+      "machine": "x86_64",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "created_at": "2026-10-25T22:13:38.899968+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 121,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 38,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.2.0",
+      "package": {
+        "name": "proyecciones-svg-1.2.0.zip",
+        "sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+        "bytes": 367637,
+        "files": 57
+      },
+      "seconds": 147.5
+    },
+    {
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "system": "Windows",
+      "python": "3.10.11",
+      "machine": "AMD64",
+      "platform": "Windows-10-10.0.26100-SP0",
+      "created_at": "2026-10-25T22:14:40.789841+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 121,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 38,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.2.0",
+      "package": {
+        "name": "proyecciones-svg-1.2.0.zip",
+        "sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+        "bytes": 367637,
+        "files": 57
+      },
+      "seconds": 107.313
+    },
+    {
+      "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+      "system": "Windows",
+      "python": "3.14.9",
+      "machine": "AMD64",
+      "platform": "Windows-2025Server-10.0.26100-SP0",
+      "created_at": "2026-10-25T22:13:53.997942+00:00",
+      "status": "success",
+      "suites": {
+        "geometry": {
+          "tests": 121,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        "distribution": {
+          "tests": 38,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      },
+      "version": "1.2.0",
+      "package": {
+        "name": "proyecciones-svg-1.2.0.zip",
+        "sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+        "bytes": 367637,
+        "files": 57
+      },
+      "seconds": 107.755
+    }
+  ],
+  "browsers": [
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "cuna",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true,
+      "sections": 2,
+      "sectionGuides": true,
+      "cotaPreserved": true
+    },
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "bloque-taladrado",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true,
+      "sections": 2,
+      "sectionGuides": true,
+      "cotaPreserved": true
+    },
+    {
+      "browser": "chromium",
+      "version": "151.0.7922.34",
+      "model": "cuatro-taladros",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true,
+      "sections": 2,
+      "sectionGuides": true,
+      "cotaPreserved": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "cuna",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true,
+      "sections": 2,
+      "sectionGuides": true,
+      "cotaPreserved": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "bloque-taladrado",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true,
+      "sections": 2,
+      "sectionGuides": true,
+      "cotaPreserved": true
+    },
+    {
+      "browser": "firefox",
+      "version": "153.0",
+      "model": "cuatro-taladros",
+      "angles": 24,
+      "portable": true,
+      "reducedMotion": true,
+      "width320": true,
+      "sections": 2,
+      "sectionGuides": true,
+      "cotaPreserved": true
+    }
+  ],
+  "workflow_run": {
+    "id": 40239175624,
+    "url": "https://github.com/MauricioPerera/proyecciones-svg/actions/runs/40239175624"
+  }
+}

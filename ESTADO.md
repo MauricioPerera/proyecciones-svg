@@ -2,7 +2,7 @@
 
 Fecha de corte: **25 de octubre de 2026**.
 
-La candidata **1.2.0** reúne cortes SVG, batería adversarial y mallas GLB/3MF/STL, con hasta cuatro taladros comunicados. Su publicación está condicionada a la matriz completa del paquete instalado en Windows, Linux y macOS con Python 3.10/3.14. Las secciones 1–10 conservan los hitos históricos anteriores; sus referencias a 1.1.0 y al desarrollo local describen esos momentos, no la candidata actual.
+La versión estable **1.2.0 está publicada e instalada**, con cortes SVG y mallas GLB/3MF/STL, incluidos hasta cuatro taladros comunicados. La matriz completa del ZIP instalado aprueba Windows, Linux y macOS con Python 3.10/3.14: 159 pruebas Python por combinación, comprobación de Cota y de los tres formatos de malla. La landing y la descarga pública ya corresponden a 1.2.0. Las secciones 1–10 conservan los hitos históricos anteriores; sus referencias a 1.1.0 y al desarrollo local describen esos momentos.
 
 Los contratos de geometría se mantienen en las referencias de la skill. La evidencia del hito de cortes está en [cortes-validacion-local.json](reports/cortes-validacion-local.json); los cambios posteriores de mallas producen un paquete diferente.
 
@@ -146,3 +146,7 @@ El [contrato de mallas](skills/proyecciones-svg/references/assets-mallas.md) def
 Los seis constructores taladrados del proyecto se exportan ahora mediante la resta booleana de la unión de cilindros poligonales inscritos. Sólo estas exportaciones requieren la dependencia opcional Manifold 3.5.4. El cálculo SVG y Cota no depende de ella. `--mesh-tolerance-mm` define la flecha radial máxima; no limita por sí sola el error de las intersecciones ni constituye una tolerancia de fabricación.
 
 Se conserva una única frontera cerrada de género 1, 3, 5 o 7 según el número de conductos. El ejemplo de cuatro taladros mantiene sus tres vistas, giro, cortes y `.cota`, y añade GLB/3MF/STL y una previsualización del GLB con recorte visual independiente de los archivos completos. La evidencia de esta ampliación se registra en [su informe](reports/mallas-taladradas.md). Sigue siendo desarrollo local, separado de la versión estable 1.1.0.
+
+## 11. Publicación estable 1.2.0
+
+La [CI 40239175624](https://github.com/MauricioPerera/proyecciones-svg/actions/runs/40239175624) aprobó el commit `79377f5f2eb02ca2a55b1e22a87fac65acc910b1` y un ZIP idéntico en seis entornos. La [release pública](https://github.com/MauricioPerera/proyecciones-svg/releases/tag/v1.2.0), la landing desplegada y las descargas se verificaron sin autenticación. La instalación local coincide con sus 57 archivos y conserva un respaldo de 1.1.0. El [informe de publicación](reports/1.2.0-stable.md) enlaza la evidencia permanente. Quedan fuera del alcance la impresión física, los perfiles de impresora/motor, los agujeros ciegos y las salidas laterales.

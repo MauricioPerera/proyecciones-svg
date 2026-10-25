@@ -1,0 +1,168 @@
+{
+  "status": "success",
+  "version": "1.2.0",
+  "package_sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba",
+  "manifest_files": 57,
+  "installed": "C:\\Users\\Administrador\\.codex\\skills\\proyecciones-svg",
+  "backup": "C:\\Users\\Administrador\\.codex\\skill-backups\\proyecciones-svg-20261025T221909034177Z",
+  "smoke": {
+    "version": "1.2.0",
+    "type": "quadruple_crossed_bores",
+    "seconds": 8.714,
+    "options": {
+      "mode": "sheet",
+      "system": "third",
+      "hidden": "dash",
+      "azimuth": 45,
+      "elevation": 35.2643897,
+      "frames": 72,
+      "seconds": 6,
+      "sweep": 360,
+      "loop": false,
+      "export_cota": true,
+      "cota_unit_mm": null,
+      "sections": true,
+      "export_glb": true,
+      "export_3mf": true,
+      "export_stl": true
+    },
+    "files": {
+      "cortes.svg": {
+        "bytes": 17994,
+        "sha256": "064cc56eee56aac9d97917fd4cafe3bea18eb7bfbede9fb69a6ae6fad953ea26"
+      },
+      "modelo.3mf": {
+        "bytes": 84762,
+        "sha256": "4fb99102edb4121de58a6e1972564c45306a497fa5f21d03752567ee9357cea5"
+      },
+      "modelo.cota": {
+        "bytes": 4954,
+        "sha256": "687bfcef8869630c99fe74dd4a83027a8d62a30f39e2f91707e2883976e327ad"
+      },
+      "modelo.glb": {
+        "bytes": 82332,
+        "sha256": "2bb7f7c7c2bbe61e84c475cdd772957e36063aa67384201bd4b50bd18360f088"
+      },
+      "modelo.json": {
+        "bytes": 2026,
+        "sha256": "cadda8285f1c43069ae77cf9431287739d7d88a3f9b76074793f68366923efa5"
+      },
+      "modelo.stl": {
+        "bytes": 56484,
+        "sha256": "b1d24f8acc26d555cef843da795d15a525e461065c653bacd74c47f46f9a6608"
+      },
+      "vistas.svg": {
+        "bytes": 68266,
+        "sha256": "53aa29e04faea9087d7ae5849a3cbdad394aabbce08f8e671e7f53ba161c2d38"
+      }
+    },
+    "cota": {
+      "schema_version": 1,
+      "target_version": "1.0.0",
+      "units": "mm",
+      "millimeters_per_source_unit": 10.0,
+      "cylinder_segments": 64,
+      "direction": "export-only"
+    },
+    "sections": {
+      "method": "analytic plane/cylinder sections; convex half-spaces; union masks",
+      "units": "cm",
+      "planes": [
+        {
+          "name": "A\u2013A \u00b7 ejes A y B",
+          "origin": [
+            4.0,
+            3.0,
+            1.4999999999999998
+          ],
+          "normal": [
+            0.0,
+            -0.9889363528682975,
+            0.14834045293024462
+          ],
+          "horizontal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "vertical": [
+            0.0,
+            0.14834045293024462,
+            0.9889363528682975
+          ]
+        },
+        {
+          "name": "B\u2013B \u00b7 ejes C y D",
+          "origin": [
+            4.0,
+            3.0,
+            1.4999999999999998
+          ],
+          "normal": [
+            1.0,
+            0.0,
+            -0.0
+          ],
+          "horizontal": [
+            -0.0,
+            1.0,
+            0.0
+          ],
+          "vertical": [
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      ]
+    },
+    "meshes": {
+      "scope": "simple extrusion, convex mesh, or validated cylindrical through-bores; one closed surface",
+      "genus": 7,
+      "tessellation": {
+        "backend": "manifold3d",
+        "backend_version": "3.5.4",
+        "operation": "body minus union of inscribed polygonal cylinders",
+        "radial_tolerance_mm": 0.02,
+        "segments_per_bore": [
+          40,
+          32,
+          32,
+          32
+        ],
+        "max_radial_sagitta_mm": 0.019261093311212285,
+        "bound_scope": "radial sagitta only; not an intersection/rim Hausdorff or manufacturing tolerance",
+        "mouths": 8,
+        "communicating_void": true
+      },
+      "vertices": 552,
+      "triangles": 1128,
+      "volume_mm3": 112947.08186843421,
+      "bounds_mm": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          80.0,
+          60.0,
+          36.0
+        ]
+      ],
+      "millimeters_per_source_unit": 10.0,
+      "source_sha256": "684b381dcb2e14d031d1499527267e0502258c5aeedbc466809126c2906cb962",
+      "glb": {
+        "units": "m",
+        "axes": "(x,y,z) -> (x,z,-y); right handed, Y up",
+        "origin": "source origin retained"
+      },
+      "printing": {
+        "units": "mm",
+        "axes": "source X/Y/Z, Z up",
+        "printer_profile": null,
+        "sliced": false
+      }
+    }
+  }
+}

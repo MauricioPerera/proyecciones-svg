@@ -1,0 +1,43 @@
+{
+  "version": "1.2.0",
+  "commit": "79377f5f2eb02ca2a55b1e22a87fac65acc910b1",
+  "status": "success",
+  "authenticated": false,
+  "assets": [
+    {
+      "name": "proyecciones-svg-1.2.0.zip",
+      "bytes": 367637,
+      "sha256": "a684118865d5ddce2c0e7bd3a211d4086a7d119d31326b0076c3f95147be8cba"
+    },
+    {
+      "name": "proyecciones-svg-1.2.0.zip.sha256",
+      "bytes": 94,
+      "sha256": "fd805ac9d852bf2c9ed1292885214f148c3838d54380e4bc5d2229ab06643716"
+    },
+    {
+      "name": "install_skill.py",
+      "bytes": 3944,
+      "sha256": "28321ad8649255e90d779b5a7c71ce74599dd688f6ccb3e4e8afec8172bfbcab"
+    },
+    {
+      "name": "LICENSE",
+      "bytes": 1072,
+      "sha256": "009b2e3184c200b2a6fc42d5ed6dd7269affe5d0f70117245410c2741f18e6c8"
+    },
+    {
+      "name": "release-readiness.json",
+      "bytes": 49816,
+      "sha256": "264481d3aeeda4e1c9bc70721ec722634a2fc9d0b19c575bd8f02622fb73fe3e"
+    },
+    {
+      "name": "RELEASE_NOTES.md",
+      "bytes": 4593,
+      "sha256": "3b19eb3c2c5afe0bcadde5f8645afae5d9d1f85c14b15270b28c7d87054462f4"
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 528,
+      "sha256": "8a3cad868eda45b26cb2d05fd7bc9c2b0ff51e9395b930e3713d1f6f231921b7"
+    }
+  ]
+}
