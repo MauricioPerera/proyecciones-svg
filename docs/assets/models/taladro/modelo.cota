@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "id": "doc",
+  "name": "Bloque con agujero cilíndrico pasante",
+  "units": "mm",
+  "layers": [
+    {
+      "id": "0",
+      "name": "0",
+      "color": "#ffffff",
+      "lineWeight": 0.25,
+      "lineType": "CONTINUOUS",
+      "locked": false,
+      "visible": true,
+      "printable": true
+    }
+  ],
+  "ucs": [
+    {
+      "id": "world",
+      "name": "World",
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "xAxis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "yAxis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "e1",
+      "type": "SOLID3D",
+      "layer": "0",
+      "props": {
+        "op": "SUBTRACT",
+        "operands": [
+          {
+            "op": "BOX",
+            "origin": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "width": 80.0,
+            "depth": 60.0,
+            "height": 20.0
+          },
+          {
+            "op": "CYLINDER",
+            "base": [
+              40.0,
+              30.0,
+              -5.099019513592785
+            ],
+            "axis": [
+              0.0,
+              0.0,
+              1.0
+            ],
+            "height": 30.198039027185573,
+            "radius": 15.0,
+            "segments": 64
+          }
+        ]
+      }
+    }
+  ],
+  "vars": {
+    "VIEWPROJECTION": "third"
+  },
+  "meta": {
+    "custom": {
+      "proyecciones_svg_version": "1.1.0",
+      "source_file": "modelo.json",
+      "source_type": "block_with_bore",
+      "source_units": "cm",
+      "millimeters_per_source_unit": "10.0",
+      "source_sha256": "ddd5f9ff1f3eb14968cbc4c677f4eb031acaf9108d359d98a6d22a061694e071",
+      "compatibility": "Cota 1.0.0 / schema 1; one-way export",
+      "curves": "Cota evaluates tessellated solids; the original SVG curves are preserved separately."
+    }
+  }
+}

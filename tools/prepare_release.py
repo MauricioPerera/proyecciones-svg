@@ -10,7 +10,7 @@ import tempfile
 
 import release
 from verify import source_checks
-from validate_matrix import PROFILES,validate
+from validate_matrix import PROFILES,validate,requires_cota,check_cota
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -41,6 +41,19 @@ def check_proof(proof,commit,version,digest,profile='all'):
         or proof.get('validation_profile','all')!=profile
         or len(proof.get('python_jobs',[]))!=len(PROFILES[profile]) or len(proof.get('browsers',[]))!=6):
         raise ValueError('La evidencia no aprueba este commit, versión, perfil o paquete.')
+    if requires_cota(version):
+        jobs=proof.get('cota_jobs',[])
+        if len(jobs)!=len(PROFILES[profile]):
+            raise ValueError('Falta la matriz de intercambio Cota del paquete.')
+        found=set()
+        for job in jobs:
+            key=(job.get('system'),'.'.join(job.get('python','').split('.')[:2]))
+            python_report=next((r for r in proof['python_jobs'] if
+                (r.get('system'),'.'.join(r.get('python','').split('.')[:2]))==key),None)
+            if key in found or python_report is None:
+                raise ValueError('Entorno Cota duplicado o sin informe Python.')
+            check_cota(job,python_report)
+            found.add(key)
 
 
 def write_assets(output,package,commit,version,digest,evidence):

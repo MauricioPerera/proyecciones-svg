@@ -34,7 +34,58 @@ def fixtures(folder,systems=('Linux','Windows','Darwin')):
     return sha
 
 
+def cota_fixtures(folder):
+    sha=fixtures(folder)
+    for path in folder.glob('python-*/report.json'):
+        python=json.loads(path.read_text())
+        python['version']='1.1.0'
+        python['suites']['geometry']['tests']=77
+        python['suites']['distribution']['tests']=22
+        path.write_text(json.dumps(python),encoding='utf-8')
+        report={key:python[key] for key in ('commit','version','system','python')}
+        report.update(status='success',tests=2,package_sha256=python['package']['sha256'],
+            cota_version='1.0.0',cota_commit=validate_matrix.COTA_COMMIT,
+            cases=[{'model':'cuna','views_mm':[[60,30],[60,40],[40,30]],'volume_mm3':36000,'material_checks':3},
+                   {'model':'cuatro-taladros','body_volume_expected_mm3':118954.16666666667,
+                    'body_volume_actual_mm3':118954.1557,'faces':8870,
+                    'material_checks':[{'material':False}]*12+[{'material':True}]*3}],
+            exports={name:{'units':'mm','sha256':'a'*64} for name in ('cuna','cuatro-taladros')})
+        (path.parent/'cota-interop.json').write_text(json.dumps(report),encoding='utf-8')
+    return sha
+
+
 class ReleaseGateTests(unittest.TestCase):
+    def test_cota_release_requires_six_matching_engine_reports(self):
+        with tempfile.TemporaryDirectory() as temp:
+            folder=Path(temp)
+            sha=cota_fixtures(folder)
+            result=validate_matrix.validate(folder,sha)
+            self.assertEqual(len(result['cota_jobs']),6)
+            check_proof(result,sha,'1.1.0',result['package_sha256'])
+            with self.assertRaisesRegex(ValueError,'Cota'):
+                check_proof({**result,'cota_jobs':[]},sha,'1.1.0',result['package_sha256'])
+            duplicate=[result['cota_jobs'][0]]*6
+            with self.assertRaisesRegex(ValueError,'duplicado'):
+                check_proof({**result,'cota_jobs':duplicate},sha,'1.1.0',result['package_sha256'])
+
+    def test_missing_failed_mismatched_or_incomplete_cota_cannot_release(self):
+        faults={'status':'failure','commit':'b'*40,'version':'1.0.1','system':'Other',
+                'python':'3.12.1','package_sha256':'b'*64,'cota_commit':'b'*40,'tests':0,
+                'cota_version':'2.0.0','cases':[],'exports':{}}
+        for fault in ('missing',*faults):
+            with self.subTest(fault=fault),tempfile.TemporaryDirectory() as temp:
+                folder=Path(temp)
+                sha=cota_fixtures(folder)
+                path=next(folder.glob('python-*/cota-interop.json'))
+                if fault=='missing':
+                    path.unlink()
+                else:
+                    data=json.loads(path.read_text())
+                    data[fault]=faults[fault]
+                    path.write_text(json.dumps(data),encoding='utf-8')
+                with self.assertRaises(ValueError):
+                    validate_matrix.validate(folder,sha)
+
     def test_current_platform_scope_requires_complete_declaration(self):
         version=(release.SOURCE/'VERSION').read_text().strip()
         current=json.loads((release.SOURCE/'PLATFORMS.json').read_text(encoding='utf-8'))

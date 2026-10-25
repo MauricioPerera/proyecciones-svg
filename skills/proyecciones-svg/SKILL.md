@@ -1,13 +1,13 @@
 ---
 name: proyecciones-svg
-description: Genera vistas técnicas y giros SVG de poliedros y prismas con hasta cuatro taladros cilíndricos pasantes comunicados a partir de descripciones, croquis o vistas. Úsala para alzado, planta, perfil y reconstrucción sin imágenes generadas ni motores 3D.
+description: Genera vistas técnicas y giros SVG de poliedros y prismas con hasta cuatro taladros cilíndricos pasantes comunicados a partir de descripciones, croquis o vistas, con exportación opcional .cota. Úsala para alzado, planta, perfil y reconstrucción sin imágenes generadas ni motores 3D.
 ---
 
 # Proyecciones SVG
 
 Plataformas validadas: Windows, Linux y macOS con Python 3.10 y 3.14 en la matriz completa de GitHub Actions. `PLATFORMS.json` registra este alcance; la evidencia de la release identifica los sistemas y arquitecturas probados.
 
-Construye una geometría coherente y proyéctala a SVG editable. Entrega vectores calculados, sin imágenes generadas, capturas como producto final, Blender, WebGL, Three.js, vídeo ni servicios externos. Las coordenadas espaciales son datos matemáticos; no requieren un motor 3D.
+Construye una geometría coherente y proyéctala a SVG editable. Calcula los SVG sin imágenes generadas, capturas como producto final, Blender, WebGL, Three.js, vídeo ni servicios externos. Las coordenadas espaciales son datos matemáticos; no requieren un motor 3D. Si se solicita, añade un archivo `.cota` para editar el modelo en Cota; esa aplicación usa su propio motor y no sustituye el cálculo de los SVG.
 
 ## Interpretar la entrada
 
@@ -42,6 +42,7 @@ Para cuatro diámetros distintos usa `scripts/cuatro_taladros.py` y lee [referen
 - **Plano:** alzado, planta y perfil derecho a una misma escala, con nombres, unidades y cotas generales reales. Respeta el sistema indicado por el usuario. Si no lo indica, usa tercer diedro y rotúlalo: planta arriba; perfil derecho a la derecha. En primer diedro: planta abajo; perfil derecho a la izquierda. No reflejes las piezas para acomodar las vistas.
 - **Vista oblicua:** proyección ortográfica desde azimut/elevación especificados. La isométrica usa azimut 45° y elevación aproximada de 35,264°. No la llames perspectiva cónica: las paralelas no convergen.
 - **Giro SVG:** recalcula las proyecciones y la visibilidad para cada ángulo. Un `rotate()` aplicado al dibujo plano no equivale a girar el volumen. Lee [references/geometria-animacion.md](references/geometria-animacion.md) para animación y revisión.
+- **Exportación Cota opcional:** añade `--export-cota` a `scripts/generar.py` cuando se pida un archivo editable en Cota. Conserva el JSON y los SVG solicitados; convierte las unidades a milímetros sin alterar las cotas originales. Para unidades relativas exige una equivalencia explícita con `--cota-unit-mm`. Lee [references/cota.md](references/cota.md) para compatibilidad, apertura y límites del intercambio.
 - **Ejercicio:** muestra primero sólo las vistas. Revela la solución mediante una acción explícita. Antes de revelar no incluyas el nombre del sólido, pistas decisivas, texto alternativo con la solución ni un modelo visible. Una solución correcta del usuario se confirma relacionándola con las vistas.
 
 No impongas animación, ejercicios o un plano completo si el usuario pide únicamente una vista. Para una explicación dentro del chat, puede usarse una presentación SVG interactiva; para archivos solicitados conserva los SVG autónomos y el JSON fuente.

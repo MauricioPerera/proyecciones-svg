@@ -29,9 +29,10 @@ class DistributionTests(unittest.TestCase):
             self.assertIsNone(backup)
             result=subprocess.run([sys.executable,'-B',str(target/'scripts'/'generar.py'),
                 str(target/'assets'/'cuna.json'),'--output-dir',str(folder/'output'),
-                '--frames','8','--viewer'],capture_output=True,text=True)
+                '--frames','8','--viewer','--export-cota'],capture_output=True,text=True)
             self.assertEqual(result.returncode,0,result.stderr)
             self.assertTrue((folder/'output'/'visor.html').is_file())
+            self.assertEqual(json.loads((folder/'output'/'modelo.cota').read_text())['units'],'mm')
             self.assertNotIn(str(ROOT),(folder/'output'/'visor.html').read_text(encoding='utf-8'))
             self.assertEqual((target/'VERSION').read_text().strip(),(SOURCE/'VERSION').read_text().strip())
 
@@ -105,6 +106,45 @@ class DistributionTests(unittest.TestCase):
                 report=json.loads((Path(tmp)/'informe.json').read_text())
                 self.assertIn('vistas.svg',report['files'])
                 self.assertEqual(report['type'],json.loads(source.read_text())['type'])
+
+    def test_optional_cota_keeps_svg_geometry_and_viewer_byte_identical(self):
+        import hashlib
+        for name in ('cuna.json','cuatro-taladros.json'):
+            with self.subTest(name=name),tempfile.TemporaryDirectory() as tmp:
+                root=Path(tmp)
+                for extra,folder in (([],root/'svg'),(['--export-cota'],root/'cota')):
+                    with contextlib.redirect_stdout(io.StringIO()):
+                        generar.main([str(SOURCE/'assets'/name),'--output-dir',str(folder),
+                                      '--frames','8','--viewer',*extra])
+                self.assertFalse((root/'svg'/'modelo.cota').exists())
+                for product in ('vistas.svg','angulo.svg','giro.svg','visor.html','modelo.json'):
+                    self.assertEqual((root/'svg'/product).read_bytes(),(root/'cota'/product).read_bytes(),product)
+                report=json.loads((root/'cota'/'informe.json').read_text())
+                self.assertEqual(report['files']['modelo.cota']['sha256'],
+                                 hashlib.sha256((root/'cota'/'modelo.cota').read_bytes()).hexdigest())
+                self.assertEqual(report['cota']['millimeters_per_source_unit'],10)
+
+    def test_cota_budget_unit_errors_and_selection_preserve_previous_delivery(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            folder=Path(tmp)/'output'
+            model=Path(tmp)/'modelo.json'
+            data=json.loads((SOURCE/'assets'/'cuna.json').read_text())
+            model.write_text(json.dumps(data))
+            common=[str(model),'--output-dir',str(folder),'--frames','8','--viewer']
+            with contextlib.redirect_stdout(io.StringIO()):
+                generar.main([*common,'--export-cota'])
+            previous={p.name:p.read_bytes() for p in folder.iterdir()}
+            budget=sum(len(previous[name]) for name in ('vistas.svg','angulo.svg','giro.svg','modelo.json','modelo.cota'))-1
+            for extra in ([],['--export-cota','--max-bytes',str(budget)],
+                          ['--export-cota','--cota-unit-mm','0'],['--cota-unit-mm','1']):
+                with self.subTest(extra=extra),contextlib.redirect_stderr(io.StringIO()),self.assertRaises(SystemExit):
+                    generar.main([*common,'--force',*extra])
+                self.assertEqual({p.name:p.read_bytes() for p in folder.iterdir()},previous)
+            data['units']='relative'
+            model.write_text(json.dumps(data))
+            with contextlib.redirect_stderr(io.StringIO()),self.assertRaises(SystemExit):
+                generar.main([*common,'--export-cota','--force'])
+            self.assertEqual({p.name:p.read_bytes() for p in folder.iterdir()},previous)
 
 
 if __name__=='__main__':

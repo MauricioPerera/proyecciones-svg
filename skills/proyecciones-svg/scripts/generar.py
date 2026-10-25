@@ -66,7 +66,8 @@ def renderers(data, args):
 def requested(args):
     names = {'sheet':['vistas.svg'], 'view':['angulo.svg'], 'animation':['giro.svg'],
              'all':['vistas.svg','angulo.svg','giro.svg']}[args.mode]
-    return names + ['modelo.json', 'informe.json'] + (['visor.html'] if args.viewer else [])
+    return (names + ['modelo.json', 'informe.json'] + (['visor.html'] if args.viewer else [])
+            + (['modelo.cota'] if args.export_cota else []))
 
 
 def size_check(folder, limit):
@@ -77,7 +78,7 @@ def size_check(folder, limit):
 
 def check_target(target, args):
     names=requested(args)
-    known={'vistas.svg','angulo.svg','giro.svg','modelo.json','informe.json','visor.html'}
+    known={'vistas.svg','angulo.svg','giro.svg','modelo.json','informe.json','visor.html','modelo.cota'}
     if any((target/name).exists() for name in known-set(names)):
         raise ValueError('La carpeta contiene productos fuera del modo solicitado; usa otra carpeta para no mezclar entregas.')
     if not args.force and any((target/name).exists() for name in names):
@@ -90,12 +91,19 @@ def worker(args):
     if not isinstance(data, dict):
         raise ValueError('El JSON debe ser un objeto de modelo.')
     jobs = renderers(data, args)
+    cota = None
+    if args.export_cota:
+        from exportar_cota import CYLINDER_SEGMENTS, document
+        cota = document(data,args.system,args.cota_unit_mm)
     for name in requested(args):
         if name in jobs:
             root = jobs[name]()
             ET.ElementTree(root).write(args.output_dir/name, encoding='utf-8', xml_declaration=True)
             size_check(args.output_dir, args.max_bytes)
     (args.output_dir/'modelo.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    if cota is not None:
+        (args.output_dir/'modelo.cota').write_text(json.dumps(cota,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+        size_check(args.output_dir,args.max_bytes)
     if args.viewer:
         from visor import create_viewer
         create_viewer(args.output_dir, args.seconds, args.loop)
@@ -106,6 +114,11 @@ def worker(args):
         'files': {path.name:{'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()}
                   for path in sorted(args.output_dir.iterdir()) if path.is_file()},
     }
+    if cota is not None:
+        report['options'].update(export_cota=True,cota_unit_mm=args.cota_unit_mm)
+        report['cota'] = {'schema_version':cota['schemaVersion'], 'target_version':'1.0.0', 'units':'mm',
+                          'millimeters_per_source_unit':float(cota['meta']['custom']['millimeters_per_source_unit']),
+                          'cylinder_segments':CYLINDER_SEGMENTS, 'direction':'export-only'}
     (args.output_dir/'informe.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     size_check(args.output_dir, args.max_bytes)
 
@@ -135,6 +148,8 @@ def main(argv=None):
     parser.add_argument('--sweep',type=float,default=360)
     parser.add_argument('--loop',action='store_true')
     parser.add_argument('--viewer',action='store_true',help='HTML autónomo con plano, giro y controles; requiere --mode all.')
+    parser.add_argument('--export-cota',action='store_true',help='Añade modelo.cota en milímetros junto a los SVG (Cota 1.0.0 / schema 1).')
+    parser.add_argument('--cota-unit-mm',type=float,help='Milímetros por unidad del JSON; para unidades relativas o una equivalencia explícita.')
     parser.add_argument('--timeout',type=float,default=180,help='Presupuesto de tiempo: 0 < segundos <= 600.')
     parser.add_argument('--max-bytes',type=int,default=16*1024*1024,help='Presupuesto total de salida: 1..67108864 bytes.')
     parser.add_argument('--force',action='store_true')
@@ -147,6 +162,11 @@ def main(argv=None):
             raise ValueError('Parámetros fuera de límites; consulta --help.')
         if args.viewer and args.mode!='all':
             raise ValueError('--viewer requiere --mode all.')
+        if args.cota_unit_mm is not None:
+            if not args.export_cota:
+                raise ValueError('--cota-unit-mm requiere --export-cota.')
+            if not math.isfinite(args.cota_unit_mm) or args.cota_unit_mm<=0:
+                raise ValueError('--cota-unit-mm debe ser finito y positivo.')
         if args.model.stat().st_size>MAX_INPUT:
             raise ValueError('El JSON supera el límite de 1 MiB.')
         if args._worker:

@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "id": "doc",
+  "name": "Pieza irregular · prueba de la versión estable 1.0.0",
+  "units": "mm",
+  "layers": [
+    {
+      "id": "0",
+      "name": "0",
+      "color": "#ffffff",
+      "lineWeight": 0.25,
+      "lineType": "CONTINUOUS",
+      "locked": false,
+      "visible": true,
+      "printable": true
+    }
+  ],
+  "ucs": [
+    {
+      "id": "world",
+      "name": "World",
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "xAxis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "yAxis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "e1",
+      "type": "SOLID3D",
+      "layer": "0",
+      "props": {
+        "op": "SUBTRACT",
+        "operands": [
+          {
+            "op": "INTERSECT",
+            "operands": [
+              {
+                "op": "EXTRUDE",
+                "profile": [
+                  [
+                    0.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    72.0,
+                    0.0,
+                    0.0
+                  ],
+                  [
+                    85.0,
+                    16.0,
+                    0.0
+                  ],
+                  [
+                    82.0,
+                    48.0,
+                    0.0
+                  ],
+                  [
+                    61.0,
+                    64.0,
+                    0.0
+                  ],
+                  [
+                    0.0,
+                    60.0,
+                    0.0
+                  ]
+                ],
+                "axis": [
+                  0.0,
+                  0.0,
+                  1.0
+                ],
+                "height": 42.14465785626112
+              },
+              {
+                "op": "BOX",
+                "origin": [
+                  -0.8697280474367233,
+                  -4.059497205389218,
+                  -26.91846065791812
+                ],
+                "width": 100.78992085431946,
+                "depth": 79.03701304641217,
+                "height": 41.3189613442164,
+                "basis": {
+                  "x": [
+                    0.9841833239736953,
+                    0.0,
+                    0.17715299831526515
+                  ],
+                  "y": [
+                    -0.020777720325300012,
+                    0.9930980770296175,
+                    0.11543177958500009
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "op": "CYLINDER",
+            "base": [
+              12.404898821864382,
+              25.450918529099575,
+              -20.99387647266952
+            ],
+            "axis": [
+              0.620453387463585,
+              0.11633501014942219,
+              0.7755667343294812
+            ],
+            "height": 96.03427110942114,
+            "radius": 6.0,
+            "segments": 64
+          },
+          {
+            "op": "CYLINDER",
+            "base": [
+              70.82517636610554,
+              25.595279431355213,
+              -20.03147045763193
+            ],
+            "axis": [
+              -0.620453387463585,
+              0.11633501014942219,
+              0.7755667343294812
+            ],
+            "height": 87.09974232994551,
+            "radius": 4.5,
+            "segments": 64
+          },
+          {
+            "op": "CYLINDER",
+            "base": [
+              42.0,
+              4.430881951698989,
+              -11.967492682422119
+            ],
+            "axis": [
+              0.0,
+              0.688749461914693,
+              0.7249994335944138
+            ],
+            "height": 80.45776164344498,
+            "radius": 3.0,
+            "segments": 64
+          },
+          {
+            "op": "CYLINDER",
+            "base": [
+              42.0,
+              58.51786969087657,
+              -12.966178621975336
+            ],
+            "axis": [
+              0.0,
+              -0.688749461914693,
+              0.7249994335944138
+            ],
+            "height": 76.32526487195682,
+            "radius": 2.0,
+            "segments": 64
+          }
+        ]
+      }
+    }
+  ],
+  "vars": {
+    "VIEWPROJECTION": "third"
+  },
+  "meta": {
+    "custom": {
+      "proyecciones_svg_version": "1.1.0",
+      "source_file": "modelo.json",
+      "source_type": "quadruple_crossed_bores",
+      "source_units": "mm",
+      "millimeters_per_source_unit": "1.0",
+      "source_sha256": "13e5fadcb16894eff98433f74dda38acb0ba4367a8b3669d4f90297f04a5cd1e",
+      "compatibility": "Cota 1.0.0 / schema 1; one-way export",
+      "curves": "Cota evaluates tessellated solids; the original SVG curves are preserved separately."
+    }
+  }
+}

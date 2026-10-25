@@ -2,13 +2,15 @@
 
 Requiere Python 3.10 o posterior. El generador, el instalador y el visor no necesitan paquetes Python, Node, red ni rutas de una máquina concreta.
 
-La versión 1.0.1 está validada en Windows, Linux y macOS con Python 3.10 y 3.14 mediante GitHub Actions. El archivo `PLATFORMS.json` conserva este alcance junto al paquete; `release-readiness.json`, adjunto a la release, identifica las versiones y arquitecturas efectivamente probadas. En macOS y Linux usa `python3` si ése es el nombre del intérprete instalado.
+La versión 1.1.0 está validada en Windows, Linux y macOS con Python 3.10 y 3.14 mediante GitHub Actions. El archivo `PLATFORMS.json` conserva este alcance junto al paquete; `release-readiness.json`, adjunto a la release, identifica las versiones y arquitecturas efectivamente probadas. En macOS y Linux usa `python3` si ése es el nombre del intérprete instalado.
 
 ```sh
 python <skill>/scripts/generar.py modelo.json --output-dir salida --mode all --viewer
 ```
 
 `--mode sheet|view|animation|all` selecciona los SVG. `--viewer` requiere `all` y añade un HTML autónomo con plano, control de ángulo, reproducción manual y opción de ocultar las aristas discontinuas disponibles. No abre programas ni sirve archivos por red. Abre `visor.html` o los SVG con un navegador. El giro autónomo usa SMIL y ofrece una vista estática con movimiento reducido; el visor siempre empieza detenido.
+
+`--export-cota` añade `modelo.cota` junto a los productos seleccionados, sin cambiar los SVG ni el visor. Funciona con todos los tipos de modelo admitidos y no necesita instalar Cota, Node ni paquetes Python. El archivo usa milímetros; para una unidad relativa o personalizada añade `--cota-unit-mm N`, donde N son los milímetros por unidad del JSON. Consulta [cota.md](cota.md) para la compatibilidad y los límites.
 
 Valores comunes: tercer diedro, ocultas discontinuas, azimut 45°, elevación 35,2643897°, 72 fotogramas, 6 segundos, barrido 360°, una reproducción. Usa `--system first`, `--hidden omit`, `--azimuth`, `--elevation`, `--frames`, `--seconds`, `--sweep` o `--loop` según el encargo. Los poliedros permiten elevaciones −90..90°; los cuerpos taladrados, 0..90°.
 

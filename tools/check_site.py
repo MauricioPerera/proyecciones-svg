@@ -38,6 +38,8 @@ def main():
             assert path.is_relative_to(SITE.resolve()) and path.is_file(),link
     assert 'repositorio privado' not in source.lower()
     assert 'sin iniciar sesión' in source
+    assert '--export-cota' in source and 'modelo.cota' in source
+    assert page.anchors.get('cota-download')=='assets/models/cuna/modelo.cota'
     version=(ROOT/'skills'/'proyecciones-svg'/'VERSION').read_text().strip()
     base=f'https://github.com/MauricioPerera/proyecciones-svg/releases/download/v{version}/'
     for identity,name in (('download-hero',f'proyecciones-svg-{version}.zip'),
@@ -52,6 +54,9 @@ def main():
         folder=SITE/'assets'/'models'/key
         model=json.loads((folder/'modelo.json').read_text(encoding='utf-8'))
         assert model['type']
+        cota=json.loads((folder/'modelo.cota').read_text(encoding='utf-8'))
+        assert cota['schemaVersion']==1 and cota['units']=='mm' and len(cota['entities'])==1,key
+        assert cota['meta']['custom']['source_type']==model['type'],key
         boxes=[]
         for name in ('planta.svg','alzado.svg','perfil.svg'):
             root=ET.parse(folder/name).getroot()

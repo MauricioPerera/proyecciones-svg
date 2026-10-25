@@ -75,9 +75,9 @@ def main():
             target=Path(temporary)/'generated'
             command=[sys.executable,'-B',str(skill/'scripts'/'generar.py'),str(source),
                 '--output-dir',str(target),'--mode','all','--frames','24','--seconds','8',
-                '--viewer','--elevation','50','--hidden','dash']
+                '--viewer','--export-cota','--elevation','50','--hidden','dash']
             subprocess.run(command,check=True,capture_output=True,text=True,encoding='utf-8')
-            for name in ('vistas.svg','giro.svg','modelo.json','visor.html'):
+            for name in ('vistas.svg','giro.svg','modelo.json','modelo.cota','visor.html'):
                 shutil.copyfile(target/name,folder/name)
             oblique=clean(ET.parse(target/'angulo.svg').getroot(),key+'-angle-')
             x0,y0,x1,y1=bounds(oblique)

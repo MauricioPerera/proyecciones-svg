@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "doc",
+  "name": "Pieza escalonada",
+  "units": "mm",
+  "layers": [
+    {
+      "id": "0",
+      "name": "0",
+      "color": "#ffffff",
+      "lineWeight": 0.25,
+      "lineType": "CONTINUOUS",
+      "locked": false,
+      "visible": true,
+      "printable": true
+    }
+  ],
+  "ucs": [
+    {
+      "id": "world",
+      "name": "World",
+      "origin": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "xAxis": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "yAxis": [
+        0.0,
+        1.0,
+        0.0
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "e1",
+      "type": "SOLID3D",
+      "layer": "0",
+      "props": {
+        "op": "EXTRUDE",
+        "profile": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            60.0,
+            0.0,
+            0.0
+          ],
+          [
+            60.0,
+            0.0,
+            20.0
+          ],
+          [
+            20.0,
+            0.0,
+            20.0
+          ],
+          [
+            20.0,
+            0.0,
+            40.0
+          ],
+          [
+            0.0,
+            0.0,
+            40.0
+          ]
+        ],
+        "height": 40.0,
+        "axis": [
+          0.0,
+          1.0,
+          0.0
+        ]
+      }
+    }
+  ],
+  "vars": {
+    "VIEWPROJECTION": "third"
+  },
+  "meta": {
+    "custom": {
+      "proyecciones_svg_version": "1.1.0",
+      "source_file": "modelo.json",
+      "source_type": "extrusion",
+      "source_units": "cm",
+      "millimeters_per_source_unit": "10.0",
+      "source_sha256": "8665d30ed49a117504fc650b9730a9b21496d4c1c1164fb36c0c6abfaf363b96",
+      "compatibility": "Cota 1.0.0 / schema 1; one-way export",
+      "curves": "Cota evaluates tessellated solids; the original SVG curves are preserved separately."
+    }
+  }
+}
